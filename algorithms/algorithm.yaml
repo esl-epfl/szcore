@@ -1,6 +1,6 @@
 ---
 # Description of a seizure detection algorithm
-title: Demo Research Software
+tiitle: Demo Research Software
 image: "ghcr.io/username/image-name:tag"
 authors:
   - family-names: Druskat
