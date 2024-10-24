@@ -56,6 +56,6 @@ jobs:
       - name: Pull image
         run: |
           for algo in ${FILELIST}; do 
-            docker pull $(sed 's/^image: \+\(.*\)$/\1/' $algo)
+            docker pull $(grep '^image: ' $algo | sed 's/^image: \+//' | tr -d \'\")
           done
 
