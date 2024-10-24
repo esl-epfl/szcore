@@ -8,8 +8,10 @@ name: Publish evaluator container
 on:
   push:
     branches: [ "main" ]
+    paths: "evaluation/*"
   pull_request:
     branches: [ "main" ]
+    paths: "evaluation/*"
 
 env:
   # Use docker.io for Docker Hub if empty

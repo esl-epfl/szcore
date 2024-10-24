@@ -8,8 +8,10 @@ name: Publish website builder container
 on:
   push:
     branches: [ "main" ]
+    paths: "website/*"
   pull_request:
     branches: [ "main" ]
+    paths: "website/*"
 
 env:
   # Use docker.io for Docker Hub if empty
