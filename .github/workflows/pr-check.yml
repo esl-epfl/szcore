@@ -13,7 +13,7 @@ jobs:
   check_yaml:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/${{ github.repository }}-algo-checks:latest
+      image: ghcr.io/${{ github.repository }}-algo-checks:main
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.github_token }}
