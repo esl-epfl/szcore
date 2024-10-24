@@ -57,6 +57,9 @@ jobs:
         run: |
           for algo in ${FILELIST}; do 
             IMAGE=$(grep '^image: ' $algo | sed 's/^image: \+//' | tr -d \'\")
-            docker pull $IMAGE || echo "Cannot pull image: $IMAGE"
+            if !docker pull $IMAGE ; then
+              echo "Cannot pull image: $IMAGE"
+              exit 1
+            fi
           done
 
