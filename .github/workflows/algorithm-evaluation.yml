@@ -1,0 +1,65 @@
+name: Execute algorithm and evaluate metrics
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: 'algorithms/*.yaml'
+  pull_request:
+    branches: [ "main" ]
+    paths: 'algorithms/*.yaml'
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Find updated algorithm
+        id: find-algorithm
+        uses: tj-actions/changed-files@v44
+        with:
+          files: algorithms/**.yaml
+
+      - name: Execute algorithm container
+        run: |
+          for algo in ${{ steps.find-algorithm.outputs.all_changed_files }}; do
+            IMAGE=$(grep '^image: ' $algo | sed 's/^image: \+//' | tr -d \'\")
+            docker run \
+              -e AWS_REGION= ${{ secrets.AWS_REGION }} \
+              -e AWS_ACCESS_KEY= ${{ secrets.AWS_ACCESS_KEY }} \
+              -e AWS_SECRET_KEY= ${{ secrets.AWS_SECRET_KEY }} \
+              -e AWS_BUCKET= ${{ secrets.AWS_BUCKET }} \
+              -v /predictions:/output \
+              $IMAGE
+          done
+
+      - name: Save predictions
+        uses: actions/upload-artifact@v4
+        with:
+          name: predictions
+          path: /predictions
+        
+  evaluate:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}-evaluator:main
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
+
+    steps:
+      - name: Get predictions
+        uses: actions/download-artifact@v4
+        with:
+          name: predictions
+          path: /predictions
+
+      - name: Evaluate algorithm predictions
+        run: |
+          python __main__.py /predictions/*
+          
+
+
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: upload to s3
+
