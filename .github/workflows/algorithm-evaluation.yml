@@ -49,6 +49,10 @@ jobs:
               docker run \
                 -e INPUT=tmp.edf \
                 -e OUTPUT=tmp.tsv \
+                -e AWS_BUCKET=AWS_BUCKET \
+                -e AWS_REGION=AWS_DEFAULT_REGION \
+                -e AWS_ACCESS_KEY=AWS_ACCESS_KEY \
+                -e AWS_SECRET_KEY=AWS_SECRET_KEY \
                 -v ./predictions:/output:rw \
                 -v ./data:/data:ro \
                 --network none \
