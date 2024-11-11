@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Execute algorithm container
-        if: ${{ steps.find-algorithm.outputs.any_changed != "false" }}
+        if: steps.find-algorithm.outputs.any_changed == 'false'
         run: |
           # iterate over all datasets in S3
           for recording in $(aws s3api list-objects --bucket ${AWS_BUCKET} --prefix datasets --output text --query 'Contents[].[Key]' | grep '.*edf'); do
