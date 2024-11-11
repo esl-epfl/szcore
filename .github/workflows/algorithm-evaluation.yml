@@ -44,8 +44,6 @@ jobs:
               touch ./predictions/tmp.tsv
               chmod 776 ./predictions/tmp.tsv
 
-              # Create restricted network for docker image execution
-              docker network create --driver bridge isolated_network
 
               echo "Running inference for $ALGO_NAME"
               docker run \
@@ -53,7 +51,7 @@ jobs:
                 -e OUTPUT=tmp.tsv \
                 -v ./predictions:/output:rw \
                 -v ./data:/data:ro \
-                --network isolated_network \
+                --network none \
                 --name "${ALGO_NAME}" \
                 "${IMAGE}"
 
@@ -67,7 +65,6 @@ jobs:
               # Cleanup
               rm ./predictions/tmp.tsv
               docker rm "${ALGO_NAME}"
-              docker network rm isolated_network
             done
             # Cleanup
             rm ./data/tmp.edf
