@@ -87,4 +87,4 @@ jobs:
     steps:
 
       - name: Evaluate algorithm predictions
-        run: python __main__.py
+        run: python /__main__.py
