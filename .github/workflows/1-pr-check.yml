@@ -4,11 +4,11 @@ on:
   pull_request:
     paths:
       - 'algorithms/*.yaml'
-      - '.github/workflows/pr-check.yml'
+      - '.github/workflows/1-pr-check.yml'
   push:
     paths:
       - 'algorithms/*.yaml'
-      - '.github/workflows/pr-check.yml'
+      - '.github/workflows/1-pr-check.yml'
 
 jobs:
 
