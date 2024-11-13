@@ -6,11 +6,6 @@ on:
     paths:
       - 'algorithms/*.yaml'
       - '.github/workflows/2-algorithm-evaluation.yml'
-  pull_request:
-    branches: [ "main" ]
-    paths:
-      - 'algorithms/*.yaml'
-      - '.github/workflows/-algorithm-evaluation.yml'
 
 jobs:
   execute:
