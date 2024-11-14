@@ -71,6 +71,14 @@ jobs:
         run: |
           cp -r ./algorithms website/public/algorithms
 
+      - name: Rename algorithms
+        run: |
+          for algo in website/public/algorithms/*; do
+            IMAGE=$(grep '^image: ' $algo | sed 's/^image: \+//' | tr -d \'\")
+            ALGO_NAME=$(echo "$IMAGE" | iconv -t ascii//TRANSLIT | sed -r s/[^a-zA-Z0-9]+/-/g | sed -r s/^-+\|-+$//g | tr A-Z a-z)
+            mv $algo website/public/algorithms/$ALGO_NAME.yaml
+          done
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
