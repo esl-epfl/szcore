@@ -11,13 +11,18 @@ jobs:
   execute:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Configure Git Safe Directory
+        run: git config --global --add safe.directory /__w/szcore/szcore
+
       - name: Find updated algorithm
         id: find-algorithm
-        uses: tj-actions/changed-files@v44
+        uses: tj-actions/changed-files@v45
         with:
           files: algorithms/**.yaml
-
-      - uses: actions/checkout@v4
 
       - name: Execute algorithm container
         if: steps.find-algorithm.outputs.any_changed == 'true'
@@ -74,13 +79,18 @@ jobs:
     runs-on: ubuntu-latest
     needs: [execute]
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Configure Git Safe Directory
+        run: git config --global --add safe.directory /__w/szcore/szcore
+
       - name: Find updated algorithm
         id: find-algorithm
-        uses: tj-actions/changed-files@v44
+        uses: tj-actions/changed-files@v45
         with:
           files: algorithms/**.yaml
-
-      - uses: actions/checkout@v4
 
       - name: Log in to GitHub Container Registry
         run: |
