@@ -15,25 +15,42 @@ permissions:
   id-token: write
 
 jobs:
-  # download:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Download results
-  #       run: |
-  #         aws s3 cp \
-  #           s3://${AWS_BUCKET}/results/results.json \
-  #           website/data/sampleEval.json
-  #       env:
-  #         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
-  #         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
-  #         AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-  #         AWS_BUCKET: ${{secrets.AWS_BUCKET }}
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download results
+        run: |
+          aws s3 sync s3://${AWS_BUCKET}/results/ ./results
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+          AWS_BUCKET: ${{secrets.AWS_BUCKET }}
 
-  #     - name: upload artifact
-  #       uses: actions/upload-artifact@v4
-  #       with: 
-  #         name: web-data
-  #         path: website/data/
+      - name: Concatenate JSONs
+        run: |
+          result="./results.json"
+          echo "{}" > "$result"
+          for algorithm_dir in ./results/*/; do
+            algorithm_name=$(basename "$algorithm_dir")
+            algorithm_obj="{}"
+            for dataset_file in "$algorithm_dir"*.json; do
+              dataset_name=$(basename "$dataset_file" .json)
+              algorithm_obj=$(jq --arg dataset_name "$dataset_name" \
+                                  --argjson dataset_content "$(cat "$dataset_file")" \
+                                  '. + {($dataset_name): $dataset_content}' <<< "$algorithm_obj")
+            done
+            jq --arg algorithm_name "$algorithm_name" \
+              --argjson algorithm_obj "$algorithm_obj" \
+              '. + {($algorithm_name): $algorithm_obj}' <<< "$(<"$result")" > "$result"
+          done
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with: 
+          name: results
+          path: ./results.json
+
   deploy:
     needs: build
     environment:
@@ -43,6 +60,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Download results.json
+        uses: actions/download-artifact@v4
+        with:
+          name: results
+          path: website/public/results.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
