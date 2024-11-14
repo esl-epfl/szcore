@@ -61,18 +61,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Debug directory contents
-        run: |
-          echo "Listing contents of the current directory"
-          ls -la
-          echo "Listing contents of website/public"
-          ls -la website/public
-
       - name: Download results.json
         uses: actions/download-artifact@v4
         with:
           name: results
-          path: website/public/results.json
+          path: website/public/
       
       - name: Copy algorithms
         run: |
