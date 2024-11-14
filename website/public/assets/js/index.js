@@ -20,7 +20,7 @@ async function loadResults() {
     // Add a row for each algorithm
     algorithms.forEach(algorithm => {
         const row = document.createElement("tr");
-        row.appendChild(createTableCell(algorithm)); // Add algorithm name as row header
+        row.appendChild(createTableCellLink(algorithm, "algorithm.html?algo=" + algorithm)); // Add algorithm name as row header
 
         // Add F1 score for each dataset
         datasets.forEach(dataset => {
@@ -44,6 +44,15 @@ async function loadResults() {
 function createTableCell(content) {
     const td = document.createElement("td");
     td.textContent = content;
+    return td;
+}
+
+function createTableCellLink(content, url) {
+    const td = document.createElement("td");
+    const a = document.createElement("a");
+    a.setAttribute('href',url);
+    a.innerHTML = content;
+    td.appendChild(a);
     return td;
 }
 
