@@ -1,17 +1,43 @@
-# Use an official Python runtime as a parent image
-FROM python:3.12-slim
+# syntax=docker/dockerfile:1
 
-# Set the working directory in the container
-WORKDIR .
+ARG PYTHON_VERSION=3.12
+FROM python:${PYTHON_VERSION}-slim AS base
 
-# Copy the requirements.txt file into the container
-COPY requirements.txt .
+# Prevents Python from writing pyc files.
+ENV PYTHONDONTWRITEBYTECODE=1
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Keeps Python from buffering stdout and stderr to avoid situations where
+# the application crashes without emitting any logs due to buffering.
+ENV PYTHONUNBUFFERED=1
 
-# Copy the rest of the application code into the container
-COPY . .
+WORKDIR /app
 
-# Command to run the evaluator.py script
-CMD ["python", "__main__.py"]
+# Create a non-privileged user that the app will run under.
+ARG UID=10001
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/nonexistent" \
+    --shell "/sbin/nologin" \
+    --no-create-home \
+    --uid "${UID}" \
+    appuser
+
+# Download dependencies as a separate step to take advantage of Docker's caching.
+# Leverage a cache mount to /root/.cache/pip to speed up subsequent builds.
+RUN --mount=type=cache,target=/root/.cache/pip \
+    python -m pip install 'szcore-evaluation>=0.0.5'
+
+# Switch to the non-privileged user to run the application.
+USER appuser
+
+# Create a data volume
+VOLUME ["/ref"]
+VOLUME ["/hyp"]
+VOLUME ["/results"]
+
+# Define environment variables
+ENV OUT=""
+
+# Run the application
+CMD python3 -m szcore_evaluation "/ref" "/hyp" "/results/$OUT"
