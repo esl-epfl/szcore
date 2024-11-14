@@ -15,50 +15,25 @@ permissions:
   id-token: write
 
 jobs:
-  download:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download results
-        run: |
-          aws s3 cp \
-            s3://${AWS_BUCKET}/results/results.json \
-            website/data/sampleEval.json
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
-          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
-          AWS_BUCKET: ${{secrets.AWS_BUCKET }}
+  # download:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Download results
+  #       run: |
+  #         aws s3 cp \
+  #           s3://${AWS_BUCKET}/results/results.json \
+  #           website/data/sampleEval.json
+  #       env:
+  #         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+  #         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+  #         AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+  #         AWS_BUCKET: ${{secrets.AWS_BUCKET }}
 
-      - name: upload artifact
-        uses: actions/upload-artifact@v4
-        with: 
-          name: web-data
-          path: website/data/
-        
-    
-  build:
-    needs: download
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/${{ github.repository }}-site-builder:main
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.github_token }}
-    steps:
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: web-data
-          path: website/data/
-
-      - name: Build website
-        run: python /app/script.py website/data/sampleEval.json
-
-
+  #     - name: upload artifact
+  #       uses: actions/upload-artifact@v4
+  #       with: 
+  #         name: web-data
+  #         path: website/data/
   deploy:
     needs: build
     environment:
