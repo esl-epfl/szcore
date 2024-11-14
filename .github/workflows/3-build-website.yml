@@ -66,6 +66,10 @@ jobs:
         with:
           name: results
           path: website/public/results.json
+      
+      - name: Copy algorithms
+        run: |
+          cp -r ./algorithms website/public/algorithms
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
