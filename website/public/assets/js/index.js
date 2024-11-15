@@ -10,11 +10,13 @@ async function loadResults() {
     const tableBody = document.getElementById("table-body");
 
     // Add an empty cell in the top-left corner
-    tableHeaderRow.appendChild(createTableCell(""));
+    tableHeaderRow.appendChild(createTableCell("Algorithms"));
 
     // Add dataset names as column headers
     datasets.forEach(dataset => {
-        tableHeaderRow.appendChild(createTableCell(dataset.replace(".json", "")));
+        const headerCell = createTableCell(dataset.replace(".json", ""));
+        headerCell.classList.add('text-center');
+        tableHeaderRow.appendChild(headerCell);
     });
 
     // Add a row for each algorithm
@@ -26,7 +28,7 @@ async function loadResults() {
         datasets.forEach(dataset => {
             const f1Score = Math.round(data[algorithm][dataset]?.event_results?.f1 * 100) ?? ''; // Handle missing data
             const f1Cell = createTableCell(f1Score);
-
+            f1Cell.classList.add('text-center');
                     if (f1Score !== '') {
                         const color = getColorForScore(f1Score);
                         f1Cell.style.backgroundColor = color.bgColor;
