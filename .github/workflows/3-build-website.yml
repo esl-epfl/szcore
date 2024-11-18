@@ -82,7 +82,7 @@ jobs:
           cd website
           hugo --minify
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: hugo
           path: website/public/
