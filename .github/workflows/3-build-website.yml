@@ -84,8 +84,8 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
       - run: |
-        cd website/themes/blowfish
-        npm ci
+          cd website/themes/blowfish
+          npm ci
       - name: Build
         run: |
           cd website
