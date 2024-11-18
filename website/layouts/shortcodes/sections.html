@@ -1,0 +1,47 @@
+{{ $articleImageClasses := "w-full md:w-auto h-full thumbnail nozoom" }}
+{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+
+<div class="bg-neutral-100">
+    <div class="grid grid-cols-3 gap-4 sm:px-14 md:px-24 lg:px-32">
+
+        {{ range .Site.Menus.main }}
+            <div class="place-content-center">
+                {{ if .Page }}
+                    <h2 class="text-center"><a href="{{ .URL }}">{{ .Name }}</a></h2>
+
+                    {{- with .Page.Params.images -}}
+                    {{- range first 6 . }}
+                    <meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
+                    {{- else -}}
+                    {{- $images := .Page.Resources.ByType "image" -}}
+                    {{- $featured := $images.GetMatch "*feature*" -}}
+                    {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+                    {{ if and .Params.featureimage (not $featured) }}
+                    {{- $url:= .Params.featureimage -}}
+                    {{ $featured = resources.GetRemote $url }}
+                    {{ end }}
+                    {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
+                    {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
+                    {{- with $featured -}}
+                    {{ if (strings.HasSuffix $featured ".svg")}}
+                        {{ with . }}
+                        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+                        {{ end }}
+                        {{ else }}
+                        {{ with .Resize "600x"  }}
+                        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+                        {{ end }}
+                        {{ end }}
+                    {{- else -}}
+                    {{- with $.Site.Params.images }}
+                    <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
+                    {{- end -}}
+                    {{- end -}}
+
+                    <p>{{ .Page.Description }}</p>
+
+                {{ end }}
+            </div>
+        {{ end }}
+    </div>
+</div>

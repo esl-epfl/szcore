@@ -1,0 +1,48 @@
+{
+  "ghcr-io-esl-epfl-gotman-1982-latest": {
+    "chbmit": {
+      "sample_results": {
+        "sensitivity": 0.35,
+        "sensitivity_std": 0,
+        "precision": 0.020588235294117647,
+        "precision_std": 0.020588235294117647,
+        "f1": 0.07368421052631578,
+        "f1_std": 0,
+        "fpRate": 1702,
+        "fpRate_std": 398
+      },
+      "event_results": {
+        "sensitivity": 1,
+        "sensitivity_std": 0,
+        "precision": 0.00684931506849315,
+        "precision_std": 0.00684931506849315,
+        "f1": 0.027027027027027025,
+        "f1_std": 0,
+        "fpRate": 282,
+        "fpRate_std": 6
+      }
+    },
+    "siena": {
+      "sample_results": {
+        "sensitivity": 0.08829611248966088,
+        "sensitivity_std": 0.03990901571546732,
+        "precision": 0.01290240163515585,
+        "precision_std": 0.006834440470107306,
+        "f1": 0.019812434346606598,
+        "f1_std": 0.008224948830963495,
+        "fpRate": 9792.41332546082,
+        "fpRate_std": 4566.67758363009
+      },
+      "event_results": {
+        "sensitivity": 1,
+        "sensitivity_std": 0,
+        "precision": 0.08496732026143791,
+        "precision_std": 0.0261437908496732,
+        "f1": 0.15555555555555556,
+        "f1_std": 0.04444444444444444,
+        "fpRate": 280.54794809412226,
+        "fpRate_std": 0.028467574641695137
+      }
+    }
+  }
+}

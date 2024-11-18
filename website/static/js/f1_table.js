@@ -1,6 +1,6 @@
 // Fetch the bundled results JSON
 async function loadResults() {
-    const response = await fetch('results.json'); // Path to the bundled JSON file
+    const response = await fetch('/results.json'); // Path to the bundled JSON file
     const data = await response.json();
 
     const algorithms = Object.keys(data);
@@ -22,7 +22,7 @@ async function loadResults() {
     // Add a row for each algorithm
     algorithms.forEach(algorithm => {
         const row = document.createElement("tr");
-        row.appendChild(createTableCellLink(algorithm, "algorithm.html?algo=" + algorithm)); // Add algorithm name as row header
+        row.appendChild(createTableCellLink(algorithm, "/algorithm/?algo=" + algorithm)); // Add algorithm name as row header
 
         // Add F1 score for each dataset
         datasets.forEach(dataset => {

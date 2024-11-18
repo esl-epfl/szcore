@@ -1,0 +1,20 @@
+[[main]]
+  name = "Framework"
+  pageRef = "framework"
+  weight = 10
+
+[[main]]
+  name = "Tools"
+  pageRef = "tools"
+  weight = 20
+
+[[main]]
+  name = "Benchmark"
+  pageRef = "benchmark"
+  weight = 30
+
+[[main]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/esl-epfl/szcore"
+  weight = 40
