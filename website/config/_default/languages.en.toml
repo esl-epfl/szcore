@@ -9,7 +9,7 @@ displayName = "EN"
 isoCode = "en"
 rtl = false
 dateFormat = "2 January 2006"
-logo = "/img/favicon.png"
+logo = "/favicon.png"
 
 [params.author]
 name = "Jonathan Dan"
