@@ -127,7 +127,7 @@ BIDS_CHB-MIT/
 
 We propose standardization of EEG data that is at least consistent with the `IFCN` and `ILAE` minimum recording standards that are recommended for EEG. Recordings should be stored in `.edf` files. They should contain the 19 electrodes of the international 10-20 system in a unipolar common average montage. The recording should be resampled to 256 Hz for storage, and original data should be acquired with a sampling frequency of at least 256 Hz. The channels should be provided in the following order: `Fp1-Avg, F3-Avg, C3-Avg, P3-Avg, O1-Avg, F7-Avg, T3-Avg, T5-Avg, Fz-Avg, Cz-Avg, Pz-Avg, Fp2-Avg, F4-Avg, C4-Avg, P4-Avg, O2-Avg, F8-Avg, T4-Avg, T6-Avg`. Additional data channels can optionally be provided after these 19 channels; they should not be used to compute the common average.
 
-![10-20 scalp EEG electrodes]({{ .Site.BaseURL }}/img/framework//10_20-noTxt-1.svg "Nineteen electrodes of the international 10-20 system. A common average is used as the reference electrode")
+![10-20 scalp EEG electrodes](/img/framework/10_20-noTxt-1.svg "Nineteen electrodes of the international 10-20 system. A common average is used as the reference electrode")
 
 The annotation format should be constructed in a way that it can be used both for original annotations (ground truth) and the output of seizure detection algorithms. The format we propose is a tab-separated values (`.tsv`) file that is human-readable. It is a text file that uses a tab as a delimiter to separate the different columns of information, with each row representing one event. Each annotation file is associated with a single EEG recording.
 
@@ -152,7 +152,7 @@ Here is an example of a HED-SCORE compliant annotation file:
 
 We propose to adopt the ILAE classification of seizure types to describe seizure types stored in the event field. The classification is hierarchical, depending on available clinical information. At the top level, the seizure type is unspecified (`sz`). The second level describes the seizure onset zone (focal: `sz-foc`, generalized: `sz-gen` or unknown: `sz-uon`). Further levels describe the awareness, motor components and seizure symptomology. They are linked to the hierarchy defined by HED-SCORE. The mapping to HED tags is provided in the [BIDS-EEG converter library](https://github.com/esl-epfl/epilepsy2bids). The full list of standardized seizure types is in the figure below.
 
-![ILAE seizure classification]({{ .Site.BaseURL }}/img/framework//szTypes-noTxt-1.svg "ILAE 2017 Classification of seizure types (expanded version). Items in purple are used as short codes to describe an event. As an example a generalized tonic-clonic seizure would be given the code : `sz-gen-m-tonic_clonic`")
+![ILAE seizure classification](/img/framework/szTypes-noTxt-1.svg "ILAE 2017 Classification of seizure types (expanded version). Items in purple are used as short codes to describe an event. As an example a generalized tonic-clonic seizure would be given the code : `sz-gen-m-tonic_clonic`")
 
 To evaluate seizure detection algorithms, a training set is used to determine the parameters of the machine learning algorithm and an independent test set is used to estimate the performance of the algorithm. These sets should be independent to guarantee that results can be generalized to other data. If data are only available from a single setting, the dataset can be split into a training set and a test set. This process is repeated multiple times (i.e. folds) to obtain robust estimates of performance by rotating data between the training set and the test set, i.e. cross-validation.
 
@@ -165,7 +165,7 @@ TSCV can be performed in two ways:
 - Training data increase as the model is evaluated on future test folds (variable amount of data, panel a).
 - Training data keeps a fixed size with past folds removed from the training data as the model is evaluated on future folds (fixed amount of data, panel b).
 
-![Personalized cross-validation]({{ .Site.BaseURL }}/img/framework//fig1-PersCrossvalidation.svg)
+![Personalized cross-validation](/img/framework/fig1-PersCrossvalidation.svg)
 
 ### Subject-independent models
 
@@ -185,7 +185,7 @@ You want to evaluate your performance to annotate epileptic seizures ? For that 
 
 In the example below, we show the annotations from an expert neurologist (*reference*, a.k.a. ground-truth) and the annotations of a seizure detection algorithm (*hypothesis)* . A neurologist annotated one epileptic seizure and an automated seizure detection algorithm annotated three events.
 
-![Seizure annotation]({{ .Site.BaseURL }}/img/framework//annotation-ref-noTxt.svg)
+![Seizure annotation](/img/framework/annotation-ref-noTxt.svg)
 
 How well is the algorithm performing ? Did it correctly identify the seizure *`(True Positive)`* ? Did it actually miss the seizure *`(False negative)`* ? Are some annotations of the hypothesis not true seizures *`(False positives)`* ? There are many correct answers to these questions. However, to allow different algorithm to be compared it is necessary to agree on a common methodology to score these time series. Here we will detail a methodology to score a time series with binary labels (e.g. seizure / non-seizure) compared to a reference time series.
 
@@ -195,17 +195,17 @@ We propose two scoring methodologies which complement each other. **[Sample base
 
 In sample based scoring, annotation labels are provided at a regular interval corresponding to the frequency of annotations given by the expert or the algorithm.
 
-![Sample sampling]({{ .Site.BaseURL }}/img/framework//sample-sampling-noTxt.svg "In sample based scoring, annotation labels are provided at regular intervals. The epileptic seizure is labelled with `'1'`, non-seizures are labelled as `'0'`.")
+![Sample sampling](/img/framework/sample-sampling-noTxt.svg "In sample based scoring, annotation labels are provided at regular intervals. The epileptic seizure is labelled with `'1'`, non-seizures are labelled as `'0'`.")
 
 These annotations are then compared on a sample by sample basis to count `True Positives`, `False Positives` and `False Negative` samples, which are used to calculate various performance metrics such as sensitivity, precision, etc.
 
-![Sample scoring]({{ .Site.BaseURL }}/img/framework//sample-scoring-noTxt.svg "Sample based scoring compares annotation labels sample by sample. Correct detections, false detections, missed detections.")
+![Sample scoring](/img/framework/sample-scoring-noTxt.svg "Sample based scoring compares annotation labels sample by sample. Correct detections, false detections, missed detections.")
 
 In sample based scoring the frequency of the labels is a parameter that can be defined. For the use case of epilepsy we recommend extracting annotation labels every second (1 Hz). This is suitable for the vast majority of applications of seizure detection algorithms in terms of latency and computational feasibility and is in line with the uncertainty of human annotators.
 
 A rule also needs to be set to determine how to handle annotation labels that only overlap partially with the epileptic seizure. We assign a seizure label to a sample if it is covered by a seizure for at least 50% of the duration of the sample.
 
-![Sample overlap]({{ .Site.BaseURL }}/img/framework//sample-overlap-noTxt.svg "When the annotation event only overlaps partially with a given label. The label is set to `'1'` if it overlaps by at least 50% with the event. If not it is set to `'0'`.")
+![Sample overlap](/img/framework/sample-overlap-noTxt.svg "When the annotation event only overlaps partially with a given label. The label is set to `'1'` if it overlaps by at least 50% with the event. If not it is set to `'0'`.")
 
 Sample scoring is widely adopted by the Machine Learning community. It integrates tightly with standard training schemes and data segmentation. It is sometimes also referred to as epoch based scoring or window based scoring.
 
@@ -215,7 +215,7 @@ While sample based scoring does a great job at capturing the fine detail agreeme
 
 Event based scoring relies on overlap. If the reference event and the hypothesis event overlap, it is a correct detection (`True Positive`). If the hypothesis event does not overlap with a reference event it is a false detection (`False Positive`).
 
-![Event scoring]({{ .Site.BaseURL }}/img/framework//event-scoring-noTxt-1.svg "The epileptic seizure is correctly detected. However, the hypothesis made one false alarm.")
+![Event scoring](/img/framework/event-scoring-noTxt-1.svg "The epileptic seizure is correctly detected. However, the hypothesis made one false alarm.")
 
 The percent of overlap required between the reference and hypothesis is a parameter. We set it by default to any overlap. This means any overlap between the hypothesis and reference, however short, is enough to consider a detection.
 
@@ -233,11 +233,11 @@ We allow a fixed tolerance before or after a reference event during which a hypo
 - Seizures do mostly not occur in rapid succession. Thus, we can consider a hypothesis annotation occurring a few seconds before or after the reference annotation to be matched to the that reference annotation.
 - From practical perspective, many applications of seizure detection algorithms would not be negatively impacted by the algorithm marking seizures slightly earlier or a bit longer then the ground-truth annotations.
 
-![Event tolerance]({{ .Site.BaseURL }}/img/framework//event-tolerance-noTxt.svg "By default we set a tolerance of 30 seconds before an event and 60 seconds after an event.")
+![Event tolerance](/img/framework/event-tolerance-noTxt.svg "By default we set a tolerance of 30 seconds before an event and 60 seconds after an event.")
 
 Given epileptic seizures do not occur in rapid succession, we group neighboring events as a single event, counting them only once if they are sufficiently close to each other (**`Minimum Duration Between Events`**).
 
-![Event merge]({{ .Site.BaseURL }}/img/framework//event-merge.svg "The two neighboring hypothesis events are merged as one event. By default we merge events less than 90 seconds apart.")
+![Event merge](/img/framework/event-merge.svg "The two neighboring hypothesis events are merged as one event. By default we merge events less than 90 seconds apart.")
 
 Seizures are only exceptionally longer than five minutes (`Maximum Event Duration`). In those occasions they are called a status epilepticus. For this reason events that are longer are split into multiple events of maximum 5 minutes.
 
