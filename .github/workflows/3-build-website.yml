@@ -79,7 +79,6 @@ jobs:
             # extended: true
       - name: Build
         run: |
-          tree ./
           cd website
           hugo --minify
       - name: Upload artifact
@@ -95,6 +94,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Download Hugo project
         uses: actions/download-artifact@v4
         with:
