@@ -78,12 +78,8 @@ jobs:
           fetch-depth: 0
       - name: Install Node.js dependencies
         run: |
-          cd website/themes
+          cd website/themes/blowfish
           "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Compile Tailwind
-        run: |
-          cd website
-          ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
