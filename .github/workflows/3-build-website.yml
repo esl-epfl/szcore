@@ -88,7 +88,7 @@ jobs:
           cd website/themes/blowfish
           npm ci
       - name: Build TailwindCSS
-        run:
+        run: |
           cd website
           ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/
       - name: Build Hugo
