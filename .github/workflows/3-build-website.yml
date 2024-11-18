@@ -102,7 +102,7 @@ jobs:
           path: website/public/
 
   deploy:
-    needs: build
+    needs: [build, build-hugo]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
