@@ -10,7 +10,7 @@ defaultAppearance = "light" # valid options: light or dark
 autoSwitchAppearance = true
 
 enableSearch = true
-enableCodeCopy = false
+enableCodeCopy = true
 
 replyByEmail = false
 
@@ -25,7 +25,7 @@ disableTextInHeader = false
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
 
 highlightCurrentMenuArea = true
-# smartTOC = true
+smartTOC = true
 # smartTOCHideUnfocusedChildren = true
 
 giteaDefaultServer = "https://git.fsfe.org"
@@ -71,7 +71,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   editAppendPath = true
   seriesOpened = false
   showHeadingAnchors = true
-  showPagination = true
+  showPagination = false
   invertPagination = false
   showReadingTime = false
   showTableOfContents = true
