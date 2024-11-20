@@ -7,8 +7,6 @@ description: "Description of the seizure detection challenge organized at the AI
 
 Epilepsy is the most common chronic brain disease and affects people of all ages. More than 50 million people worldwide have epilepsy. Scalp EEG-based seizure detection algorithms can optimize and facilitate the diagnostic workup performed on people with epilepsy to improve patients' care and quality of life [\[1\]](https://doi.org/10.1111/epi.14052).
 
-Epilepsy is the most common chronic brain disease and affects people of all ages. More than 50 million people worldwide have epilepsy. Scalp EEG-based seizure detection algorithms can optimize and facilitate the diagnostic workup performed on people with epilepsy to improve patients' care and quality of life.
-
 EEG-based seizure detection aims to detect the onset and duration of all seizures in an EEG recording. The task has benefited from advances in machine learning. However, a relative scarcity of public datasets and a lack of standardization hinder progress in the field. This likely explains the lack of adoption of state-of-the-art algorithms in clinical practices. Recently, [SzCORE]( https://doi.org/10.1111/epi.18113) has proposed a method to standardize dataset formats, evaluation methodology, and performance metrics.
 
 In this machine learning challenge, we will leverage the standardization proposed by SzCORE. We ask the participants to build models on standardized publicly available datasets. The model should perform a segmentation task by identifying the onset and duration of all epileptic seizures given a long-term continuous EEG as an input. The Models will then be evaluated on a large hold-out dataset using the event-based F1 score as the evaluation metric.
