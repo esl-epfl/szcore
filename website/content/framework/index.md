@@ -225,7 +225,7 @@ We also set several additional rules to better relate the event scoring to pract
 
 - **Minimum overlap:** between the reference and hypothesis for a detection. We use any overlap, however short, to enhance sensitivity.
 - **Pre-ictal tolerance:** tolerance with respect to the start time of an event that would count as a detection. We advise a 30 seconds pre-ictal tolerance.
-- **Post-ictal tolerance:** tolerance with respect to the end time of an event that would still count as a detection. We advise a 60second post-ictal tolerance.
+- **Post-ictal tolerance:** tolerance with respect to the end time of an event that would still count as a detection. We advise a 60 seconds post-ictal tolerance.
 - **Minimum duration:** between events resulting in merging events that are separated by less than the given duration. We advise merging events separated by less than 90 seconds which corresponds to the combined pre- and post-ictal tolerance.
 - **Maximum event duration:** resulting in splitting events longer than the given duration into multiple events: We advise splitting events longer than 5 minutes.
 
