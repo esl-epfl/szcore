@@ -164,7 +164,7 @@ Challenge is publicly announced! Participants are invited to start working.
 {{< /timelineItem >}}
 
 {{< timelineItem icon="envelope" header="Submit your algorithm" badge="Sunday, 16 February 2025" subheader="Submissions close on Sunday, 16 February 2025" >}}
-Submit your algorithm anytime! You are invited to [**submit**](#) early to make sure your submission complies with challenge guidelines.
+Submit your algorithm anytime! You are invited to **[submit](#)** early to make sure your submission complies with challenge guidelines.
 {{< /timelineItem >}}
 
 {{< timelineItem icon="bell" header="Results are announced." badge="AI epilepsy & Neuro" subheader="3-6 March 2025" >}}
