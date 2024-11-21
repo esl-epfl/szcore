@@ -1,4 +1,4 @@
-# SZcore
+# SzCORE
 
 - website: [https://esl-epfl.github.io/szcore/](https://esl-epfl.github.io/szcore/)
 
