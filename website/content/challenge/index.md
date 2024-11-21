@@ -155,7 +155,7 @@ repository: [OPTINAL] "Algorithm source code"
 Submit a new entry
 {{< /button >}}
 
-### Timeline
+## Timeline
 
 {{< timeline >}}
 
@@ -164,13 +164,7 @@ Challenge is publicly announced! Participants are invited to start working.
 {{< /timelineItem >}}
 
 {{< timelineItem icon="envelope" header="Submit your algorithm" badge="Sunday, 16 February 2025" subheader="Submissions close on Sunday, 16 February 2025" >}}
-Submit your algorithm anytime! You are invited to submit early to make your submission complies with challenge guidelines.
-
-<br/>
-
-{{< button href="#" >}}
-Submit a new entry
-{{< /button >}}
+Submit your algorithm anytime! You are invited to [**submit**](#) early to make sure your submission complies with challenge guidelines.
 {{< /timelineItem >}}
 
 {{< timelineItem icon="bell" header="Results are announced." badge="AI epilepsy & Neuro" subheader="3-6 March 2025" >}}
@@ -179,7 +173,7 @@ Challenge results are announced during The International Conference on Artificia
 
 {{< /timeline >}}
 
-### Awards
+## Awards
 
 [ceribell®](https://ceribell.com/), as the challenge sponsor, is generously offering $10.000 to challenge participants.
 
@@ -191,7 +185,7 @@ The prize money will be split among the three best performing algorithms :
 
 The challenge organizers will write a summary of the outcome of the challenge in a leading journal in our field. The top challenge contributors will be invited to contribute to this paper to describe their methodology.
 
-### Sponsor
+## Sponsor
 
 This challenge is generously sponsored by [ceribell®](https://ceribell.com/).
 
