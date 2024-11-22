@@ -96,7 +96,7 @@ jobs:
         run: |
           cd website
           mkdir -p ./assets/css/
-          ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
+          ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
       - name: Build Hugo
         run: |
           cd website
