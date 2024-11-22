@@ -16,6 +16,7 @@ async function loadResults() {
     datasets.forEach(dataset => {
         const headerCell = createTableCell(dataset.replace(".json", ""));
         headerCell.classList.add('text-center');
+        headerCell.classList.add('w-16');
         tableHeaderRow.appendChild(headerCell);
     });
 
