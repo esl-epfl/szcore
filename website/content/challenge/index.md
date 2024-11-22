@@ -57,7 +57,6 @@ Challenge participants should train their models on any combination of the four 
 | [CHB-MIT *](https://physionet.org/content/chbmit/1.0.0/) | 24 | 982 | 198 |
 | [TUH EEG Sz Corpus](https://isip.piconepress.com/projects/tuh_eeg) | 675 | 1476 | 4029 |
 | [Siena Scalp EEG](https://physionet.org/content/siena-scalp-eeg/1.0.0) | 14 | 128 | 47 |
-| [SeizeIT1](https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/P5Q0OJ) | 42 | 4211 | 182 |
 
 *\* The Physionet CHB-MIT Scalp EEG Database contains bipolar EEG channels and not referential channels as expected in this challenge.*
 
