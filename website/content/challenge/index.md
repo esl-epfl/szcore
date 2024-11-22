@@ -9,7 +9,7 @@ Epilepsy is the most common chronic brain disease and affects people of all ages
 
 EEG-based seizure detection aims to detect the onset and duration of all seizures in an EEG recording. The task has benefited from advances in machine learning. However, a relative scarcity of public datasets and a lack of standardization hinder progress in the field. This likely explains the lack of adoption of state-of-the-art algorithms in clinical practices. Recently, [SzCORE]( https://doi.org/10.1111/epi.18113) has proposed a method to standardize dataset formats, evaluation methodology, and performance metrics.
 
-In this machine learning challenge, we will leverage the standardization proposed by SzCORE. We ask the participants to build models on standardized publicly available datasets. The model should perform a segmentation task by identifying the onset and duration of all epileptic seizures given a long-term continuous EEG as an input. The Models will then be evaluated on a large hold-out dataset using the event-based F1 score as the evaluation metric.
+In this machine learning challenge, we will leverage the standardization proposed by SzCORE. We ask the participants to build models on any combination of standardized publicly available datasets or private datasets. The model should perform a segmentation task by identifying the onset and duration of all epileptic seizures given a long-term continuous EEG as an input. The Models will then be evaluated on a large hold-out dataset using the event-based F1 score as the evaluation metric.
 
 ## Challenge description
 
@@ -50,7 +50,7 @@ Here is an example of a HED-SCORE compliant annotation file with three seizures:
 
 ### Training data
 
-Challenge participants should train their models on any combination of the four publicly available large datasets:
+Challenge participants are encouraged to train their models on any combination of the three publicly available large datasets or any private datasets they might have access to. The main public datasets are:
 
 | Dataset | \# subjects | duration \[h\] | \# seizures |
 |---|---|---|---|
