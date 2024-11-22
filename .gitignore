@@ -155,3 +155,8 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# Hugo
+website/public/*
+website/.hugo_build.lock
+website/assets/css/compiled/*
