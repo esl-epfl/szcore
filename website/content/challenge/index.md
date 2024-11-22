@@ -178,11 +178,10 @@ Challenge results are announced during The International Conference on Artificia
 
 [ceribell®](https://ceribell.com/), as the challenge sponsor, is generously offering $10.000 to challenge participants.
 
-The prize money will be split among the three best performing algorithms :
+The prize money will be split among the best two performing algorithms :
 
-1. $6.000
+1. $7.000
 2. $3.000
-3. $1.000
 
 The challenge organizers will write a summary of the outcome of the challenge in a leading journal in our field. The top challenge contributors will be invited to contribute to this paper to describe their methodology.
 
