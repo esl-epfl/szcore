@@ -167,8 +167,6 @@ TSCV can be performed in two ways:
 
 ![Personalized cross-validation](img/fig1-PersCrossvalidation.svg)
 
-{{< figure src="img/fig1-PersCrossvalidation.svg" title="An elephant at sunset" >}}
-
 ### Subject-independent models
 
 Subject-independent models are designed to operate on data from any patient and seizure type. These models should successfully detect seizures in subjects whose data were not used to train the model. Several methods can be used to validate subject-independent models, provided that independence of subjects between training and test sets is maintained:
