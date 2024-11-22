@@ -1,31 +1,110 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 200 99.999997" version="1.1" id="svg39017" sodipodi:docname="chuv_logo.svg" width="200" height="100" inkscape:version="1.2.2 (1:1.2.2+202305151915+b0a8486541)" xml:space="preserve">
-  <defs id="defs39021">
-    <clipPath id="clipPath54030">
-      <path d="m 0,0 439.37,0 0,623.622 L 0,623.622 0,0 z" id="path54032"></path>
+<svg
+   viewBox="0 0 200 99.999997"
+   version="1.1"
+   id="svg39017"
+   sodipodi:docname="chuv_logo.svg"
+   width="200"
+   height="100"
+   inkscape:version="1.4 (1:1.4+202410151212+e7c3feb100)"
+   xml:space="preserve"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+   id="namedview1"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="4.81"
+   inkscape:cx="99.89605"
+   inkscape:cy="50"
+   inkscape:window-width="1280"
+   inkscape:window-height="731"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg39017" />
+  <defs
+   id="defs39021">
+    <clipPath
+   id="clipPath54030">
+      <path
+   d="m 0,0 439.37,0 0,623.622 L 0,623.622 0,0 z"
+   id="path54032" />
     </clipPath>
   </defs>
-  <title id="title38993">ETH Zürich</title>
-  <metadata id="metadata39503"></metadata>
-  <rect style="fill:#ffffff;stroke-width:2" id="rect42890" width="200" height="100" x="0" y="0" ry="3" rx="3"></rect>
-  <rect style="fill:none;stroke:#967bb6;stroke-width:2.5;stroke-dasharray:none;stroke-opacity:1" id="rect41009" width="187.97218" height="87.972183" x="6.0139084" y="6.0139084" ry="1.9860916" rx="1.986084"></rect>
-  <g transform="matrix(2.3156572,0,0,-2.3156572,-782.09068,158.12614)" id="g54046">
-    <path d="M 387.06,61.808 H 356.829 V 31.579 h 30.231 z" id="path54020" style="fill:#17a345;fill-opacity:1;fill-rule:nonzero;stroke:none"></path>
-    <g transform="translate(401.4507,39.1384)" id="g54022">
-      <path d="M 0,0 8.726,15.112 H 2.91 L -3.203,4.503 V 15.112 H -8.362 V 0 Z" id="path54024" style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"></path>
+  <title
+   id="title38993">ETH Zürich</title>
+  <metadata
+   id="metadata39503" />
+  <rect
+   style="fill:#ffffff;stroke-width:2"
+   id="rect42890"
+   width="200"
+   height="100"
+   x="0"
+   y="0"
+   ry="3"
+   rx="3" />
+  <rect
+   style="fill:none;stroke:#7c3aed;stroke-width:2.5;stroke-dasharray:none;stroke-opacity:1"
+   id="rect41009"
+   width="187.97218"
+   height="87.972183"
+   x="6.0139084"
+   y="6.0139084"
+   ry="1.9860916"
+   rx="1.986084" />
+  <g
+   transform="matrix(2.3156572,0,0,-2.3156572,-782.09068,158.12614)"
+   id="g54046">
+    <path
+   d="M 387.06,61.808 H 356.829 V 31.579 h 30.231 z"
+   id="path54020"
+   style="fill:#17a345;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    <g
+   transform="translate(401.4507,39.1384)"
+   id="g54022">
+      <path
+   d="M 0,0 8.726,15.112 H 2.91 L -3.203,4.503 V 15.112 H -8.362 V 0 Z"
+   id="path54024"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" />
     </g>
-    <g id="g54026">
-      <g clip-path="url(#clipPath54030)" id="g54028">
-        <g transform="translate(357.8314,49.5171)" id="g54034">
-          <path d="m 0,0 h 5.611 v 4.733 h -9.504 c -1.423,0 -2.266,-1.152 -2.266,-2.575 v -9.961 c 0,-1.424 1.153,-2.578 2.576,-2.578 h 9.194 v 4.736 h -5.54 c -0.71,0 -1.073,0.363 -1.073,1.074 v 3.504 C -1.002,-0.38 -0.677,-0.038 0,0" id="path54036" style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"></path>
+    <g
+   id="g54026">
+      <g
+   clip-path="url(#clipPath54030)"
+   id="g54028">
+        <g
+   transform="translate(357.8314,49.5171)"
+   id="g54034">
+          <path
+   d="m 0,0 h 5.611 v 4.733 h -9.504 c -1.423,0 -2.266,-1.152 -2.266,-2.575 v -9.961 c 0,-1.424 1.153,-2.578 2.576,-2.578 h 9.194 v 4.736 h -5.54 c -0.71,0 -1.073,0.363 -1.073,1.074 v 3.504 C -1.002,-0.38 -0.677,-0.038 0,0"
+   id="path54036"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" />
         </g>
-        <g transform="translate(387.0598,54.2505)" id="g54038">
-          <path d="m 0,0 v -9.31 c 0,-0.711 -0.363,-1.074 -1.075,-1.074 h -1.196 c -0.712,0 -1.074,0.363 -1.074,1.074 V 0 h -5.157 v -12.537 h 0.004 c 0,-1.423 1.153,-2.577 2.575,-2.577 H 2.58 c 1.423,0 2.577,1.154 2.577,2.577 V 0 Z" id="path54040" style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"></path>
+        <g
+   transform="translate(387.0598,54.2505)"
+   id="g54038">
+          <path
+   d="m 0,0 v -9.31 c 0,-0.711 -0.363,-1.074 -1.075,-1.074 h -1.196 c -0.712,0 -1.074,0.363 -1.074,1.074 V 0 h -5.157 v -12.537 h 0.004 c 0,-1.423 1.153,-2.577 2.575,-2.577 H 2.58 c 1.423,0 2.577,1.154 2.577,2.577 V 0 Z"
+   id="path54040"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" />
         </g>
       </g>
     </g>
-    <g transform="translate(368.359,39.1363)" id="g54042">
-      <path d="M 0,0 V 5.279 H 5.27 V 0 h 4.928 V 15.114 H 5.27 V 9.819 H 0 v 5.295 H -4.916 V 0 Z" id="path54044" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"></path>
+    <g
+   transform="translate(368.359,39.1363)"
+   id="g54042">
+      <path
+   d="M 0,0 V 5.279 H 5.27 V 0 h 4.928 V 15.114 H 5.27 V 9.819 H 0 v 5.295 H -4.916 V 0 Z"
+   id="path54044"
+   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
     </g>
   </g>
 </svg>
