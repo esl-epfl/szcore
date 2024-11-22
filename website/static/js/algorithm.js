@@ -115,13 +115,14 @@ async function loadYAML(fileName) {
     }
 }
 
-// Function to format authors section
 function formatAuthors(authors) {
-    return authors.map(author => {
+    const listItems = authors.map(author => {
         const name = `${author['given-names']} ${author['family-names']}`;
         const orcid = author.orcid ? ` - <a href="${author.orcid}" target="_blank">ORCID</a>` : '';
-        return `<p class="author">${name}${orcid}</p>`;
+        return `<li class="author">${name}${orcid}</li>`;
     }).join('');
+
+    return `<ul>${listItems}</ul>`;
 }
 
 // Function to format datasets section
