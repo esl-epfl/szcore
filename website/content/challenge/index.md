@@ -97,7 +97,7 @@ Results are computed on a subject by subject basis. Overall results are computed
 
 ## Submission guidelines
 
-Participants submit a pre-trained model packaged as a Docker image. The image should be publicly available on an image registry. Participants are allowed a maximum of three submissions.
+Participants submit a pre-trained model packaged as a Docker image. The image should be publicly available on an image registry. Participants are allowed a maximum of three submissions. Participants are invited to submit a poster in addition to the challenge submission. Details on poster submissions are available on the [conference website](https://www.aiepilepsy-neuro.com/abstract.aspx).
 
 ### Docker image
 
