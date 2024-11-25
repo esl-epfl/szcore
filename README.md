@@ -1,17 +1,17 @@
 # SzCORE
 
-- website: [https://esl-epfl.github.io/szcore/](https://esl-epfl.github.io/szcore/)
+- website: [https://epilepsybenchmarks.com](https://epilepsybenchmarks.com)
 
 ## Background
 
-This repository hosts an open [seizure detection benchmarking platform](https://esl-epfl.github.io/szcore/).
+This repository hosts an open [seizure detection benchmarking platform](https://epilepsybenchmarks.com).
 The aim is to provide an open source platform for the community to submit their seizure detection algorithms and provide automatic benchmark results on various high quality datasets.
 
 ## Usage
 
 Users can submit a containerized algorithm by opening a PR adding a yaml file in the `algorithms` directory. The yaml file should describe their algorithm following our schema (see [example](algorithms/gotman.yaml)) and point to a publicly available docker image based on our template (see [config/template.Dockerfile](config/template.Dockerfile)).
 
-Once the PR is merged, this image is used to execute the algorithm on GitHub actions, compute performance metrics and update a [static website](https://esl-epfl.github.io/szcore/) hosted on GitHub pages.
+Once the PR is merged, this image is used to execute the algorithm on GitHub actions, compute performance metrics and update a [static website](https://epilepsybenchmarks.com) hosted on GitHub pages.
 
 ## Data flow
 
