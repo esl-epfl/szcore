@@ -1,6 +1,6 @@
 // Fetch the bundled results JSON
 async function loadResults() {
-    const response = await fetch('https://epilepsybenchmarks.comresults.json'); // Path to the bundled JSON file
+    const response = await fetch('/results.json'); // Path to the bundled JSON file
     const data = await response.json();
 
     const algorithms = Object.keys(data);
