@@ -1,7 +1,9 @@
 ---
-title: "AI in Epilepsy and Neurological disorders -- 2025 Seizure detection challenge"
+title: "Seizure detection challenge (2025)"
 description: "Description of the seizure detection challenge organized at the AI in Epilepsy and Neurological disorders in March 2025."
 ---
+
+In partnership with [The International Conference on Artificial Intelligence and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/) (2025) we are organizing a seizure detection challenge.
 
 ## Background and impact
 
@@ -165,7 +167,7 @@ Challenge is publicly announced! Participants are invited to start working.
 {{< /timelineItem >}}
 
 {{< timelineItem icon="envelope" header="Submit your algorithm" badge="Sunday, 16 February 2025" subheader="Submissions close on Sunday, 16 February 2025" >}}
-Submit your algorithm anytime! You are invited to **[submit](#)** early to make sure your submission complies with challenge guidelines.
+Submit your algorithm anytime! You are invited to [**submit**](#) early to make sure your submission complies with challenge guidelines.
 {{< /timelineItem >}}
 
 {{< timelineItem icon="bell" header="Results are announced." badge="AI epilepsy & Neuro" subheader="3-6 March 2025" >}}
@@ -184,6 +186,12 @@ The prize money will be split among the best two performing algorithms :
 2. $3.000
 
 The challenge organizers will write a summary of the outcome of the challenge in a leading journal in our field. The top challenge contributors will be invited to contribute to this paper to describe their methodology.
+
+## Organizers
+
+The challenge is organized the [Embedded Systems Laboratory](https://www.epfl.ch/labs/esl/) of EPFL in collaboration with [CHUV](https://www.chuv.ch/fr/neurologie/nlg-home), [IIS-ETH](https://iis.ee.ethz.ch/) and the organizing committee of [The International Conference on Artificial Intelligence and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/).
+
+For questions to the organizers you can contact [Jonathan Dan](https://people.epfl.ch/jonathan.dan/?lang=en).
 
 ## Sponsor
 
