@@ -1,7 +1,7 @@
 {{ $articleImageClasses := "w-full md:w-auto h-full thumbnail nozoom" }}
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
 
-<div class="bg-neutral-100">
+<div class="bg-neutral-100 dark:bg-neutral-800">
     <div class="grid grid-cols-3 gap-4 sm:px-14 md:px-24 lg:px-32">
 
         {{ range .Site.Menus.main }}
