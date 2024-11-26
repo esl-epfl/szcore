@@ -23,7 +23,7 @@ async function loadResults() {
     // Add a row for each algorithm
     algorithms.forEach(algorithm => {
         const row = document.createElement("tr");
-        row.appendChild(createTableCellLink(algorithm, "https://epilepsybenchmarks.comalgorithm/?algo=" + algorithm)); // Add algorithm name as row header
+        row.appendChild(createTableCellLink(algorithm, "/algorithm/?algo=" + algorithm)); // Add algorithm name as row header
 
         // Add F1 score for each dataset
         datasets.forEach(dataset => {

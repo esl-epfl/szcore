@@ -39,7 +39,7 @@ async function loadResults() {
 
     try {
         // Fetch results.json file
-        const response = await fetch('https://epilepsybenchmarks.comresults.json');
+        const response = await fetch('/results.json');
         if (!response.ok) {
             throw new Error("Failed to load results.json.");
         }
@@ -95,7 +95,7 @@ async function loadYAML(fileName) {
         }
 
         // Fetch the YAML file (assuming it's served from the 'algorithms' directory)
-        const response = await fetch(`https://epilepsybenchmarks.comalgorithms/${fileName}.yaml`);
+        const response = await fetch(`/algorithms/${fileName}.yaml`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
