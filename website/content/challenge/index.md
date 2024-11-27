@@ -148,8 +148,9 @@ image: "registry path"
 authors: "List of authors"
 abstract: "Short Algorithm description."
 license: "Algorithm License"
-Datasets: "List of datasets used in training"
-repository: [OPTINAL] "Algorithm source code"
+datasets: "List of datasets used in training"
+repository: [OPTIONAL] "Algorithm source code"
+publication: [OPTIONAL] "DOI to published algorithm"
 ```
 
 The algorithms submitted here remain the strict property of the inventor. Neither the conference organizers nor the challenge sponsors have any intellectual property claims on the algorithms. The conference organizers will not share or disseminate them. They will use the algorithms during the challenge to evaluate performance on a holdout dataset.
