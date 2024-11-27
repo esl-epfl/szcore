@@ -155,6 +155,8 @@ publication: [OPTIONAL] "DOI to published algorithm"
 
 The algorithms submitted here remain the strict property of the inventor. Neither the conference organizers nor the challenge sponsors have any intellectual property claims on the algorithms. The conference organizers will not share or disseminate them. They will use the algorithms during the challenge to evaluate performance on a holdout dataset.
 
+To be eligible to win the competition, at least one co-author of the algorithm **must be registered** for the conference. Teams that are not registered can participate, but they will not be eligible to win.
+
 {{< button href="https://forms.gle/Qr2Psv4ZJbqXyujP9" >}}
 Submit a new entry
 {{< /button >}}
