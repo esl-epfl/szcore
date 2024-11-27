@@ -154,7 +154,7 @@ repository: [OPTINAL] "Algorithm source code"
 
 The algorithms submitted here remain the strict property of the inventor. Neither the conference organizers nor the challenge sponsors have any intellectual property claims on the algorithms. The conference organizers will not share or disseminate them. They will use the algorithms during the challenge to evaluate performance on a holdout dataset.
 
-{{< button href="#" >}}
+{{< button href="https://forms.gle/Qr2Psv4ZJbqXyujP9" >}}
 Submit a new entry
 {{< /button >}}
 
@@ -167,7 +167,7 @@ Challenge is publicly announced! Participants are invited to start working.
 {{< /timelineItem >}}
 
 {{< timelineItem icon="envelope" header="Submit your algorithm" badge="Sunday, 16 February 2025" subheader="Submissions close on Sunday, 16 February 2025" >}}
-Submit your algorithm anytime! You are invited to [**submit**](#) early to make sure your submission complies with challenge guidelines.
+Submit your algorithm anytime! You are invited to [**submit**](https://forms.gle/Qr2Psv4ZJbqXyujP9) early to make sure your submission complies with challenge guidelines.
 {{< /timelineItem >}}
 
 {{< timelineItem icon="bell" header="Results are announced." badge="AI epilepsy & Neuro" subheader="3-6 March 2025" >}}
