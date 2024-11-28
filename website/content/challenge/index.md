@@ -183,7 +183,7 @@ Challenge results are announced during The International Conference on Artificia
 
 [ceribell®](https://ceribell.com/), as the challenge sponsor, is generously offering $10.000 to challenge participants.
 
-The prize money will be split among the best two performing algorithms :
+The prize money will be split among the two algorithms with the best event-based F1 score computed on a private dataset :
 
 1. $7.000
 2. $3.000
