@@ -131,7 +131,7 @@ An example of a Docker packaged algorithm can be found here:
 
 {{< github repo="esl-epfl/gotman_1982" >}}
 
-The docker images are run on a machine that allows the following resource usage for processing a one-hour EEG file:
+The docker images are run on a machine that is not connected to internet. It allows the following resource usage for processing a one-hour EEG file:
 
 - 10 CPU cores
 - 40 GB peak RAM
