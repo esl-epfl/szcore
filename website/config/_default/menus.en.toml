@@ -14,6 +14,11 @@
   weight = 30
 
 [[main]]
+  name = "Challenge"
+  pageRef = "challenge"
+  weight = 35
+
+[[main]]
   identifier = "github"
   pre = "github"
   url = "https://github.com/esl-epfl/szcore"
