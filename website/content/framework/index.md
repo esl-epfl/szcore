@@ -12,11 +12,10 @@ Methodological choices for the validation of automated seizure detection algorit
 
 ---
 
-SzCORE is published in Epilepsia
-
-{{< button href="https://doi.org/10.1111/epi.18113">}}
-journal article
-{{< /button >}}
+{{< alert "link" >}}
+SzCORE is published in [Epilepsia](https://doi.org/10.1111/epi.18113) !
+{.text-xl}
+{{< /alert >}}
 
 ---
 
