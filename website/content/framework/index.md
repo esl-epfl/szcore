@@ -136,7 +136,7 @@ The annotation file is HED-SCORE compliant. It contains the following informatio
 - **duration:** represents the duration of the event, in seconds.
 - **event:** indicates the type of the event. The event field is primarily used to describe the seizure type. Seizure events begin with the value `sz`. They can optionally contain more detailed seizure types, as shown in the Figure below. Recordings with no seizures use the string `bckg` with the event duration equal to the recording duration.
 - ***confidence:*** represents confidence in the event label. Values are in the range \[0–1\] \[no confidence – fully confident\]. This field is intended for the confidence of the output prediction of machine learning algorithms. It is optional, if it is not provided value should be `n/a`.
-- ***channels:*** represents channels to which the event label applies. If the event applies to all channels, it is marked with the value `all`. Channels are listed with coma-separated values. It is optional, if it is not provided value should be `n/a`.
+- ***channels:*** represents channels to which the event label applies. If the event applies to all channels, it is marked with the value `all`. Channels are listed with comma-separated values. It is optional, if it is not provided value should be `n/a`.
 - **dateTime:** start date time of the recording file. The date time is specified in the POSIX format `%Y-%m-%d %H:%M:%S` (e.g., `2023-07-24 13:58:32`). The start time of a recording file is often specified in the metadata of the `edf`.
 - **recordingDuration:** refers to the total duration of the recording file in seconds.
 

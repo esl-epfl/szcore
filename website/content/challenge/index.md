@@ -37,7 +37,7 @@ The annotation file is [HED-SCORE](https://hed-schemas.readthedocs.io/en/latest/
 - **duration:** represents the duration of the event, in seconds.
 - **event:** indicates the type of the event. The event field is primarily used to describe the seizure type. Seizure events begin with the value `sz`. Recordings with no seizures can use the string `bckg` with the event duration equal to the recording duration.
 - ***confidence:*** represents confidence in the event label. Values are in the range \[0–1\] \[no confidence – fully confident\]. This field is intended for the confidence of the output prediction of machine learning algorithms. It is optional, if it is not provided value should be `n/a`.
-- ***channels:*** represents channels to which the event label applies. If the event applies to all channels, it is marked with the value `all`. Channels are listed with coma-separated values. It is optional, if it is not provided value should be `n/a`.
+- ***channels:*** represents channels to which the event label applies. If the event applies to all channels, it is marked with the value `all`. Channels are listed with comma-separated values. It is optional, if it is not provided value should be `n/a`.
 - **dateTime:** start date time of the recording file. The date time is specified in the POSIX format `%Y-%m-%d %H:%M:%S` (e.g., `2023-07-24 13:58:32`). The start time of a recording file is often specified in the metadata of the `edf`.
 - **recordingDuration:** refers to the total duration of the recording file in seconds.
 
@@ -192,7 +192,7 @@ The challenge organizers will write a summary of the outcome of the challenge in
 
 ## Organizers
 
-The challenge is organized the [Embedded Systems Laboratory](https://www.epfl.ch/labs/esl/) of EPFL in collaboration with [CHUV](https://www.chuv.ch/fr/neurologie/nlg-home), [IIS-ETH](https://iis.ee.ethz.ch/) and the organizing committee of [The International Conference on Artificial Intelligence and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/).
+The challenge is organized by the [Embedded Systems Laboratory](https://www.epfl.ch/labs/esl/) of EPFL in collaboration with [CHUV](https://www.chuv.ch/fr/neurologie/nlg-home), [IIS-ETH](https://iis.ee.ethz.ch/) and the organizing committee of [The International Conference on Artificial Intelligence and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/).
 
 For questions to the organizers you can contact [Jonathan Dan](https://people.epfl.ch/jonathan.dan/?lang=en).
 
