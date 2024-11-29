@@ -3,7 +3,7 @@ title: "Seizure detection challenge (2025)"
 description: "Description of the seizure detection challenge organized at the AI in Epilepsy and Neurological disorders in March 2025."
 ---
 
-In partnership with [The International Conference on Artificial Intelligence and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/) (2025), [EPFL](https://www.epfl.ch/labs/esl/), [ETH](https://iis.ee.ethz.ch/) and partners are organizing a seizure detection challenge.
+In partnership with [The International Conference on Artificial Intelligence in Epilepsy and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/) (2025), [EPFL](https://www.epfl.ch/labs/esl/), [ETH](https://iis.ee.ethz.ch/) and partners are organizing a seizure detection challenge.
 
 ## Background and impact
 
@@ -174,7 +174,7 @@ Submit your algorithm anytime! You are invited to <a href="https://forms.gle/Qr2
 {{< /timelineItem >}}
 
 {{< timelineItem icon="bell" header="Results are announced." badge="AI epilepsy & Neuro" subheader="3-6 March 2025" >}}
-Challenge results are announced during The International Conference on Artificial Intelligence and Other Neurological Disorders conference.
+Challenge results are announced during <a href="https://www.aiepilepsy-neuro.com/">The International Conference on Artificial Intelligence in Epilepsy and Other Neurological Disorders</a> conference.
 {{< /timelineItem >}}
 
 {{< /timeline >}}
@@ -192,7 +192,7 @@ The challenge organizers will write a summary of the outcome of the challenge in
 
 ## Organizers
 
-The challenge is organized by the [Embedded Systems Laboratory](https://www.epfl.ch/labs/esl/) of EPFL in collaboration with [CHUV](https://www.chuv.ch/fr/neurologie/nlg-home), [IIS-ETH](https://iis.ee.ethz.ch/) and the organizing committee of [The International Conference on Artificial Intelligence and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/).
+The challenge is organized by the [Embedded Systems Laboratory](https://www.epfl.ch/labs/esl/) of EPFL in collaboration with [CHUV](https://www.chuv.ch/fr/neurologie/nlg-home), [IIS-ETH](https://iis.ee.ethz.ch/) and the organizing committee of [The International Conference on Artificial Intelligence in Epilepsy and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/).
 
 For questions to the organizers you can contact [Jonathan Dan](https://people.epfl.ch/jonathan.dan/?lang=en).
 
