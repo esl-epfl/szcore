@@ -5,6 +5,12 @@ description: "Description of the seizure detection challenge organized at the AI
 
 In partnership with [The International Conference on Artificial Intelligence in Epilepsy and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/) (2025), [EPFL](https://www.epfl.ch/labs/esl/), [ETH](https://iis.ee.ethz.ch/) and partners are organizing a seizure detection challenge.
 
+| Key Dates        | Description       |
+|------------------|-------------------|
+| December 2024    | Challenge begins!  |
+| 16 February 2025 | Submissions close. <a href="https://forms.gle/Qr2Psv4ZJbqXyujP9"><b>Submit</b></a> early.  |
+| 3-6 March 2025   | Winners are announced during the <a href="https://www.aiepilepsy-neuro.com/">AI in Epilepsy</a> conference. |
+
 ## Background and impact
 
 Epilepsy is the most common chronic brain disease and affects people of all ages. More than 50 million people worldwide have epilepsy. Scalp EEG-based seizure detection algorithms can optimize and facilitate the diagnostic workup performed on people with epilepsy to improve patients' care and quality of life [\[1\]](https://doi.org/10.1111/epi.14052).
