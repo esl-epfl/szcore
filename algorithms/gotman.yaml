@@ -3,11 +3,17 @@
 title: "Gotman - Automatic recognition of epileptic seizures in the EEG (1982)" 
 image: "ghcr.io/esl-epfl/gotman_1982:latest"
 authors:
-  - family-names: Dan
-    given-names: Jonathan
-    orcid: "https://orcid.org/0000-0002-2338-572X"
-  - family-names: Samanos
-    given-names: Clément
+  - given-names: Jean
+    family-names: Gotman
+    affiliation: Montreal Neurological Institute
+  - given-names: Clément
+    family-names: Samanos
+    affiliation: EPFL-ESL
+  - given-names: Jonathan
+    family-names: Dan
+    email: jonathan.dan@epfl.ch
+    affiliation: EPFL-ESL
+    orcid: 'https://orcid.org/0000-0002-2338-572X'
 version: 0.1
 date-released: "1982-01-01"
 abstract: >
