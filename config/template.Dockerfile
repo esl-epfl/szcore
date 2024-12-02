@@ -50,4 +50,4 @@ ENV INPUT=""
 ENV OUTPUT=""
 # Run the application
 # NOTE: edit the second command
-CMD python3 -m algo "/data/${INPUT_FILE}" "/output/${OUTPUT_FILE}"
+CMD python3 -m algo "/data/${INPUT}" "/output/${OUTPUT}"
