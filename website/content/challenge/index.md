@@ -194,6 +194,8 @@ The prize money will be split among the two algorithms with the best event-based
 1. $7.000
 2. $3.000
 
+If your solution places 1st or 2nd on the final leaderboard, you will be required to submit your winning solution code to us for verification, and you thereby agree to share your solution under a CC-BY SA 4.0 license in order to receive the prize money.
+
 The challenge organizers will write a summary of the outcome of the challenge in a leading journal in our field. The top challenge contributors will be invited to contribute to this paper to describe their methodology.
 
 ## Organizers
