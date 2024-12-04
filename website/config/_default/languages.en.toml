@@ -10,6 +10,7 @@ isoCode = "en"
 rtl = false
 dateFormat = "2 January 2006"
 logo = "/favicon.png"
+description = "SzCORE is a framework for the validation of EEG based automated seizure detection algorithms."
 
 [params.author]
 name = "Jonathan Dan"

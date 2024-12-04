@@ -1,6 +1,6 @@
 ---
 title: "SzCORE - Epilepsy benchmarks"
-description: "This website presents the SzCORE framework for the validation of EEG based automated seizure detection algorithms."
+description: "SzCORE is a framework for the validation of EEG based automated seizure detection algorithms."
 ---
 
 This website presents the SzCORE framework for the validation of EEG based automated seizure detection algorithms:
