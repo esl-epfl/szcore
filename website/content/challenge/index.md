@@ -17,19 +17,19 @@ Epilepsy is the most common chronic brain disease and affects people of all ages
 
 EEG-based seizure detection aims to detect the onset and duration of all seizures in an EEG recording. The task has benefited from advances in machine learning. However, a relative scarcity of public datasets and a lack of standardization hinder progress in the field. This likely explains the lack of adoption of state-of-the-art algorithms in clinical practices. Recently, [SzCORE]( https://doi.org/10.1111/epi.18113) has proposed a method to standardize dataset formats, evaluation methodology, and performance metrics.
 
-In this machine learning challenge, we will leverage the standardization proposed by SzCORE. We ask the participants to build models on any combination of standardized publicly available datasets or private datasets. The model should perform a segmentation task by identifying the onset and duration of all epileptic seizures given a long-term continuous EEG as an input. The Models will then be evaluated on a large hold-out dataset using the event-based F1 score as the evaluation metric.
+In this machine learning challenge, we will leverage the standardization proposed by SzCORE. We ask the participants to build models on any combination of standardized publicly available datasets or private datasets. The model should perform a segmentation task by identifying the onset and duration of all epileptic seizures given a long-term, continuous, routine EEG as an input. The Models will then be evaluated on a large hold-out dataset using the event-based F1 score as the evaluation metric.
 
 ## Challenge description
 
 ### Objective
 
-This challenge aims to build a seizure detection model that detects the onset and duration of all epileptic seizures in a recording.
+This challenge aims to build a seizure detection model that detects the onset and duration of all epileptic seizures in a recording from a hospital routine EEG.
 
 ![Seizure detection task](img/task.svg)
 
 ### Input signal
 
-Continuous EEG signals are provided as input data. The recordings are stored in [`.edf` files](https://www.edfplus.info/). They contain the 19 electrodes of the international [10-20 system](https://en.wikipedia.org/wiki/10%E2%80%9320_system_(EEG)) in a [referential, common average montage](https://www.learningeeg.com/montages-and-technical-components#referential). The channels are provided in the following order: `Fp1-Avg, F3-Avg, C3-Avg, P3-Avg, O1-Avg, F7-Avg, T3-Avg, T5-Avg, Fz-Avg, Cz-Avg, Pz-Avg, Fp2-Avg, F4-Avg, C4-Avg, P4-Avg, O2-Avg, F8-Avg, T4-Avg, T6-Avg`. The recordings are sampled at 256 Hz. The recordings contain continuous EEG signals. They are guaranteed to last at least 10 minutes. Most recordings are approximately one hour long. File size is guaranteed to be smaller than 4 GB.
+Continuous routine EEG signals are provided as input data. The recordings are stored in [`.edf` files](https://www.edfplus.info/). They contain the 19 electrodes of the international [10-20 system](https://en.wikipedia.org/wiki/10%E2%80%9320_system_(EEG)) in a [referential, common average montage](https://www.learningeeg.com/montages-and-technical-components#referential). The channels are provided in the following order: `Fp1-Avg, F3-Avg, C3-Avg, P3-Avg, O1-Avg, F7-Avg, T3-Avg, T5-Avg, Fz-Avg, Cz-Avg, Pz-Avg, Fp2-Avg, F4-Avg, C4-Avg, P4-Avg, O2-Avg, F8-Avg, T4-Avg, T6-Avg`. The recordings are sampled at 256 Hz. The recordings contain continuous EEG signals. They are guaranteed to last at least 10 minutes. Most recordings are approximately one hour long. File size is guaranteed to be smaller than 4 GB.
 
 ![10-20 scalp EEG electrodes](img/10_20-noTxt-1.svg "Nineteen electrodes of the international 10-20 system. A common average is used")
 
