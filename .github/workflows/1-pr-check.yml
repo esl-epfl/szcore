@@ -64,16 +64,16 @@ jobs:
           done
       - name: Check output
         run: |
+          HEADER_REGEX='onset	duration	eventType	confidence	channels	dateTime	recordingDuration'
+
           for algo in ${FILELIST}; do 
             IMAGE=$(grep '^image: ' $algo | sed 's/^image: \+//' | tr -d \'\")
+            OUT=$(tr -cd '[:alnum:]' < <(echo $IMAGE) )
             echo "running: $IMAGE"
-            docker run -v ./tests/data:/data -v /tmp:/output -e INPUT=bipolar.edf -e OUTPUT=out.tsv $IMAGE
-            HEADER_REGEX='onset	duration	eventType	confidence	channels	dateTime	recordingDuration'
-            head -n1 /tmp/out.tsv
-            if ! [[ $(head -n1 /tmp/out.tsv) =~ "$HEADER_REGEX" ]]; then
+            docker run -v ./tests/data:/data -v /tmp:/output -e INPUT=bipolar.edf -e OUTPUT="${OUT}.tsv" $IMAGE
+            if ! [[ $(head -n1 "/tmp/${OUT}.tsv") =~ "$HEADER_REGEX" ]]; then
               echo "Output does not have the expected header"
               exit 1
             fi
-            rm -f /tmp/out.tsv
           done
 
