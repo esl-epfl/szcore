@@ -61,11 +61,17 @@ jobs:
               echo "Cannot pull image: $IMAGE"
               exit 1
             fi
+          done
+      - name: Check output
+        run: |
+          for algo in ${FILELIST}; do 
+            IMAGE=$(grep '^image: ' $algo | sed 's/^image: \+//' | tr -d \'\")
             docker run -v tests/data:/data -v $PWD:/output -e INPUT=dummy.edf -e OUTPUT=out.tsv $IMAGE
             HEADER_REGEX='^onset	duration	eventType	confidence	channels	dateTime	recordingDuration$'
             if ! [[ $(head -n1 $PWD/output/out.tsv) =~ "$HEADER_REGEX" ]]; then
               echo "Output does not have the expected header"
               exit 1
+            fi
+            rm -f $PWD/out.tsv
           done
-
 
