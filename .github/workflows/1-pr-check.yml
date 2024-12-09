@@ -66,7 +66,7 @@ jobs:
         run: |
           for algo in ${FILELIST}; do 
             IMAGE=$(grep '^image: ' $algo | sed 's/^image: \+//' | tr -d \'\")
-            docker run -v tests/data:/data -v $PWD:/output -e INPUT=dummy.edf -e OUTPUT=out.tsv $IMAGE
+            docker run -v ./tests/data:/data -v $PWD:/output -e INPUT=dummy.edf -e OUTPUT=out.tsv $IMAGE
             HEADER_REGEX='^onset	duration	eventType	confidence	channels	dateTime	recordingDuration$'
             if ! [[ $(head -n1 $PWD/output/out.tsv) =~ "$HEADER_REGEX" ]]; then
               echo "Output does not have the expected header"
