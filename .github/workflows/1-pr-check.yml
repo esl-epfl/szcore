@@ -70,7 +70,7 @@ jobs:
             IMAGE=$(grep '^image: ' $algo | sed 's/^image: \+//' | tr -d \'\")
             OUT=$(tr -cd '[:alnum:]' < <(echo $IMAGE) )
             echo "running: $IMAGE"
-            docker run -v ./tests/data:/data -v /tmp:/output -e INPUT=bipolar.edf -e OUTPUT="${OUT}.tsv" $IMAGE
+            docker run -v ./tests/data:/data -v /tmp:/output -e INPUT=unipolar.edf -e OUTPUT="${OUT}.tsv" $IMAGE
             if ! [[ $(head -n1 "/tmp/${OUT}.tsv") =~ "$HEADER_REGEX" ]]; then
               echo "Output does not have the expected header"
               exit 1
