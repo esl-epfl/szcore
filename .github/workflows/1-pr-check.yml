@@ -62,4 +62,18 @@ jobs:
               exit 1
             fi
           done
+      - name: Check output
+        run: |
+          HEADER_REGEX='onset	duration	eventType	confidence	channels	dateTime	recordingDuration'
+
+          for algo in ${FILELIST}; do 
+            IMAGE=$(grep '^image: ' $algo | sed 's/^image: \+//' | tr -d \'\")
+            OUT=$(tr -cd '[:alnum:]' < <(echo $IMAGE) )
+            echo "running: $IMAGE"
+            docker run -v ./tests/data:/data -v /tmp:/output -e INPUT=unipolar.edf -e OUTPUT="${OUT}.tsv" $IMAGE
+            if ! [[ $(head -n1 "/tmp/${OUT}.tsv") =~ "$HEADER_REGEX" ]]; then
+              echo "Output does not have the expected header"
+              exit 1
+            fi
+          done
 
