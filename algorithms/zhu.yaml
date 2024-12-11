@@ -1,7 +1,7 @@
 ---
 # Description of a seizure detection algorithm
 title: "utomated Seizure Detection using Transformer Models on Multi-Channel EEGs" 
-image: "ghcr.io/esl-epfl/zhu_2022:latest"
+image: "ghcr.io/esl-epfl/zhu_2023:latest"
 authors:
   - given-names: Yuanda
     family-names: Zhu
