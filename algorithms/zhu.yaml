@@ -1,0 +1,65 @@
+---
+# Description of a seizure detection algorithm
+title: "utomated Seizure Detection using Transformer Models on Multi-Channel EEGs" 
+image: "ghcr.io/esl-epfl/zhu_2022:latest"
+authors:
+  - given-names: Yuanda
+    family-names: Zhu
+    affiliation: Georgia Institute of Technology
+  - given-names: Clément
+    family-names: Samanos
+    affiliation: EPFL-ESL
+  - given-names: Jonathan
+    family-names: Dan
+    email: jonathan.dan@epfl.ch
+    affiliation: EPFL-ESL
+    orcid: 'https://orcid.org/0000-0002-2338-572X'
+version: 0.1
+date-released: "2023-11-14"
+abstract: >
+  Epilepsy is a prevalent neurological disorder characterized by recurring 
+  seizures, affecting approximately 50 million individuals globally. Given the 
+  potential severity of the associated complications, early and accurate 
+  seizure detection is crucial. In clinical practice, scalp 
+  electroencephalograms (EEGs) are non-invasive tools widely used in seizure 
+  detection and localization, aiding in the classification of seizure types. 
+  However, manual EEG annotation is labor-intensive, costly, and suffers from 
+  low inter-rater agreement, necessitating automated approaches. To address 
+  this, we introduce a novel deep learning framework, combining a convolutional 
+  neural network (CNN) module for temporal and spatial feature extraction from 
+  multi-channel EEG data, and a transformer encoder module to capture long-term 
+  sequential information. We conduct extensive experiments on a public EEG 
+  seizure detection dataset, achieving an unweighted average F1 score of 0.731, 
+  precision of 0.724, and recall (sensitivity) of 0.744. We further replicate 
+  several EEG analysis pipelines from literature and demonstrate that our 
+  pipeline outperforms, current state-of-the-art approaches. This work provides 
+  a significant step forward in automated seizure detection. By enabling a more 
+  effective and efficient diagnostic tool, it has the potential to 
+  significantly impact clinical practice, optimizing patient care and outcomes 
+  in epilepsy treatment.
+  This model was trained on TUH EEG Seizure Corpus v2.0.3
+license: MIT
+repository: https://github.com/esl-epfl/zhu_2023
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "TUH EEG Seizure Corpus v2.0.3"
+      license: "https://isip.piconepress.com/projects/nedc/forms/tuh_eeg.pdf"
+      identifiers:
+        - description: >
+            This database is a subset of the TUH EEG Corpus that was collected 
+            from archival records of clinical EEG at Temple University Hospital 
+            recorded between 2002 – 2017. From this large dataset, a subset of 
+            files with a high likelihood of containing seizures was retained 
+            based on clinical notes and on the output of seizure detection 
+            algorithms.
+            V2.0.0 contains 7377 .edf files from 675 subjects for a total 
+            duration of 1476 hours of data. The files are mostly short 
+            (avg. 10 minutes). The dataset has heterogeneous sampling frequency 
+            and number of channels. All files are acquired at a minimum of 250 
+            Hz. A minimum of 17 EEG channels is available in all recordings. 
+            They are positioned according to the 10-20 system.
+            The annotations are provided as .csv and contain the start time, 
+            stop, channel and seizure type.
+          type: url
+          value: "https://isip.piconepress.com/projects/nedc/html/tuh_eeg/"
