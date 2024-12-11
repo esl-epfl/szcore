@@ -4,7 +4,12 @@ async function loadResults() {
     const data = await response.json();
 
     const algorithms = Object.keys(data);
-    const datasets = Object.keys(data[algorithms[1]]);
+    const datasets = new Set();
+    algorithms.forEach(algorithm => {
+        Object.keys(data[algorithm]).forEach(dataset => {
+            datasets.add(dataset);
+        });
+    });
 
     const tableHeaderRow = document.getElementById("table-header");
     const tableBody = document.getElementById("table-body");
