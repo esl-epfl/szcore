@@ -1,6 +1,6 @@
 ---
 # Description of a seizure detection algorithm
-title: "utomated Seizure Detection using Transformer Models on Multi-Channel EEGs" 
+title: "Automated Seizure Detection using Transformer Models on Multi-Channel EEGs" 
 image: "ghcr.io/esl-epfl/zhu_2023:latest"
 authors:
   - given-names: Yuanda
