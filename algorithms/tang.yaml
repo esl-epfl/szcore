@@ -1,6 +1,6 @@
 ---
 # Description of a seizure detection algorithm
-title: "Automated Seizure Detection using Transformer Models on Multi-Channel EEGs" 
+title: "Self-Supervised Graph Neural Networks for Improved Electroencephalographic Seizure Analysis"
 image: "ghcr.io/esl-epfl/tang_2021:latest"
 authors:
   - given-names: Siyi
