@@ -5,10 +5,11 @@ function getQueryParam(param) {
 }
 
 // Function to populate a table (event or sample results) with metrics and dataset values
-function populateTable(tableBody, algorithmData, datasets, metrics, resultType) {
-    metrics.forEach(metric => {
+function populateTable(tableBody, algorithmData, datasets, metrics, metricTitles, resultType) {
+    metrics.forEach((metric, metricIndex) => {
         const row = document.createElement('tr');
-        row.innerHTML = `<td>${metric}</td>`;  // Metric name as the first cell
+
+        row.innerHTML = `<td>${metricTitles[metricIndex]}</td>`;  // Metric name as the first cell
 
         datasets.forEach(dataset => {
             // Get the value for the metric from the appropriate section (event_results or sample_results)
@@ -71,10 +72,10 @@ async function loadResults() {
 
         // Get the list of metrics
         const metrics = ['sensitivity', 'precision', 'f1', 'fpRate'];
-
+        const metricTitles = ['Sensitivity (%)', 'Precition (%)', 'F1 (%)', 'False Positives per Day']
         // Populate the tables using the reusable function
-        populateTable(document.getElementById('event-table-body'), algorithmData, datasets, metrics, 'event_results');
-        populateTable(document.getElementById('sample-table-body'), algorithmData, datasets, metrics, 'sample_results');
+        populateTable(document.getElementById('event-table-body'), algorithmData, datasets, metrics, metricTitles, 'event_results');
+        populateTable(document.getElementById('sample-table-body'), algorithmData, datasets, metrics, metricTitles, 'sample_results');
 
     } catch (error) {
         console.error("Error loading or processing results:", error);
@@ -111,7 +112,7 @@ async function loadYAML(fileName) {
         // Fill in the HTML content
         fillContent(parsedData);
     } catch (error) {
-        document.getElementById('content').innerHTML = `<p style="color: red;">Error loading YAML: ${error.message}</p>`;
+        // document.getElementById('content').innerHTML = `<p style="color: red;">Error loading YAML: ${error.message}</p>`;
     }
 }
 
