@@ -36,7 +36,12 @@ async function loadResults(events_or_samples) {
 
         // Add F1 score for each dataset
         metrics.forEach((metric, i) => {
-            const metricScore = Math.round(data[algorithm].evaluation_dataset[events_or_samples][metric] * 100) ?? ''; // Handle missing data
+            var metricScore;
+            if (metric === 'fpRate'){
+                metricScore = Math.round(data[algorithm].evaluation_dataset[events_or_samples][metric]) ?? ''; // Handle missing data
+            } else {
+                metricScore = Math.round(data[algorithm].evaluation_dataset[events_or_samples][metric] * 100) ?? ''; // Handle missing data
+            }
             const metricCell = createTableCell(metricScore);
             metricCell.classList.add('text-center');
                     if ((metricScore !== '') && !(metric === "fpRate")) {
@@ -192,6 +197,7 @@ function updateSampleEventSelect(){
     tableHead.innerHTML = "";
     
     var eventSampleSelect = document.getElementById('sample-event-select').value;
+    console.log(eventSampleSelect)
     loadResults(eventSampleSelect);
 }
 

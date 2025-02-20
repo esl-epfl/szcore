@@ -67,8 +67,8 @@ async function loadResults() {
         // });
 
         // Get the list of metrics
-        const metrics = ['sensitivity', 'precision', 'f1', 'fpRate'];
-        const metricTitles = ['Sensitivity (%)', 'Precition (%)', 'F1 (%)', 'False Positives per Day']
+        const metrics = ['f1', 'sensitivity', 'precision', 'fpRate'];
+        const metricTitles = ['F1 (%)', 'Sensitivity (%)', 'Precision (%)', 'False Positives per Day']
         
         metricTitles.forEach(metricTitle => {
             eventHeader.innerHTML += `<th>${metricTitle}</th>`;
