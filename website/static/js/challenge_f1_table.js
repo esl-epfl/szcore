@@ -11,6 +11,9 @@ async function loadResults() {
         });
     });
 
+    const metrics = ["f1", "sensitivity", "precision", "fpRate"]
+    const metricNames = ["F1-score", "Sensitivity", "Precision", "False Positives"]
+
     const tableHeaderRow = document.getElementById("table-header");
     const tableBody = document.getElementById("table-body");
 
@@ -18,8 +21,8 @@ async function loadResults() {
     tableHeaderRow.appendChild(createTableCell("Algorithms"));
 
     // Add dataset names as column headers
-    datasets.forEach(dataset => {
-        const headerCell = createTableCell(dataset.replace(".json", ""));
+    metrics.forEach((dataset, i) => {
+        const headerCell = createTableCell(metricNames[i]);
         headerCell.classList.add('text-center');
         headerCell.classList.add('w-16');
         tableHeaderRow.appendChild(headerCell);
@@ -32,17 +35,17 @@ async function loadResults() {
         row.appendChild(createTableCellLink(data[algorithm].algorithm_name, "/challenge_algorithm/?algo=" + algorithm)); // Add algorithm name as row header
 
         // Add F1 score for each dataset
-        datasets.forEach(dataset => {
-            const f1Score = Math.round(data[algorithm][dataset]?.event_results?.f1 * 100) ?? ''; // Handle missing data
-            const f1Cell = createTableCell(f1Score);
-            f1Cell.classList.add('text-center');
-                    if (f1Score !== '') {
-                        const color = getColorForScore(f1Score);
-                        f1Cell.style.backgroundColor = color.bgColor;
-                        f1Cell.style.color = color.textColor;
+        metrics.forEach((metric, i) => {
+            const metricScore = Math.round(data[algorithm].evaluation_dataset.event_results[metric] * 100) ?? ''; // Handle missing data
+            const metricCell = createTableCell(metricScore);
+            metricCell.classList.add('text-center');
+                    if (metricScore !== '') {
+                        const color = getColorForScore(metricScore);
+                        metricCell.style.backgroundColor = color.bgColor;
+                        metricCell.style.color = color.textColor;
                     }
 
-                    row.appendChild(f1Cell);
+                    row.appendChild(metricCell);
         });
 
         tableBody.appendChild(row);

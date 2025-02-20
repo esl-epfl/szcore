@@ -5,28 +5,24 @@ function getQueryParam(param) {
 }
 
 // Function to populate a table (event or sample results) with metrics and dataset values
-function populateTable(tableBody, algorithmData, datasets, metrics, metricTitles, resultType) {
+function populateTable(tableBody, algorithmData, metrics, metricTitles, resultType) {
+    var row = document.createElement('tr');
     metrics.forEach((metric, metricIndex) => {
-        const row = document.createElement('tr');
+        // Get the value for the metric from the appropriate section (event_results or sample_results)
+        let value = algorithmData['evaluation_dataset'][resultType][metric];
+        
+        // If the metric is sensitivity, precision, or f1, convert to percentage and round
+        if (['sensitivity', 'precision', 'f1'].includes(metric)) {
+            value = (value * 100).toFixed(2);  // Convert to percentage and round to 2 decimals
+        } else {
+            value = Math.round(value);  // Round values like fpRate
+        }
 
-        row.innerHTML = `<td>${metricTitles[metricIndex]}</td>`;  // Metric name as the first cell
-
-        datasets.forEach(dataset => {
-            // Get the value for the metric from the appropriate section (event_results or sample_results)
-            let value = algorithmData[dataset][resultType][metric];
-            
-            // If the metric is sensitivity, precision, or f1, convert to percentage and round
-            if (['sensitivity', 'precision', 'f1'].includes(metric)) {
-                value = (value * 100).toFixed(2);  // Convert to percentage and round to 2 decimals
-            } else {
-                value = Math.round(value);  // Round values like fpRate
-            }
-
-            row.innerHTML += `<td>${value}</td>`;  // Add value as a table cell
-        });
-
-        tableBody.appendChild(row);  // Append the row to the table body
+        var curCell = row.insertCell();
+        curCell.innerHTML = `${value}`;
+        curCell.style = `text-align: center;`;
     });
+    tableBody.appendChild(row);  // Append the row to the table body
 }
 
 // Function to fetch the results JSON and populate the tables
@@ -61,21 +57,27 @@ async function loadResults() {
         const sampleHeader = document.getElementById('sample-table-header');
 
         // Empty header for metrics
-        eventHeader.innerHTML = `<th></th>`;
-        sampleHeader.innerHTML = `<th></th>`;
+        // eventHeader.innerHTML = `<th></th>`;
+        // sampleHeader.innerHTML = `<th></th>`;
 
         // Create header cells for each dataset in both tables
-        datasets.forEach(dataset => {
-            eventHeader.innerHTML += `<th>${dataset}</th>`;
-            sampleHeader.innerHTML += `<th>${dataset}</th>`;
-        });
+        // datasets.forEach(dataset => {
+        //     eventHeader.innerHTML += `<th>${dataset}</th>`;
+        //     sampleHeader.innerHTML += `<th>${dataset}</th>`;
+        // });
 
         // Get the list of metrics
         const metrics = ['sensitivity', 'precision', 'f1', 'fpRate'];
         const metricTitles = ['Sensitivity (%)', 'Precition (%)', 'F1 (%)', 'False Positives per Day']
+        
+        metricTitles.forEach(metricTitle => {
+            eventHeader.innerHTML += `<th>${metricTitle}</th>`;
+            sampleHeader.innerHTML += `<th>${metricTitle}</th>`;
+        });
+        
         // Populate the tables using the reusable function
-        // populateTable(document.getElementById('event-table-body'), algorithmData, datasets, metrics, metricTitles, 'event_results');
-        // populateTable(document.getElementById('sample-table-body'), algorithmData, datasets, metrics, metricTitles, 'sample_results');
+        populateTable(document.getElementById('event-table-body'), algorithmData, metrics, metricTitles, 'event_results');
+        populateTable(document.getElementById('sample-table-body'), algorithmData, metrics, metricTitles, 'sample_results');
 
     } catch (error) {
         console.error("Error loading or processing results:", error);
@@ -118,7 +120,7 @@ async function loadYAML(fileName) {
 
 function formatAuthors(authors) {
     const listItems = authors.map(author => {
-        const name = `${author['given-names']} ${author['family-names']}`;
+        const name = `${author['given-names']} ${author['family-names']} ( ${author['affiliation']} )`;
         const orcid = author.orcid ? ` - <a href="${author.orcid}" target="_blank">ORCID</a>` : '';
         return `<li class="author">${name}${orcid}</li>`;
     }).join('');
