@@ -3,6 +3,9 @@ async function loadResults(events_or_samples) {
     const response = await fetch('/challenge_results.json'); // Path to the bundled JSON file
     const data = await response.json();
 
+    const briefSummaryResponse = await fetch('/brief_summaries.json'); // Path to the bundled JSON file
+    const briefSummaries = await briefSummaryResponse.json();
+
     const algorithms = Object.keys(data);
     const datasets = new Set();
     algorithms.forEach(algorithm => {
@@ -32,7 +35,8 @@ async function loadResults(events_or_samples) {
     algorithms.forEach(algorithm => {
         const row = document.createElement("tr");
 
-        row.appendChild(createTableCellLink(data[algorithm].algorithm_name, "/challenge_algorithm/?algo=" + algorithm)); // Add algorithm name as row header
+        const briefSummary = briefSummaries[algorithm]
+        row.appendChild(createTableCellLink(data[algorithm].algorithm_name, "/challenge_algorithm/?algo=" + algorithm, briefSummary)); // Add algorithm name as row header
 
         // Add F1 score for each dataset
         metrics.forEach((metric, i) => {
@@ -66,12 +70,27 @@ function createTableCell(content) {
     return td;
 }
 
-function createTableCellLink(content, url) {
+function createTableCellLink(content, url, briefSummary) {
+//     <div class="tooltip">Hover over me
+//   <span class="tooltiptext">Transformer-based model trained on the TUH dataset.</span>
+
     const td = document.createElement("td");
+
+    const div = document.createElement("div");
+    div.className = "tooltip";
+
+    const span = document.createElement("span");
+    span.className = "tooltiptext";
+    span.innerHTML = briefSummary;
+
     const a = document.createElement("a");
     a.setAttribute('href',url);
     a.innerHTML = content;
-    td.appendChild(a);
+
+    div.appendChild(a)
+    div.appendChild(span)
+
+    td.appendChild(div);
     return td;
 }
 
