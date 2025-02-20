@@ -1,0 +1,94 @@
+---
+# Description of a seizure detection algorithm
+name: "HHT-AlexNet"
+title: "Seizure Detect HHT-AlexNet" 
+image: "-"
+authors:
+  - given-names: Hedieh
+    family-names: Jafarpourdavatgar
+    affiliation: AUT
+  
+  - given-names: Samaneh Alsadat
+    family-names: Saeedinia
+    affiliation: IUST
+  
+  - given-names: Amir reza
+    family-names: Bahadori
+    affiliation: ICNR
+
+  - given-names: Afshan
+    family-names: Davari
+    affiliation: ICNR
+
+  - given-names: Abbas
+    family-names: Tafakhori
+    affiliation: ICNR
+
+version: 
+date-released: "2025-01-28"
+abstract: >
+  In this work, we present a novel algorithm for seizure detection that integrates 
+  transfer learning with AlexNet, the Hilbert-Huang Transform (HHT), and a module to 
+  analyze long-term electroencephalogram (EEG) recordings. Our approach addresses the 
+  critical need for accurate and efficient seizure detection in clinical settings, where 
+  timely intervention can significantly improve patient outcomes.
+
+  The algorithm begins by applying HHT to decompose EEG signals into intrinsic mode 
+  functions, effectively capturing the non-linear and non-stationary characteristics 
+  inherent in seizure activity. These features are then processed using a pre-trained 
+  AlexNet model, leveraging transfer learning to enhance detection performance. A module 
+  is employed to refine the feature set, minimizing noise and improving signal 
+  representation. Notably, our method utilizes a 1-second time sample window, striking 
+  a balance between temporal resolution and computational efficiency.
+
+  We evaluated our method using datasets collected from the Iranian Center of 
+  Neurological Disorders and selected segments of the CHB-MIT dataset, focusing on 
+  detecting both the onset and duration of seizures within continuous EEG recordings. 
+  The CHB-MIT dataset is publicly available, while the data from our center can be 
+  obtained upon request to Dr. Tafakhori or Dr. Saeedinia. The performance of our 
+  algorithm is assessed using the event-based F1 score metric, demonstrating a 
+  significant improvement in detection accuracy compared to traditional methods.
+
+  This work not only contributes to advancing seizure detection technologies but also 
+  aligns with the challenge's goal of developing robust models that can be deployed in 
+  real-time clinical environments. Our findings indicate that combining deep learning 
+  techniques with advanced signal processing methods can lead to effective solutions for 
+  epilepsy monitoring.
+
+  Furthermore, we conducted a complexity analysis of our algorithm, considering both 
+  time and space complexity. The use of transfer learning with AlexNet reduces the
+  computational burden typically associated with training deep neural networks from 
+  scratch. The HHT decomposition, while computationally intensive, is offset by the 
+  efficiency gained in subsequent processing steps. The 1-second window approach allows 
+  for near real-time analysis, crucial for clinical applications. Overall, our method 
+  achieves a favorable balance between detection accuracy and computational efficiency, 
+  making it suitable for deployment in resource-constrained clinical settings.
+  
+license: "Apache License 2.0"
+repository: "-"
+publication: "-"
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "Physionet CHB-MIT Scalp EEG dataset v1.0.0"
+      license: "ODC-By-1.0"
+      identifiers:
+        - description: >
+             This database, collected at the Children’s Hospital Boston, 
+             consists of EEG recordings from pediatric subjects with 
+             intractable seizures. Subjects were monitored for up to several 
+             days following withdrawal of anti-seizure medication in order to 
+             characterize their seizures and assess their candidacy for 
+             surgical intervention. The recordings are grouped into 23 cases 
+             and were collected from 22 subjects (5 males, ages 3–22; and 17 
+             females, ages 1.5–19). 
+          type: "doi"
+          value: "10.13026/C2K01R"
+    
+    - title: "Collected data by Iranian center of neorological research"
+      license: "-"
+      identifiers:
+        - description: >
+             -
+          type: "-"
+          value: "-"

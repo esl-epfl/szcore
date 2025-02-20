@@ -1,0 +1,86 @@
+---
+# Description of a seizure detection algorithm
+name: "SD2025"
+title: "SD2025" 
+image: "https://hub.docker.com/r/eegdude/solution1"
+authors:
+  - given-names: Shuranov 
+    family-names: Evgenii
+    affiliation: ITMO
+  
+  - given-names: Rafael 
+    family-names: Grigorian
+    affiliation: MSU
+  
+  - given-names: Konstantin 
+    family-names: Chukaev
+    affiliation: DeniS
+
+version: "-"
+date-released: "2025-02-16"
+abstract: > 
+  This is a deep learning-based approach for seizure detection, leveraging a 
+  pre-trained Labram model. Initial pre-training weights are sourced from the 
+  LaBraM repository, followed by fine-tuning on the TUEV dataset using cross-entropy
+  loss across six classes. Further refinement incorporates TUEV, TUSZ, and Siena 
+  datasets, optimizing losses aligned with the sz_challenge2025 target metric. Input 
+  EEG data consists of unipolar recordings from 19 channels, preprocessed through notch
+  filtering (50 Hz), resampling (200 Hz), and frame construction over five-second 
+  windows. Model inference is performed on four-hour EEG segments, producing boolean 
+  output masks, later converted into TSV format. Training data preprocessing includes 
+  file length filtering, label-based exclusion (Siena, TUSZ), and time-shift augmentation.
+  Experimental results on the TUSZ dataset yield an F1 score of 0.43. The method operates
+  with O(N) time complexity and requires sufficient memory allocation for loading EEG 
+  files. Benchmarks using an NVIDIA 3090 (12GB) and 62GB RAM indicate a total processing
+  time of approximately two hours for the full TUSZ dataset.
+  
+license: "MIT License"
+repository: "-"
+publication: "-"
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "Siena Scalp EEG Database"
+      license: "https://physionet.org/content/siena-scalp-eeg/view-license/1.0.0/"
+      identifiers:
+        - description: >
+            The database consists of EEG recordings of 14 patients acquired at the Unit 
+            of Neurology and Neurophysiology of the University of Siena.  Subjects include 
+            9 males (ages 25-71) and 5 females (ages 20-58). Subjects were monitored with 
+            a Video-EEG with a sampling rate of 512 Hz, with electrodes arranged on the 
+            basis of the international 10-20 System. Most of the recordings also contain 1 
+            or 2 EKG signals. The diagnosis of epilepsy and the classification of seizures 
+            according to the criteria of the International League Against Epilepsy were 
+            performed by an expert clinician after a careful review of the clinical and 
+            electrophysiological data of each patient.
+          type: "doi"
+          value: "10.13026/5d4a-j060"
+
+    - title: "TUH EEG Seizure Corpus v2.0.3"
+      license: "https://isip.piconepress.com/projects/nedc/forms/tuh_eeg.pdf"
+      identifiers:
+        - description: >
+            This database is a subset of the TUH EEG Corpus that was collected 
+            from archival records of clinical EEG at Temple University Hospital 
+            recorded between 2002 – 2017. From this large dataset, a subset of 
+            files with a high likelihood of containing seizures was retained 
+            based on clinical notes and on the output of seizure detection 
+            algorithms.
+            V2.0.0 contains 7377 .edf files from 675 subjects for a total 
+            duration of 1476 hours of data. The files are mostly short 
+            (avg. 10 minutes). The dataset has heterogeneous sampling frequency 
+            and number of channels. All files are acquired at a minimum of 250 
+            Hz. A minimum of 17 EEG channels is available in all recordings. 
+            They are positioned according to the 10-20 system.
+            The annotations are provided as .csv and contain the start time, 
+            stop, channel and seizure type.
+          type: "url"
+          value: "https://isip.piconepress.com/projects/nedc/html/tuh_eeg/"
+
+    - title: "TUH EEG Corpus v2.0.31"
+      license: "-"
+      identifiers:
+        - description: >
+            -
+          type: "url"
+          value: "-"

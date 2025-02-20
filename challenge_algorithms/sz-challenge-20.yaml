@@ -1,0 +1,58 @@
+---
+# Description of a seizure detection algorithm
+name: "eventNet"
+title: "eventNet" 
+image: "ghcr.io/esl-epfl/eventnet_2024:latest"
+authors:
+  - given-names: Clement
+    family-names: Samanos
+    affiliation: EPFL
+version: "-"
+date-released: "2025-02-13"
+abstract: >
+  Objective: Finding events of interest is a common task in biomedical signal processing.
+  The detection of epileptic seizures and signal artefacts are two key examples. 
+  Epoch-based classification is the typical machine learning framework to detect such 
+  signal events because of the straightforward application of classical machine learning 
+  techniques. Usually, post-processing is required to achieve good performance and 
+  enforce temporal dependencies. Designing the right post-processing scheme to convert 
+  these classification outputs into events is a tedious, and labor-intensive element of 
+  this framework. Methods: We propose an event-based modeling framework that directly 
+  works with events as learning targets, stepping away from ad-hoc post-processing 
+  schemes to turn model outputs into events. We illustrate the practical power of this 
+  framework on simulated data and real-world data, comparing it to epoch-based modeling 
+  approaches. Results: We show that event-based modeling (without tailored 
+  post-processing) performs on par with or better than epoch-based modeling with 
+  extensive post-processing. Conclusion: These results show the power of treating events 
+  as direct learning targets, instead of using ad-hoc post-processing to obtain them, 
+  severely reducing design effort. Significance: The event-based modeling framework 
+  can easily be applied to other event detection problems in signal processing, removing 
+  the need for intensive task-specific post-processing. This model was trained on the 
+  train and dev set of TUSZ v2.0.3.
+
+license: "MIT License"
+repository: "https://github.com/esl-epfl/eventnet_2024"
+publication: "-"
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "TUH EEG Seizure Corpus v2.0.3"
+      license: "https://isip.piconepress.com/projects/nedc/forms/tuh_eeg.pdf"
+      identifiers:
+        - description: >
+            This database is a subset of the TUH EEG Corpus that was collected 
+            from archival records of clinical EEG at Temple University Hospital 
+            recorded between 2002 – 2017. From this large dataset, a subset of 
+            files with a high likelihood of containing seizures was retained 
+            based on clinical notes and on the output of seizure detection 
+            algorithms.
+            V2.0.0 contains 7377 .edf files from 675 subjects for a total 
+            duration of 1476 hours of data. The files are mostly short 
+            (avg. 10 minutes). The dataset has heterogeneous sampling frequency 
+            and number of channels. All files are acquired at a minimum of 250 
+            Hz. A minimum of 17 EEG channels is available in all recordings. 
+            They are positioned according to the 10-20 system.
+            The annotations are provided as .csv and contain the start time, 
+            stop, channel and seizure type.
+          type: "url"
+          value: "https://isip.piconepress.com/projects/nedc/html/tuh_eeg/"

@@ -1,0 +1,75 @@
+---
+# Description of a seizure detection algorithm
+name: "Random Forest" 
+title: "EEG Seizure Detection using Random Forest"
+image: "https://hub.docker.com/r/yuxiaohe/eeg2"
+authors:
+  - given-names: Yuxiao
+    family-names: He
+    affiliation: Rensselaer Polytechnic Institute
+  
+  - given-names: Bulent
+    family-names: Yener
+    affiliation: Rensselaer Polytechnic Institute
+
+version: "-"
+date-released: "2025-02-16"
+abstract: > 
+  The EEG seizure detection algorithm is based on Random Forest Model. The model leverages 
+  a combination of statistical, spectral, and entropy-based features extracted from 
+  multi-channel EEG signals. Time-domain features include mean, variance, skewness, and 
+  kurtosis, while frequency-domain features are derived from Power Spectral Density (PSD)
+  using Welch’s method. Additionally, entropy-based measures such as sample entropy and 
+  fuzzy entropy enhance the model’s ability to distinguish between seizure and non-seizure
+  patterns. EEG signals are processed using a 2-second sliding window with 50% overlap, 
+  which are the same as the provided gotman1982 algorithm. The classification model 
+  consists of a Random Forest Classifier with 20 decision trees (n_estimators=20), 
+  utilizing class weighting (class_weight='balanced') to address class imbalance, and a 
+  fixed random seed (random_state=0). After applying the seizure detection model, the 
+  predictions might contain false positives, isolated short seizure detections, or closely
+  spaced events, so nearby seizure events that occur within a short time gap are merged, 
+  and very short detections (e.g., less than 2 seconds) are removed to reduce false 
+  positives.
+
+  The BIDS CHB-MIT Scalp EEG Database were used for training and testing, using 80% of the 
+  data for training and 20% for testing. So the sampling frequency is 256 Hz, and number of 
+  channels is 18. Since the input data has 19 channel, one of the channel 'T3' will be 
+  deleted to ensure the features of the model are matched. Before feature extraction, 
+  the EEG signals undergo bandpass filtering (1–50 Hz), which is same as the provided 
+  gotman algorithm. 
+
+  The performance evaluation is based on a binary classification problem, where Class 0 
+  (Non-Seizure); Class 1 (Seizure). The overall accuracy is 99%, because this is largely 
+  influenced by the high number of non-seizure (Class 0) samples. Precision is 95% for 
+  seizures, F1 score is 0.8 on the test set. 
+
+  The EEG seizure detection algorithm consists of feature extraction and classification. 
+  The algorithm processes EEG data using a 2-second sliding window with 50% overlap. 
+  Welch’s Power Spectral Density (PSD) estimation is used to extract frequency-domain 
+  features, which has a complexity of O(N log N) for each window, where N is the number
+  of EEG samples in the window. Other time-domain features (mean, variance, skewness, 
+  kurtosis, sample entropy, fuzzy entropy) are computed in O(N) time. Given W sliding 
+  windows, the total feature extraction complexity is O(W * N log N). The classification 
+  is performed using a Random Forest Classifier (RFC) with 20 estimators, so the 
+  classification complexity is (N trees × log features) per window."
+  
+license: "MIT License"
+repository: "-"
+publication: "-"
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "Physionet CHB-MIT Scalp EEG dataset v1.0.0"
+      license: "ODC-By-1.0"
+      identifiers:
+        - description: >
+             This database, collected at the Children’s Hospital Boston, 
+             consists of EEG recordings from pediatric subjects with 
+             intractable seizures. Subjects were monitored for up to several 
+             days following withdrawal of anti-seizure medication in order to 
+             characterize their seizures and assess their candidacy for 
+             surgical intervention. The recordings are grouped into 23 cases 
+             and were collected from 22 subjects (5 males, ages 3–22; and 17 
+             females, ages 1.5–19). 
+          type: "doi"
+          value: "10.13026/C2K01R"

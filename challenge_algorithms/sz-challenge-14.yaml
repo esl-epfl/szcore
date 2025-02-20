@@ -1,0 +1,149 @@
+---
+# Description of a seizure detection algorithm
+name: "STORM"
+title: "STORM: Self-supervised Transformer for Optimized Recognition in EEG Modeling" 
+image: "-"
+authors:
+  - given-names: William Theodor
+    family-names: Lehn-Schiøler
+    affiliation: BrainCapture
+  
+  - given-names: Magnus Guldberg
+    family-names: Pedersen
+    affiliation: M.Sc. Eng student, DTU Compute
+  
+  - given-names: Benjamin Kock
+    family-names: Fazal
+    affiliation: M.Sc. Eng student, DTU Compute
+
+version: "-"
+date-released: "2025-02-16"
+abstract: >
+  Clinical interpretations of electroencephalography (EEG) recordings remain an area of 
+  uncertainty and high inter-reader variability - especially in resource-limited regions 
+  of the world. While automation tools like artificial intelligence (AI) may aid diagnostic 
+  support with remote and automated interpretation, annotated EEG data is scarce and the 
+  lack of publicly available labelled EEG data makes it difficult to build robust automation 
+  tools. With the recent surge in popularity in using self-supervised learning and 
+  transformer models, e.g. GPT-4 and similar large language models (LLMs), we have seen 
+  that unlabeled data can be used to learn inherent structures and contextual information. 
+  In this work, a general-purpose EEG transformer model pre-trained on massive, unlabeled, 
+  and publicly available EEG data is proposed. Using smaller and labeled datasets, the 
+  general-purpose model is later adjusted to specific downstream tasks like seizure 
+  detection. We thus present a pipeline with the capacity to train and improve model 
+  prediction, with the ability to generalize to the larger realm of neurological findings 
+  using EEG.
+
+  For the proposed STORM architecture, pretraining and downstream finetuning can be divided 
+  into two separate systems in which self-supervised learning (SSL) is incorporated in the 
+  pretraining structure.
+
+  Here, a PyTorch implementation of the BErt-like Neurophysiological Data Representation 
+  (BENDR) model by Kostas et al. was used in a Deep Neural Network (DNN) setting. This
+  setting utilizes a transformer-based architecture, which is applied for the pretraining 
+  of a Latent Feature Encoder (LFE), where the BENDR model is trained using contrastive 
+  learning with masked signal reconstruction. Following this, the LFE was used in the 
+  downstream finetuning structure where a Multilayer Perceptron (MLP) is tuned for 
+  prediction using preprocessed and labeled EEG data. The predictive model was trained 
+  using 10-fold cross-validation for optimization of hyperparameters, and evaluated on a 
+  hold-out set. As the model is pre-trained, downstream fine-tuning requires significantly 
+  less data to achieve the presented results, demonstrating the efficiency and 
+  computational effectiveness of the proposed pipeline. Following the training and 
+  fine-tuning of the proposed pipeline, a series of post-processing steps were optimized 
+  using a separate evaluation set and a Bayesian Optimization approach. Here, majority 
+  voting, minimum epilepsy duration and merge of occurrences were implemented with each 
+  method possessing a singular hyperparameter. Moreover, varying window lengths of the 
+  model, for the prediction of seizures, were implemented and used combinatorially as a 
+  final voting system in the inference of the pipeline. 
+
+  For pre-training the transformer model, the Temple University Hospital EEG Corpus (TUEG) 
+  was utilized as the primary motivator of the self-supervised deep learning pipeline for 
+  EEG data. It comprises 26,846 clinical EEG recordings collected at Temple University 
+  Hospital (TUH) in Philadelphia from 2002 to 2017, split into 69,652 EDF files. It takes 
+  1.6 TB of storage, and is entirely unlabeled. 
+
+  The recordings were obtained from a diverse patient population with a variety of 
+  neurological conditions, including epilepsy, sleep disorders, and other brain-related 
+  health problems. The EEG recordings include different EEG tests, allowing investigation 
+  of various neurological phenomena. However, the variety in experiment setups also means 
+  that the data format is not unified. 
+
+  The multilayer-perceptron model was finetuned using the learning encodings of the 
+  transformer model on the TUH EEG Seizure Corpus. The corpus includes 675 patients with 
+  1643 sessions spread over 7361 files, and all data was, during tuning, balanced with 
+  majority downsampling.
+
+  For the proposed architecture, the preprocessing methodology builds on the scalable and 
+  efficient framework introduced in the SPEED pipeline by Madsen et al., optimizing it 
+  further for robust and large-scale self-supervised learning of EEG data. This methodology 
+  enables the use of unlabeled data for large model training, in which multiple
+  preprocessing steps are carried out to ensure optimal data quality for the prediction 
+  task at hand.
+
+  The pipeline is initialized by standardizing channel names, setting the montage and 
+  segmenting the data into 60-second windows. 
+
+  Bad channels are then detected, and windows with insufficient quality are 
+  removed - assessment is based on the signal-to-noise ratio or if the signal exhibits high
+  variance. Following this, a region-based power line notch filter, a high-pass filter 
+  (1 Hz) and a low-pass (70 Hz) filter are applied. Moreover, a notch filter is applied to 
+  assist in the removal of power line noise. Robust detrending is applied to eliminate 
+  linear trends, followed by average referencing to standardize the signal across channels.  
+  Lastly, missing channels are interpolated using Legendre polynomial expansion via the 
+  minimum-norm method, after which all signals are resampled at 256 Hz for uniformity. 
+  The pipeline utilizes the 19 most common electrode channels from the TUEG in the 
+  following order:
+
+  {F p 1, F p 2, F 7, F 3, F z, F 4, F 8, T 7, C 3, C z, C 4, T 8, P 7, P 3, P z, P 4, 
+  P 8, O 1, O 2}
+
+  The final performance was measured using a previously unseen portion of the input data. 
+  To clarify, fine-tuning of the multilayer-perceptron, optimization of the post-processing 
+  and final evaluation of the model performance were all realized using varying and 
+  non-overlapping subsets of the TUH EEG Seizure dataset. On the final set, the model 
+  held an event-based f1-score of 0.7593, which was calculated using the esl-epfl 
+  timescoring github repo. 
+  
+  These results show a clear indication of significant performance in the realm of 
+  epileptic seizure detection with a non-balanced and unseen testing set. Improvement 
+  in performance could naturally occur by training on more diverse datasets, such as 
+  including Siena Scalp EEG and CHB-MIT. This will be pursued in a later implementation 
+  devoid of time-constraints and with larger availability in computational power. 
+  Moreover, for a better gauge of the predictive capabilities, multiple runs with varying 
+  random seeds for the splits of the data would be advantageous. Such an approach would 
+  provide a confidence interval which offers a more robust fundament for comparative 
+  measures.
+  
+license: "Proprietary - Copyright 2025 BrainCapture. All Rights Reserved."
+repository: "-"
+publication: "-"
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "TUH EEG Seizure Corpus v2.0.3"
+      license: "https://isip.piconepress.com/projects/nedc/forms/tuh_eeg.pdf"
+      identifiers:
+        - description: >
+            This database is a subset of the TUH EEG Corpus that was collected 
+            from archival records of clinical EEG at Temple University Hospital 
+            recorded between 2002 – 2017. From this large dataset, a subset of 
+            files with a high likelihood of containing seizures was retained 
+            based on clinical notes and on the output of seizure detection 
+            algorithms.
+            V2.0.0 contains 7377 .edf files from 675 subjects for a total 
+            duration of 1476 hours of data. The files are mostly short 
+            (avg. 10 minutes). The dataset has heterogeneous sampling frequency 
+            and number of channels. All files are acquired at a minimum of 250 
+            Hz. A minimum of 17 EEG channels is available in all recordings. 
+            They are positioned according to the 10-20 system.
+            The annotations are provided as .csv and contain the start time, 
+            stop, channel and seizure type.
+          type: "url"
+          value: "https://isip.piconepress.com/projects/nedc/html/tuh_eeg/"
+    - title: "TUH EEG Corpus v2.0.31"
+      license: "-"
+      identifiers:
+        - description: >
+            -
+          type: "url"
+          value: "-"

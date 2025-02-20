@@ -1,0 +1,112 @@
+---
+# Description of a seizure detection algorithm
+name: "Channel-adaptive classifier"
+title: "Channel-adaptive EEG classifier" 
+image: "docker.io/francescocarzaniga/epfl-challenge:ca-eegwavenet-v1"
+authors:
+  - given-names: Francesco
+    family-names: Carzaniga
+    affiliation: Inselspital, IBM
+  
+  - given-names: Michael
+    family-names: Hersche
+    affiliation: IBM
+
+  - given-names: Kaspar
+    family-names: Schindler
+    affiliation: Inselspital
+  
+  - given-names: Abbas
+    family-names: Rahimi
+    affiliation: IBM
+    
+version: "1"
+date-released: "2025-02-16"
+abstract: >
+  The channel-adaptive EEG architecture (CA-EEGWaveNet here) seamlessly processes any 
+  multi-variate signal with an arbitrary number of channels. It uses three components: 
+  the Encoder, that extracts short-term temporal information; the Fusion, that 
+  reconstructs the spatial information; and the Memory, that processes long-term 
+  dependencies to create a longer effective context window. As the Encoder, we use 
+  EEGWaveNet. For the Fusion, we use an HRR-based composition. Finally, for the Memory,
+  we use a TCN. The (i)EEG recording is divided into windows in the order of a few seconds. 
+  These windows are processed by the Encoder channel-by-channel, to generalize to arbitrary 
+  channel configurations. Then, the relationship between the channels is learned through 
+  the Fusion component as geometric closeness between key vectors, that are then bound 
+  with the feature vectors and bundled to obtain a single vector per window. This vector 
+  contains both the spatial information and the short-term temporal information. Multiple 
+  vectors are accumulated into a memory and finally processed by a TCN to get the final 
+  classification results on a longer context window, in the order of a few minutes.
+
+  All recordings are up-/or down-sampled to 256Hz for consistency with the testing dataset, 
+  but 512Hz or higher have also been used successfully. Given the homogeneous nature of 
+  the 10-20 system, the Fusion component is used without learning and a uniform 
+  relationship is assumed across all channels. Nonetheless, any number of channels can be 
+  used, with a linear increase in computational complexity. In particular, we use the 
+  CHB-MIT and Siena datasets for training, and the TUSZ dataset for validation and 
+  hyperparameter optimization. Except for sampling rate manipulation when needed, no other 
+  pre-processing step is performed.
+
+  We perform large-scale validation on iEEG datasets, that better represent the final 
+  use-case of CA-EEGWaveNet. We compare CA-EEGWaveNet with EEGWaveNet on the Short-term 
+  SWEC iEEG datset. CA-EEGWaveNet is trained on a single seizure of the tested subject, 
+  while the baseline EEGWaveNet is trained on all but one. CA-EEGWaveNet surpasses the 
+  baseline in median F1-score (0.78 vs 0.76).
+  
+license: "Apache License 2.0"
+repository: "https://github.com/IBM/channel-adaptive-eeg-classifier"
+publication: "-"
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "Physionet CHB-MIT Scalp EEG dataset v1.0.0"
+      license: "ODC-By-1.0"
+      identifiers:
+        - description: >
+             This database, collected at the Children’s Hospital Boston, 
+             consists of EEG recordings from pediatric subjects with 
+             intractable seizures. Subjects were monitored for up to several 
+             days following withdrawal of anti-seizure medication in order to 
+             characterize their seizures and assess their candidacy for 
+             surgical intervention. The recordings are grouped into 23 cases 
+             and were collected from 22 subjects (5 males, ages 3–22; and 17 
+             females, ages 1.5–19). 
+          type: "doi"
+          value: "10.13026/C2K01R"
+    
+    - title: "Siena Scalp EEG Database"
+      license: "https://physionet.org/content/siena-scalp-eeg/view-license/1.0.0/"
+      identifiers:
+        - description: >
+            The database consists of EEG recordings of 14 patients acquired at the Unit 
+            of Neurology and Neurophysiology of the University of Siena.  Subjects include 
+            9 males (ages 25-71) and 5 females (ages 20-58). Subjects were monitored with 
+            a Video-EEG with a sampling rate of 512 Hz, with electrodes arranged on the 
+            basis of the international 10-20 System. Most of the recordings also contain 1 
+            or 2 EKG signals. The diagnosis of epilepsy and the classification of seizures 
+            according to the criteria of the International League Against Epilepsy were 
+            performed by an expert clinician after a careful review of the clinical and 
+            electrophysiological data of each patient.
+          type: "doi"
+          value: "10.13026/5d4a-j060"
+    
+    - title: "TUH EEG Seizure Corpus v2.0.3"
+      license: "https://isip.piconepress.com/projects/nedc/forms/tuh_eeg.pdf"
+      identifiers:
+        - description: >
+            This database is a subset of the TUH EEG Corpus that was collected 
+            from archival records of clinical EEG at Temple University Hospital 
+            recorded between 2002 – 2017. From this large dataset, a subset of 
+            files with a high likelihood of containing seizures was retained 
+            based on clinical notes and on the output of seizure detection 
+            algorithms.
+            V2.0.0 contains 7377 .edf files from 675 subjects for a total 
+            duration of 1476 hours of data. The files are mostly short 
+            (avg. 10 minutes). The dataset has heterogeneous sampling frequency 
+            and number of channels. All files are acquired at a minimum of 250 
+            Hz. A minimum of 17 EEG channels is available in all recordings. 
+            They are positioned according to the 10-20 system.
+            The annotations are provided as .csv and contain the start time, 
+            stop, channel and seizure type.
+          type: url
+          value: "https://isip.piconepress.com/projects/nedc/html/tuh_eeg/"

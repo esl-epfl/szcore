@@ -1,0 +1,66 @@
+---
+# Description of a seizure detection algorithm
+name: "DynSD"
+title: "DynSD" 
+image: "ghcr.io/wojemann/dynasd_competition:latest"
+authors:
+  - given-names: William K.S.
+    family-names: Ojemann
+    affiliation: CNT, University of Pennsylvania
+version: 0.1
+date-released: "2025-02-13"
+abstract: >
+  We submit the DynaSD (Dynamic Seizure Detection) seizure detection algorithm for 
+  the AI in Epilepsy seizure detection competition. This algorithm uses autoregressive 
+  loss as a seizure detection feature. We use a 12th order multivariate autoregressive 
+  LSTM with a 10-element hidden state shared across all channels that is then fed through 
+  a fully connected layer. In each clip, we assume that the first 60 seconds of the 
+  clip will not contain a seizure or an abundance of ictal activity and can approximate
+  patient and channel specific baseline neurophysiology. We train the LSTM to minimize 
+  autoregressive mean squared error using the default adam optimizer parameters from 
+  pytorch on the 60-second baseline period. We then deploy the algorithm on 1 second 
+  windows with 0.5 seconds of overlap and average the mean absolute error within each 
+  clip. We then threshold each window based on the average optimal threshold for 
+  annotating seizure onset channels in a cohort of annotated intracranial EEG seizure 
+  recordings.  We then applied a 5-second moving median window followed by a temporal 
+  smoothing procedure where, for each window, 14 seconds of the following 15 seconds 
+  must also be classified as seizure activity. Using this temporally smoothed signal, 
+  we required that at least 9 (more than half) of the channels be detected as seizing 
+  for a window to be classified as seizure activity. Prior to training and detection, 
+  we bipolar re reference the signal, applied a notch filter at 60 and 120 Hz, bandpass 
+  filtered the signal from 1 to 100 Hz, and then downsampled the signal to 128 Hz. We 
+  tuned the filter frequencies, spatial and temporal smoothing parameters, and the 
+  training sample size hyperparameters using the first 5 patients of the CHB-MIT scalp 
+  dataset. We achieved a median (25th and 75th percentile) F1 score of 1.0 (0.58,1.0) 
+  on this limited dataset. We do not report any space, time, or sample complexity for 
+  our model, however, we did observe that running inference on one, 1-hour clip takes 
+  approximately 15 seconds on an M1 Pro silicone chip with 10 CPU and 16 GPU cores and 
+  32 GB of unified RAM.
+license: "CC BY-NC 4.0"
+repository: "https://github.com/wojemann/DynaSD_competition"
+publication: "-"
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "Physionet CHB-MIT Scalp EEG dataset v1.0.0"
+      license: "ODC-By-1.0"
+      identifiers:
+        - description: >
+             This database, collected at the Children’s Hospital Boston, 
+             consists of EEG recordings from pediatric subjects with 
+             intractable seizures. Subjects were monitored for up to several 
+             days following withdrawal of anti-seizure medication in order to 
+             characterize their seizures and assess their candidacy for 
+             surgical intervention. The recordings are grouped into 23 cases 
+             and were collected from 22 subjects (5 males, ages 3–22; and 17 
+             females, ages 1.5–19). 
+          type: "doi"
+          value: "10.13026/C2K01R"
+    
+    - title: "Intracranial EEG recordings of Seizures from HUP"
+      license: "-"
+      identifiers:
+        - description: >
+             "-" 
+          type: "-"
+          value: "-"

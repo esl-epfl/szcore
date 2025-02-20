@@ -1,0 +1,58 @@
+---
+# Description of a seizure detection algorithm
+name: "Serial Band Powers"
+title: "Detect Serial Band Powers" 
+image: "https://hub.docker.com/r/ravinderjits/seizure_detect"
+authors:
+  - given-names: Ravinderjit
+    family-names: Singh
+    affiliation: Neurology, Mount Sinai
+
+  - given-names: Benjamin
+    family-names: Kummer
+    affiliation: Neurology, Mount Sinai
+  
+  - given-names: Ho Wing
+    family-names: Chan
+    affiliation: Neurology, Mount Sinai
+
+version: "-"
+date-released: "2025-02-17"
+abstract: >
+  The algorithm analyzes data in 5 second segments. First the algorithm rejects bad 
+  channels in each 5 second segment by looking for channels with high deflections in 
+  amplitude or much higher power than other channels. Then the algorithm looks at theta 
+  band power, ratio of temporal chain power on L versus R side, and delta power to 
+  detect seizures. Then the algorithm looks at a variety of other spectral 
+  characteristics like the ratio of theta and alpha power to increase specificity by 
+  characterizing what non-seizure epochs look like. Lastly the algorithm looks for 
+  sustained spectral relationships, as defined previously, over time to consider a 
+  certain epoch to be seizure. The algorithm expects a sampling rate of 256 Hz, expects 
+  channels to be referenced to the average of all electrodes (or some other common 
+  reference), and  expects 19 channels. The data is filtered from 2-40 Hz and a notch 
+  filter is applied at 50 Hz.  The algorithm is trained on the Siena dataset. 
+  The algorithm achieved an average sensitivity of 58%, precision of 37 %, F1-score of 
+  39%, and FP/24h of 29.1 on the Siena dataset. The algorithm is efficient, but can 
+  benefit from training on a larger set of seizures.
+  
+license: "MIT License"
+repository: "-"
+publication: "-"
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "Siena Scalp EEG Database"
+      license: "https://physionet.org/content/siena-scalp-eeg/view-license/1.0.0/"
+      identifiers:
+        - description: >
+            The database consists of EEG recordings of 14 patients acquired at the Unit 
+            of Neurology and Neurophysiology of the University of Siena.  Subjects include 
+            9 males (ages 25-71) and 5 females (ages 20-58). Subjects were monitored with 
+            a Video-EEG with a sampling rate of 512 Hz, with electrodes arranged on the 
+            basis of the international 10-20 System. Most of the recordings also contain 1 
+            or 2 EKG signals. The diagnosis of epilepsy and the classification of seizures 
+            according to the criteria of the International League Against Epilepsy were 
+            performed by an expert clinician after a careful review of the clinical and 
+            electrophysiological data of each patient.
+          type: "doi"
+          value: "10.13026/5d4a-j060"

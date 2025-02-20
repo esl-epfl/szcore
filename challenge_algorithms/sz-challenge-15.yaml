@@ -1,0 +1,68 @@
+---
+# Description of a seizure detection algorithm
+name: "NE Illusion 1 v1"
+title: "NE Illusion 1" 
+image: "-"
+authors:
+  - given-names: Maximilian
+    family-names: Kalcher
+    affiliation: ETH
+  
+  - given-names: Marian
+    family-names: Galovic
+    affiliation: USZ
+
+version: "1"
+date-released: "2025-02-17"
+abstract: >
+  This submission implements a self-supervised learning approach for EEG seizure detection 
+  using a Joint Embedding Predictive Architecture (JEPA). The model learns EEG signal 
+  representations without requiring explicit seizure labels by predicting masked 
+  portions of spectrograms from their surrounding context. This predictive task 
+  encourages the model to learn meaningful features from the temporal and spatial 
+  relationships within EEG data. The learned representations are then used with a simple 
+  classifier for the downstream task of seizure detection. The approach leverages large 
+  amounts of unlabeled EEG data to learn robust features that can generalize across 
+  different patients and recording conditions.
+  
+  The model processes 6-channel EEG recordings sampled at 250 Hz, focusing on key 
+  electrode positions (F3, C3, P3, F4, C4, P4). Input data undergoes preprocessing 
+  including 60 Hz notch filtering, 0.5-124.9 Hz bandpass filtering, and normalization. 
+  The spectrograms are computed using short-time Fourier transform with parameters 
+  adjusted based on window length (5s).
+
+  Training utilized the TUH Seizure Corpus, containing thousands of EEG recordings 
+  with annotated seizure events. Records with significant artifacts or unclear seizure 
+  annotations were excluded. The self-supervised pretraining phase used all available 
+  data, while the classifier training used a balanced subset of seizure and 
+  non-seizure windows.
+
+  On public evaluation data, the model achieved F1 scores above 0.82 for seizure 
+  detection. The model requires approximately 3GB of GPU memory during inference (CUDA).
+  
+license: "Private" 
+repository: "-"
+publication: "2025-02-17"
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "TUH EEG Seizure Corpus v2.0.3"
+      license: "https://isip.piconepress.com/projects/nedc/forms/tuh_eeg.pdf"
+      identifiers:
+        - description: >
+            This database is a subset of the TUH EEG Corpus that was collected 
+            from archival records of clinical EEG at Temple University Hospital 
+            recorded between 2002 – 2017. From this large dataset, a subset of 
+            files with a high likelihood of containing seizures was retained 
+            based on clinical notes and on the output of seizure detection 
+            algorithms.
+            V2.0.0 contains 7377 .edf files from 675 subjects for a total 
+            duration of 1476 hours of data. The files are mostly short 
+            (avg. 10 minutes). The dataset has heterogeneous sampling frequency 
+            and number of channels. All files are acquired at a minimum of 250 
+            Hz. A minimum of 17 EEG channels is available in all recordings. 
+            They are positioned according to the 10-20 system.
+            The annotations are provided as .csv and contain the start time, 
+            stop, channel and seizure type.
+          type: "url"
+          value: "https://isip.piconepress.com/projects/nedc/html/tuh_eeg/"

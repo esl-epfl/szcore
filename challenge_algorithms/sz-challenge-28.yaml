@@ -1,0 +1,43 @@
+---
+# Description of a seizure detection algorithm
+name: "Features-TCN-GRU"
+title: "seizure_detection" 
+image: "-"
+authors:
+  - given-names: Yunlin
+    family-names: Li
+    affiliation: "-"
+version: "1"
+date-released: "2025-02-14"
+abstract: >
+  The seizure detection algorithm utilizes data from CHB-MIT to train, validate and 
+  test the model. Specifically, the EEG data are first preprocessed according to the 
+  BIDS format; then the time, frequency and wavelet domain features of the EEG data 
+  are extracted; finally, these features are input into the TCN_GRU model for seizure 
+  detection. The training EPOCH is 100, 3-fold cross-validation is performed, and the 
+  average result of the 3-folds is taken as the result of this model. The training and 
+  validation losses were printed for each fold to determine if the loss decreased 
+  normally during training and to rule out overfitting. In addition, a post-processing 
+  step was added to define epileptic events and Kalman filter the model output before 
+  defining the events.
+
+license: "Apache License 2.0"
+repository: "-"
+publication: "-"
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "Physionet CHB-MIT Scalp EEG dataset v1.0.0"
+      license: "ODC-By-1.0"
+      identifiers:
+        - description: >
+             This database, collected at the Children’s Hospital Boston, 
+             consists of EEG recordings from pediatric subjects with 
+             intractable seizures. Subjects were monitored for up to several 
+             days following withdrawal of anti-seizure medication in order to 
+             characterize their seizures and assess their candidacy for 
+             surgical intervention. The recordings are grouped into 23 cases 
+             and were collected from 22 subjects (5 males, ages 3–22; and 17 
+             females, ages 1.5–19). 
+          type: "doi"
+          value: "10.13026/C2K01R"

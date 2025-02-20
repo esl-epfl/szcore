@@ -1,0 +1,67 @@
+---
+# Description of a seizure detection algorithm
+name: "bRAWlstar"
+title: "bRAWlstar: Linear Recurrent Unit for raw EEG processing" 
+image: "https://hub.docker.com/r/rdgao/szcore-challenge"
+authors:
+  - given-names: Richard
+    family-names: Gao
+    affiliation: University of Tübingen
+  
+  - given-names: Julius
+    family-names: Vetter
+    affiliation: University of Tübingen
+  
+  - given-names: Meghal
+    family-names: Dani
+    affiliation: University of Tübingen
+  
+  - given-names: Stefanie
+    family-names: Liebe
+    affiliation: University of Tübingen
+
+  - given-names: Jakob H.
+    family-names: Macke
+    affiliation: University of Tübingen
+version: "-"
+date-released: "2025-02-17"
+abstract: >
+  bRAWlstar: Linear Recurrent Unit for raw EEG processing
+
+  We present bRAWlstar, a simple seizure detection model based on the Linear Recurrent 
+  Unit, a linear state-space model for sequence processing. Raw EEG data is preprocessed 
+  by removing the mean and bandstop filtering 60Hz. Then, the model—composed of multiple 
+  LRU layers—receives the preprocessed EEG data (at 256Hz) and predicts timepoint-matched 
+  seizure labels. Training is made efficient with parallel scan, and arbitrary-length 
+  signal can be processed at inference time due to the recurrent nature of the LRU 
+  layer. The model is trained on the Temple University Seizure Corpus, but only on runs 
+  with seizures. Binary classification threshold is further tuned on the TUSZ dev set. 
+  It achieved a subject-averaged F1 score of 0.29 on Siena and 0.45 on the TUSZ 
+  evaluation dataset.
+  
+license: "MIT License"
+repository: "-"
+publication: "-"
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "TUH EEG Seizure Corpus v2.0.3"
+      license: "https://isip.piconepress.com/projects/nedc/forms/tuh_eeg.pdf"
+      identifiers:
+        - description: >
+            This database is a subset of the TUH EEG Corpus that was collected 
+            from archival records of clinical EEG at Temple University Hospital 
+            recorded between 2002 – 2017. From this large dataset, a subset of 
+            files with a high likelihood of containing seizures was retained 
+            based on clinical notes and on the output of seizure detection 
+            algorithms.
+            V2.0.0 contains 7377 .edf files from 675 subjects for a total 
+            duration of 1476 hours of data. The files are mostly short 
+            (avg. 10 minutes). The dataset has heterogeneous sampling frequency 
+            and number of channels. All files are acquired at a minimum of 250 
+            Hz. A minimum of 17 EEG channels is available in all recordings. 
+            They are positioned according to the 10-20 system.
+            The annotations are provided as .csv and contain the start time, 
+            stop, channel and seizure type.
+          type: "url"
+          value: "https://isip.piconepress.com/projects/nedc/html/tuh_eeg/"

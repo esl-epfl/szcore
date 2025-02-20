@@ -1,0 +1,54 @@
+---
+# Description of a seizure detection algorithm
+name: "HySEIZa v1"
+title: "HySEIZa" 
+image: "-"
+authors:
+  - given-names: Meghal
+    family-names: Dani
+    affiliation: University of Tübingen
+  
+  - given-names: Julius
+    family-names: Vetter
+    affiliation: University of Tübingen
+  
+  - given-names: Richard
+    family-names: Gao
+    affiliation: University of Tübingen
+  
+  - given-names: Jakob H.
+    family-names: Macke
+    affiliation: University of Tübingen
+  
+  - given-names: Stefanie
+    family-names: Liebe
+    affiliation: University of Tübingen
+
+version: "1"
+date-released: "2025-02-16"
+abstract: >
+  We present HySEIZa, a seizure detection model leveraging the Hyena hierarchy for 
+  efficient long-range EEG processing. The model classifies 12-second EEG windows 
+  into seizure and non-seizure states at 1 Hz resolution, processing all 19 EEG 
+  channels with minimal preprocessing, including bandpass filtering (0.5–120 Hz) 
+  and notch filtering (50 Hz and 60 Hz). EEG signals are transformed using a 
+  short-term Fourier transform (STFT) with 1-second non-overlapping segments. 
+  Input features are standardized per channel across the training set. During 
+  inference, the model performs sliding-window predictions at 1-second increments, 
+  and the final classification is obtained by averaging predictions over time. 
+  We train and evaluate HySEIZa on the Temple University Seizure Corpus (TUSZ) 
+  and, achieving a subject-averaged F1 score of 66.01. 
+  
+license: "MIT License"
+repository: "-"
+publication: "-"
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "TUH EEG Corpus v2.0.31"
+      license: "-"
+      identifiers:
+        - description: >
+            -
+          type: "url"
+          value: "-"

@@ -1,0 +1,110 @@
+---
+# Description of a seizure detection algorithm
+name: "DeepSOZ-HEM"
+title: "DeepSOZ-HEM" 
+image: "https://hub.docker.com/r/amruth1234/deepsoz-hem:v0.1.1"
+authors:
+  - given-names: Amruth
+    family-names: Niranjan
+    affiliation: BU
+  
+  - given-names: Deeksha M
+    family-names: Shama
+    affiliation: BU
+
+  - given-names: Archana
+    family-names: Venkataraman
+    affiliation: BU
+
+version: "0.1.1"
+date-released: "2025-02-13"
+abstract: >
+  Introduction
+  Epilepsy is a neurological disorder that causes recurring, unprovoked seizures. 
+  Recently, deep learning has offered a unique approach to reliable seizure detection 
+  by capturing latent patterns in EEG data in order to accurately predict seizure onset 
+  and duration. However, automatic seizure detection is still challenging due to high 
+  inter-subject variability, which limits model performance. We present DeepSOZ-HEM, a 
+  robust deep learning framework specifically designed for high-resolution seizure 
+  detection from multichannel scalp EEG, offering strong generalizability across 
+  multiple datasets.
+
+  Methods
+  Building upon our original DeepSOZ model (M. Shama, et al.), DeepSOZ-HEM leverages a 
+  transformer encoder to extract both global and channel-wise features from EEG, which 
+  are subsequently integrated via an LSTM module to capture temporal dynamics at a 
+  second-level resolution. The model is configured to accept inputs sampled at a 
+  frequency of 256 Hz and featuring 19 channels from average-referenced data. We 
+  preprocessed data by splitting all recordings into 10-minute segments with 2 minutes 
+  of overlap between each segment of the recording, zero-padding when necessary. To 
+  postprocess the model’s predictions, we implemented a moving average (25-second) 
+  kernel that smoothed the outputs and stitched outputs from multiple segments of a 
+  recording before converting them into a BIDS-compatible format. We trained DeepSOZ-HEM 
+  using 10-fold cross-validation on a large cohort of 171 patients from the Temple 
+  University Hospital (TUH) corpus. To further enhance detection performance, we 
+  employed a hard example mining (HEM) strategy that iteratively retrains the model on 
+  selected EEG recordings containing heightened false positives and missed detections 
+  from the initial training phase on the TUH dataset. We chose to exclude CHB-MIT 
+  dataset as it is not average-referenced. Finally, the HEM process is complemented by 
+  additional training and validation on 14 patients from the University of Siena Scalp 
+  EEG Database for improved robustness and generalization. 
+
+  Results
+  After the initial 10-fold training stage, we observed an average F1 score of 
+  0.62 土 0.11 across folds.  The best performing model split featured an F1 score of 
+  0.76. After retraining this model using the HEM strategy, we observed an event-based 
+  F1 score of 0.89 on the TUH validation set, indicating that the HEM strategy improved 
+  model performance. We also observed an event-based F1 score of 0.72 on the Siena 
+  dataset, indicating high generalizability. The Siena dataset featured a slight drop 
+  in performance due to its large amount of long EEG recordings (12 hours or more) 
+  with almost exclusively background noise, leading to some inevitable false positives.
+
+  Significance
+  Based on the event-based metrics for F1 score, DeepSOZ-HEM indicates high potential 
+  for success in future clinical applications. This approach offers a reliable seizure 
+  detection algorithm that can be integrated into clinical workflows, especially due to 
+  its ability to generalize well to patient variability. Future works may consider 
+  retraining DeepSOZ’s onset zone localization branch and confidence scoring using HEM.
+  
+license: "GNU GPLv3"
+repository: "https://github.com/deeksha-ms/DeepSOZ/tree/main"
+publication: "https://doi.org/10.1007/978-3-031-43993-3_18"
+
+# List all datasets that were used to train this algorithm
+Dataset:
+    - title: "Siena Scalp EEG Database"
+      license: "https://physionet.org/content/siena-scalp-eeg/view-license/1.0.0/"
+      identifiers:
+        - description: >
+            The database consists of EEG recordings of 14 patients acquired at the Unit 
+            of Neurology and Neurophysiology of the University of Siena.  Subjects include 
+            9 males (ages 25-71) and 5 females (ages 20-58). Subjects were monitored with 
+            a Video-EEG with a sampling rate of 512 Hz, with electrodes arranged on the 
+            basis of the international 10-20 System. Most of the recordings also contain 1 
+            or 2 EKG signals. The diagnosis of epilepsy and the classification of seizures 
+            according to the criteria of the International League Against Epilepsy were 
+            performed by an expert clinician after a careful review of the clinical and 
+            electrophysiological data of each patient.
+          type: "doi"
+          value: "10.13026/5d4a-j060"
+    
+    - title: "TUH EEG Seizure Corpus v2.0.3"
+      license: "https://isip.piconepress.com/projects/nedc/forms/tuh_eeg.pdf"
+      identifiers:
+        - description: >
+            This database is a subset of the TUH EEG Corpus that was collected 
+            from archival records of clinical EEG at Temple University Hospital 
+            recorded between 2002 – 2017. From this large dataset, a subset of 
+            files with a high likelihood of containing seizures was retained 
+            based on clinical notes and on the output of seizure detection 
+            algorithms.
+            V2.0.0 contains 7377 .edf files from 675 subjects for a total 
+            duration of 1476 hours of data. The files are mostly short 
+            (avg. 10 minutes). The dataset has heterogeneous sampling frequency 
+            and number of channels. All files are acquired at a minimum of 250 
+            Hz. A minimum of 17 EEG channels is available in all recordings. 
+            They are positioned according to the 10-20 system.
+            The annotations are provided as .csv and contain the start time, 
+            stop, channel and seizure type.
+          type: "url"
+          value: "https://isip.piconepress.com/projects/nedc/html/tuh_eeg/"
