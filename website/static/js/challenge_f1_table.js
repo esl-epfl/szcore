@@ -39,7 +39,7 @@ async function loadResults() {
             const metricScore = Math.round(data[algorithm].evaluation_dataset.event_results[metric] * 100) ?? ''; // Handle missing data
             const metricCell = createTableCell(metricScore);
             metricCell.classList.add('text-center');
-                    if (metricScore !== '') {
+                    if ((metricScore !== '') && !(metric === "fpRate")) {
                         const color = getColorForScore(metricScore);
                         metricCell.style.backgroundColor = color.bgColor;
                         metricCell.style.color = color.textColor;
