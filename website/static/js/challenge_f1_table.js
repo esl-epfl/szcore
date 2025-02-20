@@ -1,5 +1,5 @@
 // Fetch the bundled results JSON
-async function loadResults() {
+async function loadResults(events_or_samples) {
     const response = await fetch('/challenge_results.json'); // Path to the bundled JSON file
     const data = await response.json();
 
@@ -36,11 +36,12 @@ async function loadResults() {
 
         // Add F1 score for each dataset
         metrics.forEach((metric, i) => {
-            const metricScore = Math.round(data[algorithm].evaluation_dataset.event_results[metric] * 100) ?? ''; // Handle missing data
+            const metricScore = Math.round(data[algorithm].evaluation_dataset[events_or_samples][metric] * 100) ?? ''; // Handle missing data
             const metricCell = createTableCell(metricScore);
             metricCell.classList.add('text-center');
                     if ((metricScore !== '') && !(metric === "fpRate")) {
-                        const color = getColorForScore(metricScore);
+                        // const color = getColorForScore(metricScore);
+                        const color = getThemePurpleColorForScore(metricScore);
                         metricCell.style.backgroundColor = color.bgColor;
                         metricCell.style.color = color.textColor;
                     }
@@ -89,6 +90,60 @@ function getColorForScore(score) {
     };
 }
 
+function getThemePurpleColorForScore(score) {
+    // Normalize the score between 0 and 1
+    const normalizedScore = score / 100;
+
+
+    const hue_max = 262;
+    const saturation_max = 76;
+    const value_max = 93;
+
+    // Define color changing saturation
+    const saturation = normalizedScore * saturation_max;
+
+    rgb = HSVtoRGB(hue_max / 360.0, saturation / 100.0, value_max / 100.0);
+    const red = rgb.r;
+    const green = rgb.g;
+    const blue = rgb.b;
+
+    // Calculate the luminance of the color to determine text color
+    const luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+    const textColor = luminance > 128 ? 'black' : 'white'; // Dark text for light background, light text for dark background
+
+    // Return the color and text color
+    return {
+        bgColor: `rgb(${red}, ${green}, ${blue})`,
+        textColor: textColor
+    };
+}
+
+// Function required by getThemePurpleColorForScore to convert HSV to RGB
+function HSVtoRGB(h, s, v) {
+    var r, g, b, i, f, p, q, t;
+    if (arguments.length === 1) {
+        s = h.s, v = h.v, h = h.h;
+    }
+    i = Math.floor(h * 6);
+    f = h * 6 - i;
+    p = v * (1 - s);
+    q = v * (1 - f * s);
+    t = v * (1 - (1 - f) * s);
+    switch (i % 6) {
+        case 0: r = v, g = t, b = p; break;
+        case 1: r = q, g = v, b = p; break;
+        case 2: r = p, g = v, b = t; break;
+        case 3: r = p, g = q, b = v; break;
+        case 4: r = t, g = p, b = v; break;
+        case 5: r = v, g = p, b = q; break;
+    }
+    return {
+        r: Math.round(r * 255),
+        g: Math.round(g * 255),
+        b: Math.round(b * 255)
+    };
+}
+
 function sortTable(column_number) {
     var table = document.getElementById("table-body");
     var switching, i, x, y, shouldSwitch;
@@ -106,7 +161,6 @@ function sortTable(column_number) {
         shouldSwitch = false;
         /* Get the two elements you want to compare,
         one from current row and one from the next: */
-        console.log(rows[i].getElementsByTagName("TD"))
         x = rows[i].getElementsByTagName("TD")[column_number];
         y = rows[i + 1].getElementsByTagName("TD")[column_number];
         // Check if the two rows should switch place:
@@ -130,6 +184,17 @@ function updateMetricSort(){
     sortTable(parseInt(metricSortSelect));
 }
 
+function updateSampleEventSelect(){
+    var tableBody = document.getElementById("table-body");
+    tableBody.innerHTML = "";
+
+    var tableHead = document.getElementById("table-header");
+    tableHead.innerHTML = "";
+    
+    var eventSampleSelect = document.getElementById('sample-event-select').value;
+    loadResults(eventSampleSelect);
+}
+
 
 // Call the function to load results and populate the table
-loadResults();
+loadResults('event_results');
