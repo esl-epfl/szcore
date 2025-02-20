@@ -35,9 +35,11 @@ abstract: >
   short-term Fourier transform (STFT) with 1-second non-overlapping segments. 
   Input features are standardized per channel across the training set. During 
   inference, the model performs sliding-window predictions at 1-second increments, 
-  and the final classification is obtained by averaging predictions over time. 
-  We train and evaluate HySEIZa on the Temple University Seizure Corpus (TUSZ) 
-  and, achieving a subject-averaged F1 score of 66.01. 
+  and the final classification is obtained by averaging predictions over time. We 
+  train and evaluate HySEIZa on the Temple University Seizure Corpus (TUSZ). In 
+  this version of the model has 6 hyena blocks, and, the decision threshold was 
+  set to 0.58. Using this setting, it  achieved a subject-averaged F1 score of 
+  64.01 on the TUSZ evaluation dataset.
   
 license: "MIT License"
 repository: "-"
