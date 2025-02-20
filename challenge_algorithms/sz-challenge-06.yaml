@@ -53,6 +53,9 @@ abstract: >
   is performed using a Random Forest Classifier (RFC) with 20 estimators, so the 
   classification complexity is (N trees × log features) per window."
   
+brief-summary: >
+  Random Forest Classifier trained the CHB-MIT datasets.
+
 license: "MIT License"
 repository: "-"
 publication: "-"

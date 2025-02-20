@@ -29,7 +29,10 @@ abstract: >
   fine-tuning. This article indicates the possibility of further developing this model 
   and the fine-tuning methodology toward healthcare 5.0, where the AI aid clinicians 
   in a manner of man–machine collaboration. This algorithm was trained on Physionet 
-  CHB-MIT Scalp EEG dataset v1.0.0."
+  CHB-MIT Scalp EEG dataset v1.0.0.
+
+brief-summary: >
+  Multiscale convolutional neural network trained on the CHB-MIT dataset.
   
 license: "MIT License"
 repository: "https://github.com/esl-epfl/eegwavenet_2021"

@@ -52,6 +52,10 @@ abstract: >
   SWEC iEEG datset. CA-EEGWaveNet is trained on a single seizure of the tested subject, 
   while the baseline EEGWaveNet is trained on all but one. CA-EEGWaveNet surpasses the 
   baseline in median F1-score (0.78 vs 0.76).
+
+brief-summary: >
+  EEGWavenet-based model trained the CHB-MIT, Siena Scalp EEG and TUH EEG Seizure 
+  datasets.
   
 license: "Apache License 2.0"
 repository: "https://github.com/IBM/channel-adaptive-eeg-classifier"

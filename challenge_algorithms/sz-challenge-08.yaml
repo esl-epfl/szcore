@@ -38,6 +38,9 @@ abstract: >
   and the final classification is obtained by averaging predictions over time. 
   We train and evaluate HySEIZa on the Temple University Seizure Corpus (TUSZ) 
   and, achieving a subject-averaged F1 score of 66.01. 
+
+brief-summary: >
+  Hyena Hierarchy-based model trained the TUH EEG Corpus.
   
 license: "MIT License"
 repository: "-"

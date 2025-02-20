@@ -28,6 +28,9 @@ abstract: >
   enabling a more effective and efficient diagnostic tool, it has the potential to 
   significantly impact clinical practice, optimizing patient care and outcomes in 
   epilepsy treatment. This model was trained on TUH EEG Seizure Corpus v2.0.3.
+
+brief-summary: >
+  Convolutions followed by a trasnformer trained on the TUH EEG Seizure Corpus.
   
 license: "MIT License"
 repository: "https://github.com/esl-epfl/zhu_2023"

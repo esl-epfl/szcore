@@ -17,18 +17,27 @@ abstract: >
   techniques. Usually, post-processing is required to achieve good performance and 
   enforce temporal dependencies. Designing the right post-processing scheme to convert 
   these classification outputs into events is a tedious, and labor-intensive element of 
-  this framework. Methods: We propose an event-based modeling framework that directly 
+  this framework. 
+  
+  Methods: We propose an event-based modeling framework that directly 
   works with events as learning targets, stepping away from ad-hoc post-processing 
   schemes to turn model outputs into events. We illustrate the practical power of this 
   framework on simulated data and real-world data, comparing it to epoch-based modeling 
-  approaches. Results: We show that event-based modeling (without tailored 
+  approaches. 
+  
+  Results: We show that event-based modeling (without tailored 
   post-processing) performs on par with or better than epoch-based modeling with 
-  extensive post-processing. Conclusion: These results show the power of treating events 
+  extensive post-processing. 
+  
+  Conclusion: These results show the power of treating events 
   as direct learning targets, instead of using ad-hoc post-processing to obtain them, 
   severely reducing design effort. Significance: The event-based modeling framework 
   can easily be applied to other event detection problems in signal processing, removing 
   the need for intensive task-specific post-processing. This model was trained on the 
   train and dev set of TUSZ v2.0.3.
+
+brief-summary: >
+  Event-based classification trained on the TUH EEG Seizure corpus.
 
 license: "MIT License"
 repository: "https://github.com/esl-epfl/eventnet_2024"

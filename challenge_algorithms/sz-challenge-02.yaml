@@ -73,6 +73,9 @@ abstract: >
   length. Processing time averages 5 minutes per hour of EEG using 10 CPU cores and 50 
   GB RAM.
   
+brief-summary: >
+  XGBoost model trained on the Siena Scalp EEG and TUH EEG Seizure datasets.
+
 license: "MIT License"
 repository: "https://github.com/CRCHUM-Epilepsy-Group/sz_detection_challenge2025"
 publication: "-"

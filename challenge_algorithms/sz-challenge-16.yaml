@@ -40,6 +40,9 @@ abstract: >
   On public evaluation data, the model achieved F1 scores above 0.82 for seizure 
   detection. The model requires approximately 3GB of GPU memory during inference (CUDA).
   
+brief-summary: >
+  Joint Embedding Predictive Architecture trained the TUH EEG Seizure corpus.
+
 license: "Private" 
 repository: "-"
 publication: "2025-02-17"

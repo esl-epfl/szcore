@@ -35,6 +35,9 @@ abstract: >
   39%, and FP/24h of 29.1 on the Siena dataset. The algorithm is efficient, but can 
   benefit from training on a larger set of seizures.
   
+brief-summary: >
+  Spectral-feature-based algorithm developed on the Siena Scalp EEG dataset.
+
 license: "MIT License"
 repository: "-"
 publication: "-"

@@ -40,6 +40,9 @@ abstract: >
   this version of the model has 6 hyena blocks, and, the decision threshold was 
   set to 0.58. Using this setting, it  achieved a subject-averaged F1 score of 
   64.01 on the TUSZ evaluation dataset.
+
+brief-summary: >
+  Hyena Hierarchy-based model trained the TUH EEG Seizure Corpus.
   
 license: "MIT License"
 repository: "-"

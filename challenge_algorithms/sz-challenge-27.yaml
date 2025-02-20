@@ -38,6 +38,9 @@ abstract: >
   with seizures. Binary classification threshold is further tuned on the TUSZ dev set. 
   It achieved a subject-averaged F1 score of 0.29 on Siena and 0.45 on the TUSZ 
   evaluation dataset.
+
+brief-summary: >
+  LRU-based architecture trained on the TUH EEG Seizure corpus.
   
 license: "MIT License"
 repository: "-"

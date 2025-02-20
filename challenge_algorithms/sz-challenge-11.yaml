@@ -1,7 +1,7 @@
 ---
 # Description of a seizure detection algorithm
 name: "SeizureTransformer"
-title: SeizureTransformer" 
+title: "SeizureTransformer" 
 image: "https://hub.docker.com/r/yujjio/seizure_transformer"
 authors:
   - given-names: Kerui
@@ -33,6 +33,10 @@ abstract: >
   experiments on a public EEG seizure detection dataset demonstrate that our model 
   significantly outperforms existing approaches, underscoring its potential for real-time, 
   precise seizure detection.
+
+brief-summary: >
+  Convolution, Network-in-Network, Residual Connections and Transformer model trained the 
+  Siena Scalp EEG and TUH EEG Seizure datasets.
   
 license: "MIT License"
 repository: "https://github.com/keruiwu/SeizureTransformer"

@@ -43,6 +43,10 @@ abstract: >
   were excluded. The model is trained on records from TUH, CHBMIT, SIENA and a 
   private source of data.
   
+brief-summary: >
+  Convolution-Transformer model trained on the CHB-MIT, TUH EEG Seizure, 
+  Siena Scalp EEG and private-sourced datasets.
+
 license: "Under Copyright"
 repository: "-"
 publication: "-"

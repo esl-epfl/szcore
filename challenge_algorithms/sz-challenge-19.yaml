@@ -66,6 +66,9 @@ abstract: >
   its ability to generalize well to patient variability. Future works may consider 
   retraining DeepSOZ’s onset zone localization branch and confidence scoring using HEM.
   
+brief-summary: >
+  Transformer-encoder with LSTM train on the Siena Scalp EEG and TUH EEG Seizure datasets.
+
 license: "GNU GPLv3"
 repository: "https://github.com/deeksha-ms/DeepSOZ/tree/main"
 publication: "https://doi.org/10.1007/978-3-031-43993-3_18"

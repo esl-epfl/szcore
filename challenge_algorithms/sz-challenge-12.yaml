@@ -41,6 +41,9 @@ abstract: >
   dataset and the SeizIT2 dataset. While further refinements are needed for clinical 
   application, the results demonstrate the potential of the proposed approach for robust 
   automatic seizure detection.
+
+brief-summary: >
+  U-Net based model trained the TUH EEG Seizure and KU Leuven SeizeIT2 datasets.
   
 license: "GNU GPLv3"
 repository: "https://github.com/kkontras/EpilepsyChallenge"

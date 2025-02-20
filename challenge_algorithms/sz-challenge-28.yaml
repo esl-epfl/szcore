@@ -21,6 +21,9 @@ abstract: >
   step was added to define epileptic events and Kalman filter the model output before 
   defining the events.
 
+brief-summary: >
+  TCN-GRU architecture trained on the CHB-MIT dataset.
+
 license: "Apache License 2.0"
 repository: "-"
 publication: "-"

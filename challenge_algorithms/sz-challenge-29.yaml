@@ -34,6 +34,10 @@ abstract: >
   and requires sufficient memory allocation for loading EEG files. Benchmarks 
   using an NVIDIA 3090 (12GB) and 62GB RAM indicate a total processing time of 
   approximately two hours for the full TUSZ dataset.
+
+brief-summary: >
+  Model based on the pre-trained LaBraM model finetuned on the Siena Scalp EEG,
+  TUH EEG Seizure and TUH EEG datasets.
   
 license: "MIT License"
 repository: "-"

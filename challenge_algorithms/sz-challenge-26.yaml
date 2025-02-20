@@ -64,6 +64,10 @@ abstract: >
   achieves a favorable balance between detection accuracy and computational efficiency, 
   making it suitable for deployment in resource-constrained clinical settings.
   
+brief-summary: >
+  Hilbert-Huang Transform followed by AlexNet trained on the CHB-MIT dataset and 
+  data colelcted by the Iranian Center of Neurological Research.
+
 license: "Apache License 2.0"
 repository: "-"
 publication: "-"

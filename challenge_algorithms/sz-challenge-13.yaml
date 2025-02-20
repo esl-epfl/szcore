@@ -38,6 +38,9 @@ abstract: >
   During inference, the model classifies each 12-second EEG window independently. We train 
   and evaluate SeizFormer on the Temple University Seizure Corpus (TUSZ) and, achieving a 
   subject-averaged F1 score of 54.65.
+
+brief-summary: >
+  Combination of convolutions and transformer architecture trained the TUH EEG Seizure Corpus.
   
 license: "MIT License"
 repository: "-"

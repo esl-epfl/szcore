@@ -44,6 +44,9 @@ abstract: >
   setting, it  achieved a subject-averaged F1 score of 0.59 on SSDD and 0.68 on the 
   TUSZ evaluation dataset, demonstrating strong generalization to unseen data.
   
+brief-summary: >
+  Model based on the S4 backbone trained on the TUH EEG Seizure Corpus.
+
 license: "MIT License"
 repository: "-"
 publication: "-"

@@ -113,6 +113,10 @@ abstract: >
   random seeds for the splits of the data would be advantageous. Such an approach would 
   provide a confidence interval which offers a more robust fundament for comparative 
   measures.
+
+brief-summary: >
+  EEG-transformer model trained the TUH EEG Seizure and TUH EEG datasets.
+  
   
 license: "Proprietary - Copyright 2025 BrainCapture. All Rights Reserved."
 repository: "-"
