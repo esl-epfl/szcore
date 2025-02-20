@@ -11,7 +11,7 @@ A detailed description of the challenge is presented [here]({{< ref "/challenge-
 
 The challenge run from December 2024 to February 2024, totalling **30 algorithms** from **19 teams**. All algorithms were evaluated on the **[TODO]** dataset which remained private during the challenge. 
 
-## Event-based Scoring
+## Algorithm Scoring Results
 For all algorithms we evaluted the [F1-score](https://en.wikipedia.org/wiki/F-score) (%), [Sensitivity](https://en.wikipedia.org/wiki/Sensitivity_and_specificity) (%), [Precision](https://en.wikipedia.org/wiki/Precision_and_recall) (%) and the number daily [false positives](https://en.wikipedia.org/wiki/False_positives_and_false_negatives).
 
 {{< challenge_f1_table >}}
