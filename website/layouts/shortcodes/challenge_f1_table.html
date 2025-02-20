@@ -13,7 +13,7 @@
 
     .tooltip .tooltiptext {
         visibility: hidden;
-        width: 400px;
+        width: 250px;
         max-width: 500px;
         background-color: black;
         color: #fff;
@@ -24,9 +24,9 @@
         /* Position the tooltip */
         position: absolute;
         z-index: 1;
-        top: 100%;
+        bottom: 100%;
         left: 50%;
-        margin-left: -50%;
+        margin-left: -60px;
     }
 
     .tooltip:hover .tooltiptext {
@@ -55,12 +55,6 @@
             </select>
         </div>
     </div>
-<!-- 
-    <div style="display: table; width:100%;">
-        <div style="display: table-cell;">Low</div>
-        <div id="purple_gradient" style="text-align:center; display: table-cell;">  </div>
-        <div style="display: table-cell;">High</div>
-    </div> -->
 
     <div class="grid place-content-center w-full">
         <table id="results" class="table-fixed", style="display:table;">
@@ -74,6 +68,11 @@
             </tbody>
         </table>
     </div>
+
+    <div id="brief-algorithm-summary" style="height: 30px;">
+        
+    </div>
+
 </div>
 
 <script src="{{ .Site.BaseURL }}/js/challenge_f1_table.js"></script>

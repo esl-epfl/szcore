@@ -76,21 +76,30 @@ function createTableCellLink(content, url, briefSummary) {
 
     const td = document.createElement("td");
 
-    const div = document.createElement("div");
-    div.className = "tooltip";
+    // const div = document.createElement("div");
+    // div.className = "tooltip";
 
-    const span = document.createElement("span");
-    span.className = "tooltiptext";
-    span.innerHTML = briefSummary;
+    // const span = document.createElement("span");
+    // span.className = "tooltiptext";
+    // span.innerHTML = briefSummary;
 
     const a = document.createElement("a");
     a.setAttribute('href',url);
     a.innerHTML = content;
 
-    div.appendChild(a)
-    div.appendChild(span)
+    a.onmouseover = function(e) {
+        var briefDescriptor = document.getElementById("brief-algorithm-summary");
+        briefDescriptor.innerHTML = briefSummary;
+    };
+    a.onmouseout = function(e) {
+        var briefDescriptor = document.getElementById("brief-algorithm-summary");
+        briefDescriptor.innerHTML = "";
+    };
 
-    td.appendChild(div);
+    // div.appendChild(a)
+    // div.appendChild(span)
+
+    td.appendChild(a);
     return td;
 }
 
