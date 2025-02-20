@@ -10,7 +10,7 @@ SzCORE is published in [Epilepsia](https://doi.org/10.1111/epi.18113) !
 {.text-center .text-xl}
 
 {{< alert "code" >}}
-The [seizure detection challenge]({{< ref "/challenge" >}}), organized in partnership with [The International Conference on Artificial Intelligence and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/) (2025), [EPFL](https://www.epfl.ch/labs/esl/), [ETH](https://iis.ee.ethz.ch/) has been completed!
+The [seizure detection challenge]({{< ref "/challenge-description" >}}), organized in partnership with [The International Conference on Artificial Intelligence and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/) (2025), [EPFL](https://www.epfl.ch/labs/esl/), [ETH](https://iis.ee.ethz.ch/) has been completed!
 {.text-center .text-xl}
 
 **See the [results]({{< ref "/challenge" >}})!**

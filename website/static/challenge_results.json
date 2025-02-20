@@ -1,0 +1,727 @@
+{
+  "sz-challenge-00": {
+    "algorithm_name": "DynSD",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16181873188563095,
+        "sensitivity_std": 0.1728837712629253,
+        "precision": 0.010398175095877014,
+        "precision_std": 0.01980404885284986,
+        "f1": 0.018449122622449736,
+        "f1_std": 0.03311878382654499,
+        "fpRate": 1940.8401407739404,
+        "fpRate_std": 1966.4356582201588
+      },
+      "event_results": {
+        "sensitivity": 0.6701479076479077,
+        "sensitivity_std": 0.33750380477289416,
+        "precision": 0.00860435911377815,
+        "precision_std": 0.007559950370380821,
+        "f1": 0.016858424482851356,
+        "f1_std": 0.014630148434563993,
+        "fpRate": 95.115741937477,
+        "fpRate_std": 42.59395754653881
+      }
+    }
+  },
+  "sz-challenge-01": {
+    "algorithm_name":"Van Gogh Detect",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.5154906585208963,
+        "sensitivity_std": 0.32747309165853966,
+        "precision": 0.1306250115289031,
+        "precision_std": 0.2134343292950913,
+        "f1": 0.16841050231596136,
+        "f1_std": 0.2287236708401947,
+        "fpRate": 2586.640451934121,
+        "fpRate_std": 7490.605779627463
+      },
+      "event_results": {
+        "sensitivity": 0.6185064935064934,
+        "sensitivity_std": 0.3442384340859614,
+        "precision": 0.16728605757316545,
+        "precision_std": 0.2197910827502648,
+        "f1": 0.22060753411218142,
+        "f1_std": 0.24368411650944008,
+        "fpRate": 19.58827956943631,
+        "fpRate_std": 49.54904568626509
+      }
+    }
+  },
+  "sz-challenge-02": {
+    "algorithm_name":"Multi-scale Gradient Boosting v1",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-03": {
+    "algorithm_name":"Multi-scale Gradient Boosting v2",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-04": {
+    "algorithm_name":"Multi-scale Gradient Boosting v3",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-05": {
+    "algorithm_name":"SD2025",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-06": {
+    "algorithm_name":"Random Forest",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-07": {
+    "algorithm_name":"ConvNet",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-08": {
+    "algorithm_name":"HySEIZa v1",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-09": {
+    "algorithm_name":"HySEIZa v2",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-10": {
+    "algorithm_name":"Channel-adaptive classifier",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-11": {
+    "algorithm_name":"SeizureTransformer",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-12": {
+    "algorithm_name":"SeizUnet",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-13": {
+    "algorithm_name":"SeizFormer",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-14": {
+    "algorithm_name":"STORM",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-15": {
+    "algorithm_name":"NE Illusion 1 v1",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-16": {
+    "algorithm_name":"NE Illusion 1 v2",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-17": {
+    "algorithm_name":"NE Illusion 1 v3",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-18": {
+    "algorithm_name":"Serial Band Powers",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-19": {
+    "algorithm_name":"DeepSOZ-HEM",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-20": {
+    "algorithm_name":"eventNet",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-21": {
+    "algorithm_name":"eegwavenet",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-22": {
+    "algorithm_name":"zhu-transformer",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-23": {
+    "algorithm_name":"S4Seizure v2",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-24": {
+    "algorithm_name":"S4Seizure v3",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-25": {
+    "algorithm_name":"S4Seizure v1",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-26": {
+    "algorithm_name":"HHT-AlexNet",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-27": {
+    "algorithm_name":"bRAWlstar",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  },
+  "sz-challenge-28": {
+    "algorithm_name":"Features-TCN-GRU",
+    "evaluation_dataset": {
+      "sample_results": {
+        "sensitivity": 0.16384903181573104,
+        "sensitivity_std": 0.14136821958789542,
+        "precision": 0.032723735353386976,
+        "precision_std": 0.041410655074110646,
+        "f1": 0.0465554503067521,
+        "f1_std": 0.05614274508194485,
+        "fpRate": 2441.613741100823,
+        "fpRate_std": 1685.6680197997314
+      },
+      "event_results": {
+        "sensitivity": 0.9126623376623378,
+        "sensitivity_std": 0.14874207016279975,
+        "precision": 0.02634675142426299,
+        "precision_std": 0.032531120559907506,
+        "f1": 0.049258561762728234,
+        "f1_std": 0.055921396108825724,
+        "fpRate": 241.34696271127652,
+        "fpRate_std": 64.98509882930641
+      }
+    }
+  }
+}
