@@ -134,7 +134,7 @@ function formatDatasets(datasets) {
         return `
             <div class="dataset">
                 <h3>${dataset.title}</h3>
-                <p><strong>License:</strong> <a href="${dataset.license}" target="_blank">${dataset.license}</a></p>
+                <p><strong>License:</strong> ${dataset.license}</p>
                 <h4>Identifiers:</h4>
                 ${dataset.identifiers.map(id => {
                     return `
