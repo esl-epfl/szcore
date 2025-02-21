@@ -60,7 +60,7 @@ async function loadResults(events_or_samples) {
 
         tableBody.appendChild(row);
     });
-    sortTable(1);
+    updateMetricSort();
 }
 
 // Helper function to create a table cell
