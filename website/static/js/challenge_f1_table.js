@@ -89,7 +89,8 @@ function createTableCellLink(content, url, briefSummary) {
 
     a.onmouseover = function(e) {
         var briefDescriptor = document.getElementById("brief-algorithm-summary");
-        briefDescriptor.innerHTML = briefSummary;
+        briefDescriptor.innerHTML = "<strong style=\"color:#7b39ed;\">Brief Summary. </strong>" + briefSummary 
+        + " <em> Click on method name for more details. </em>";
     };
     a.onmouseout = function(e) {
         var briefDescriptor = document.getElementById("brief-algorithm-summary");
