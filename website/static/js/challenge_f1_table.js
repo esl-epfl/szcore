@@ -71,36 +71,34 @@ function createTableCell(content) {
 }
 
 function createTableCellLink(content, url, briefSummary) {
-//     <div class="tooltip">Hover over me
-//   <span class="tooltiptext">Transformer-based model trained on the TUH dataset.</span>
 
     const td = document.createElement("td");
 
-    // const div = document.createElement("div");
-    // div.className = "tooltip";
+    const div = document.createElement("div");
+    div.className = "tooltip";
 
-    // const span = document.createElement("span");
-    // span.className = "tooltiptext";
-    // span.innerHTML = briefSummary;
+    const span = document.createElement("span");
+    span.className = "tooltiptext";
+    span.innerHTML = briefSummary;
 
     const a = document.createElement("a");
     a.setAttribute('href',url);
     a.innerHTML = content;
 
-    a.onmouseover = function(e) {
-        var briefDescriptor = document.getElementById("brief-algorithm-summary");
-        briefDescriptor.innerHTML = "<strong style=\"color:#7b39ed;\">Brief Summary. </strong>" + briefSummary 
-        + " <em> Click on method name for more details. </em>";
-    };
-    a.onmouseout = function(e) {
-        var briefDescriptor = document.getElementById("brief-algorithm-summary");
-        briefDescriptor.innerHTML = "";
-    };
+    // a.onmouseover = function(e) {
+    //     var briefDescriptor = document.getElementById("brief-algorithm-summary");
+    //     briefDescriptor.innerHTML = "<strong style=\"color:#7b39ed;\">Brief Summary. </strong>" + briefSummary 
+    //     + "<br><em> Click on method name for more details. </em>";
+    // };
+    // a.onmouseout = function(e) {
+    //     var briefDescriptor = document.getElementById("brief-algorithm-summary");
+    //     briefDescriptor.innerHTML = "";
+    // };
 
-    // div.appendChild(a)
-    // div.appendChild(span)
+    div.appendChild(a)
+    div.appendChild(span)
 
-    td.appendChild(a);
+    td.appendChild(div);
     return td;
 }
 
