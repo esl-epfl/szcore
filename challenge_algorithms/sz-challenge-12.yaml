@@ -43,7 +43,7 @@ abstract: >
   automatic seizure detection.
 
 brief-summary: >
-  U-Net based model trained the TUH EEG Seizure and KU Leuven SeizeIT2 datasets.
+  U-Net based model trained on the TUH EEG Seizure and KU Leuven SeizeIT2 datasets.
   
 license: "GNU GPLv3"
 repository: "https://github.com/kkontras/EpilepsyChallenge"

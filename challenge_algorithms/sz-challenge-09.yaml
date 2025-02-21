@@ -42,7 +42,7 @@ abstract: >
   64.01 on the TUSZ evaluation dataset.
 
 brief-summary: >
-  Hyena Hierarchy-based model trained the TUH EEG Seizure Corpus.
+  Hyena Hierarchy-based model trained on the TUH EEG Seizure Corpus.
   
 license: "MIT License"
 repository: "-"

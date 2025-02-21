@@ -40,7 +40,7 @@ abstract: >
   subject-averaged F1 score of 54.65.
 
 brief-summary: >
-  Combination of convolutions and transformer architecture trained the TUH EEG Seizure Corpus.
+  Combination of convolutions and transformer architecture trained on the TUH EEG Seizure Corpus.
   
 license: "MIT License"
 repository: "-"

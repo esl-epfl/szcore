@@ -35,7 +35,7 @@ abstract: >
   precise seizure detection.
 
 brief-summary: >
-  Convolution, Network-in-Network, Residual Connections and Transformer model trained the 
+  Convolution, Network-in-Network, Residual Connections and Transformer model trained on the 
   Siena Scalp EEG and TUH EEG Seizure datasets.
   
 license: "MIT License"

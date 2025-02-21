@@ -54,7 +54,7 @@ abstract: >
   baseline in median F1-score (0.78 vs 0.76).
 
 brief-summary: >
-  EEGWavenet-based model trained the CHB-MIT, Siena Scalp EEG and TUH EEG Seizure 
+  EEGWavenet-based model trained on the CHB-MIT, Siena Scalp EEG and TUH EEG Seizure 
   datasets.
   
 license: "Apache License 2.0"

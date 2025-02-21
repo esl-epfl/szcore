@@ -41,7 +41,7 @@ abstract: >
   detection. The model requires approximately 3GB of GPU memory during inference (CUDA).
   
 brief-summary: >
-  Joint Embedding Predictive Architecture trained the TUH EEG Seizure corpus.
+  Joint Embedding Predictive Architecture trained on the TUH EEG Seizure corpus.
 
 license: "Private" 
 repository: "-"

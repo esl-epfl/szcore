@@ -115,7 +115,7 @@ abstract: >
   measures.
 
 brief-summary: >
-  EEG-transformer model trained the TUH EEG Seizure and TUH EEG datasets.
+  EEG-transformer model trained on the TUH EEG Seizure and TUH EEG datasets.
   
   
 license: "Proprietary - Copyright 2025 BrainCapture. All Rights Reserved."

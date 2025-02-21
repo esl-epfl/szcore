@@ -28,7 +28,7 @@ abstract: >
   (256 hz sampling frequency) was approximately 120 seconds. 
   
 brief-summary: >
-  Convolutional Neural Network trained the CHB-MIT datasets.
+  Convolutional Neural Network trained on the CHB-MIT datasets.
 
 license: "MIT License"
 repository: "-"
