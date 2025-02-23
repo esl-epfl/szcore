@@ -196,7 +196,17 @@ function sortTable(column_number) {
         x = rows[i].getElementsByTagName("TD")[column_number];
         y = rows[i + 1].getElementsByTagName("TD")[column_number];
         // Check if the two rows should switch place:
-        if (parseInt(x.innerHTML.toLowerCase()) < parseInt(y.innerHTML.toLowerCase())) {
+
+        var x_value = 0;
+        var y_value = 0;
+        if (x.innerHTML.toLowerCase() != "nan"){
+            x_value = parseInt(x.innerHTML.toLowerCase());
+        }
+        if (y.innerHTML.toLowerCase() != "nan"){
+            y_value = parseInt(y.innerHTML.toLowerCase());
+        }
+
+        if ( x_value < y_value) {
           // If so, mark as a switch and break the loop:
           shouldSwitch = true;
           break;
