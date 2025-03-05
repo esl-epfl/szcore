@@ -173,7 +173,7 @@ function fillContent(data) {
     // Update repository section
     document.getElementById('repository-url').innerHTML = `<a href="${data.repository}" target="_blank">${data.repository}</a>`;
     document.getElementById('license-text').innerText = data.license || "No license available";
-    document.getElementById('algorithm-image').innerHTML = `<a href="https://${data.image}" target="_blank">https://${data.image}</a>`;
+    document.getElementById('algorithm-image').innerHTML = `<a href="${data.image}" target="_blank">${data.image}</a>`;
 
 }
 
