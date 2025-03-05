@@ -135,9 +135,9 @@ jobs:
             mv $algo website/public/algorithms/$ALGO_NAME.yaml
           done
 
-          - name: Copy challenge algorithms
-          run: |
-            cp -r ./challenge_algorithms website/public/challenge_algorithms
+      - name: Copy challenge algorithms
+        run: |
+          cp -r ./challenge_algorithms website/public/challenge_algorithms
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
