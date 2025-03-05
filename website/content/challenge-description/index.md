@@ -3,7 +3,7 @@ title: "Description of the Seizure detection challenge (2025)"
 description: "Description of the seizure detection challenge organized at the AI in Epilepsy and Neurological disorders in March 2025."
 ---
 
-In partnership with [The International Conference on Artificial Intelligence in Epilepsy and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/) (2025), [EPFL](https://www.epfl.ch/labs/esl/), [ETH](https://iis.ee.ethz.ch/) and partners are organizing a seizure detection challenge.
+In partnership with [The International Conference on Artificial Intelligence in Epilepsy and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/) (2025), [EPFL](https://www.epfl.ch/labs/esl/) and partners are organizing a seizure detection challenge.
 
 | Key Dates        | Description       |
 |------------------|-------------------|
