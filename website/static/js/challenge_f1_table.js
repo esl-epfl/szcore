@@ -27,7 +27,7 @@ async function loadResults(events_or_samples) {
     metrics.forEach((dataset, i) => {
         const headerCell = createTableCell(metricNames[i]);
         headerCell.classList.add('text-center');
-        headerCell.classList.add('w-16');
+        headerCell.classList.add('w-24');
         tableHeaderRow.appendChild(headerCell);
     });
 
