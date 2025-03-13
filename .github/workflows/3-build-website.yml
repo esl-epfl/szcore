@@ -70,7 +70,7 @@ jobs:
   build-hugo:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.139.0
+      HUGO_VERSION: 0.145.0
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -80,12 +80,12 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-            hugo-version: '0.139.0'
+            hugo-version: '0.145.0'
             # extended: true
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '23'
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
       - name: Install Node packages
