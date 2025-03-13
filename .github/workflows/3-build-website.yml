@@ -92,15 +92,12 @@ jobs:
         run: |
           cd website/themes/blowfish
           npm ci
-      - name: Install TailwindCSS
-        run: |
-          npm install tailwindcss @tailwindcss/cli
       - name: Build TailwindCSS
         run: |
           cd website
           mkdir -p ./assets/css/
           mv tailwind.config.js ./themes/blowfish/tailwind.config.js
-          npx @tailwindcss/cli -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
+          ./themes/blowfish/node_modules/tailwindcss/lib/cli.js -c ./themes/blowfish/tailwind.config.js -i ./themes/blowfish/assets/css/main.css -o ./assets/css/compiled/main.css --jit
       - name: Build Hugo
         run: |
           cd website
