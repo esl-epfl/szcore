@@ -4,11 +4,6 @@ on:
   pull_request:
     paths:
       - 'algorithms/*.yaml'
-      - '.github/workflows/1-pr-check.yml'
-  push:
-    paths:
-      - 'algorithms/*.yaml'
-      - '.github/workflows/1-pr-check.yml'
 
 jobs:
 
@@ -21,13 +16,16 @@ jobs:
         password: ${{ secrets.github_token }}
     steps:
 
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: find algorithm files
         run: |
           {
             echo 'FILELIST<<EOF'
-            find ./algorithms -name '*.yaml' -print
+            git diff --name-only HEAD^1 HEAD | grep -E 'algorithms/.*\.yaml$' | tr -d \'\"
             echo EOF
           }  >> "$GITHUB_ENV"
 
@@ -43,13 +41,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: find algorithm files
         run: |
           {
             echo 'FILELIST<<EOF'
-            find ./algorithms -name '*.yaml' -print
+            git diff --name-only HEAD^1 HEAD | grep -E 'algorithms/.*\.yaml$' | tr -d \'\"
             echo EOF
           }  >> "$GITHUB_ENV"
 
@@ -62,6 +63,7 @@ jobs:
               exit 1
             fi
           done
+
       - name: Check output
         run: |
           HEADER_REGEX='onset	duration	eventType	confidence	channels	dateTime	recordingDuration'
