@@ -3,7 +3,7 @@
 title: "Gotman - Automatic recognition of epileptic seizures in the EEG (1982)" 
 image: "ghcr.io/esl-epfl/gotman_1982:latest"
 authors:
-  - given-names: Jean
+  - given-names: Test
     family-names: Gotman
     affiliation: Montreal Neurological Institute
   - given-names: Clément
