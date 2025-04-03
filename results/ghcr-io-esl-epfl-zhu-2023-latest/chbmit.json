@@ -1,0 +1,22 @@
+{
+  "sample_results": {
+    "sensitivity": 0.0,
+    "sensitivity_std": 0.0,
+    "precision": NaN,
+    "precision_std": NaN,
+    "f1": NaN,
+    "f1_std": NaN,
+    "fpRate": 0.0,
+    "fpRate_std": 0.0
+  },
+  "event_results": {
+    "sensitivity": 0.0,
+    "sensitivity_std": 0.0,
+    "precision": NaN,
+    "precision_std": NaN,
+    "f1": NaN,
+    "f1_std": NaN,
+    "fpRate": 0.0,
+    "fpRate_std": 0.0
+  }
+}
