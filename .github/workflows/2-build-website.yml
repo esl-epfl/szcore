@@ -1,15 +1,10 @@
 name: Build website
 on:
-  workflow_run:
-    workflows: ["Execute algorithm and evaluate metrics"]
-    branches: [main]
-    types: 
-      - completed
-
   push:
     branches: [ "main" ]
     paths:
       - 'website/**'
+      - 'results/**'
 
   workflow_dispatch:
 
