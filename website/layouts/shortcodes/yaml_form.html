@@ -1,0 +1,230 @@
+
+<form class="w-full max-w-lg">
+    <div class="flex flex-wrap -mx-3">
+        <div class="w-full px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-title">
+                Title *
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-title" type="text" placeholder="Full algorithm title" name="title" required>
+        </div>
+        <div class="w-full px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-image">
+                Image *
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-image" type="text" placeholder="Docker image" name="image" required>
+        </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-short">
+                Short title *
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-short" type="text" placeholder="Short title" required maxlength="20" name="short-title">
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-version">
+                Version *
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-version" type="text" placeholder="1.0.0" required name="version">
+        </div>
+    </div>
+    <h3>Algorithm authors</h3>
+    <div id="authors-container">
+        <div class="author-fields flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-given-names">
+                    Given Name *
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-given-names" name="author_given_names[]" type="text" placeholder="Jane" required>
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-family-names">
+                    Family Name *
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-family-names" name="author_family_names[]" type="text" placeholder="Doe" required>
+            </div>
+            <div class="w-full px-3 mt-2">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-institution">
+                    Institution *
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-institution" name="author_institution[]" type="text" placeholder="EPFL" required>
+            </div>
+            <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-email">
+                    Email  (optional)
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-email" name="author_email[]" type="email" placeholder="john.doe@epfl.ch">
+            </div>
+        </div>
+    </div>
+    <!-- Add Author Button -->
+    <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+            <button type="button" id="add-author-button" class="bg-primary-400 text-white py-2 px-4 rounded-md hover:bg-primary-500">
+                Add Author
+            </button>
+        </div>
+    </div>
+    <h3>Algorithm description</h3>
+    <div class="flex flex-wrap -mx-3 mb-3">
+        <div class="w-full px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-abstract">
+                Abstract *
+            </label>
+            <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-abstract" name="abstract" rows="20" cols="50" required>
+Abstract that describes your algorithm. We recommend the following structure for abstracts:
+- A clear description of the algorithm, and/or ML model including assumptions and parameters.
+- A description of the input data of the algorithm specifying sampling frequency, and number of channels.
+- A description of the training data.
+- An explanation of any training data that were excluded, and all pre-processing steps.
+- An analysis of measured performance on the publicly available datasets
+- An analysis of the complexity (time, space, sample size) of any algorithm.
+            </textarea>
+        </div>
+        <div class="w-full px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-repository">
+                Repository (optional)
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-repository" type="url" placeholder="https://github.com/esl-epfl/szcore" name="repository">
+        </div>
+        <div class="w-full px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-license">
+                License *
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-license" type="text" placeholder="GNU GPLv3" required name="license">
+        </div>
+        <div class="w-full px-3 mt-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                Training Datasets *
+            </label>
+            <input class="bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mr-5" id="grid-chb" type="checkbox"><label for="grid-chb">Physionet CHB-MIT Scalp EEG Database</label><br/>
+            <input class="bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mr-5" id="grid-siena" type="checkbox"><label for="grid-chb">Physionet Siena Scalp EEG</label><br/>
+            <input class="bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mr-5" id="grid-tuh" type="checkbox"><label for="grid-tuh">Temple University Seizure Corpus</label><br/>
+            <input class="bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mr-5" id="grid-tuh-eeg" type="checkbox"><label for="grid-tuh-eeg">Temple University EEG Corpus</label><br/>
+            <input class="bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mr-5" id="grid-seizeit1" type="checkbox"><label for="grid-seizeit1">KU Leuven SeizeIT1</label><br/>
+            <input class="bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mr-5" id="grid-seizeit2" type="checkbox"><label for="grid-seizeit2">KU Leuven SeizeIT2</label><br/>
+            <input class="bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-2 mr-5" id="grid-dianalund" type="checkbox"><label for="grid-dianalund">Dianalund Scalp EEG dataset</label><br/>
+            <div class="mt-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="custom-dataset">
+                    Custom Dataset (Optional)
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="custom-dataset" name="custom_dataset" type="text" placeholder="Enter custom dataset name">
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+            <button class="bg-primary-400 text-white py-2 px-4 rounded-md hover:bg-primary-500" type="submit">
+                Submit
+            </button>
+        </div>
+    </div>
+</form>
+
+<script>
+    document.getElementById('add-author-button').addEventListener('click', function () {
+        const authorsContainer = document.getElementById('authors-container');
+
+        // Create a new author fields container
+        const newAuthorFields = document.createElement('div');
+        newAuthorFields.classList.add('author-fields', 'w-full', 'flex', 'flex-wrap', '-mx-3', 'mb-6');
+
+        // Add fields for a new author with a remove button
+        newAuthorFields.innerHTML = `
+            <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-given-names">
+                    Given Names *
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="author_given_names[]" type="text" placeholder="Jane" required>
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-family-names">
+                    Family Names *
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="author_family_names[]" type="text" placeholder="Doe" required>
+            </div>
+            <div class="w-full px-3 mt-2">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-institution">
+                    Institution *
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="author_institution[]" type="text" placeholder="EPFL" required>
+            </div>
+            <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-email">
+                    Email (optional)
+                </label>
+                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="author_email[]" type="email" placeholder="john.doe@epfl.ch">
+            </div>
+            <div class="w-full px-3">
+                <button type="button" class="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 remove-author-button">
+                    Remove Author
+                </button>
+            </div>
+        `;
+
+        // Append the new author fields to the container
+        authorsContainer.appendChild(newAuthorFields);
+
+        // Add event listener to the remove button
+        newAuthorFields.querySelector('.remove-author-button').addEventListener('click', function () {
+            authorsContainer.removeChild(newAuthorFields);
+        });
+    });
+
+    document.querySelector('form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        // Capture form data
+        const formData = new FormData(e.target);
+
+        // Process authors (multiple fields)
+        const authors = [];
+        const givenNames = formData.getAll('author_given_names[]');
+        const familyNames = formData.getAll('author_family_names[]');
+        const institutions = formData.getAll('author_institution[]');
+        const emails = formData.getAll('author_email[]');
+
+        for (let i = 0; i < givenNames.length; i++) {
+            authors.push({
+                given_names: givenNames[i],
+                family_names: familyNames[i],
+                institution: institutions[i],
+                email: emails[i] || null, // Email is optional
+            });
+        }
+
+        // Process datasets (checkboxes)
+        const datasets = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(
+            (checkbox) => checkbox.nextElementSibling.textContent.trim()
+        );
+
+        // Add custom dataset if provided
+        const customDataset = formData.get('custom_dataset');
+        if (customDataset && customDataset.trim() !== '') {
+            datasets.push(customDataset.trim());
+        }
+
+        // Build YAML object
+        const yamlData = {
+            title: formData.get('title'),
+            image: formData.get('image'),
+            short_title: formData.get('short-title'),
+            version: formData.get('version'),
+            authors: authors,
+            abstract: formData.get('abstract'),
+            repository: formData.get('repository') || null, // Optional
+            license: formData.get('license'),
+            datasets: datasets,
+        };
+
+        // Convert to YAML
+        const yamlString = jsyaml.dump(yamlData);
+
+        // Trigger download
+        const blob = new Blob([yamlString], { type: 'text/yaml' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'algorithm_submission.yaml';
+        link.click();
+    });
+</script>
