@@ -4,28 +4,28 @@ name: "SeizFormer"
 title: "SeizFormer" 
 image: "-"
 authors:
-  - given-names: Meghal
-    family-names: Dani
+  - given_names: Meghal
+    family_names: Dani
     affiliation: University of Tübingen
   
-  - given-names: Julius
-    family-names: Vetter
+  - given_names: Julius
+    family_names: Vetter
     affiliation: University of Tübingen
   
-  - given-names: Richard
-    family-names: Gao
+  - given_names: Richard
+    family_names: Gao
     affiliation: University of Tübingen
   
-  - given-names: Jakob H.
-    family-names: Macke
+  - given_names: Jakob H.
+    family_names: Macke
     affiliation: University of Tübingen
   
-  - given-names: Stefanie
-    family-names: Liebe
+  - given_names: Stefanie
+    family_names: Liebe
     affiliation: University of Tübingen
 
 version: "1"
-date-released: "2025-02-16"
+date_released: "2025-02-16"
 abstract: >
   We present SeizFormer, a seizure detection model that combines convolutional and 
   transformer-based architectures to classify 12-second EEG windows into seizure and 

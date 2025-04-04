@@ -4,36 +4,36 @@ name: "Multi-scale Gradient Boosting v2"
 title: "An Efficient Pipeline for Seizure Detection on Scalp EEG Combining Multi-scale Features and Gradient Boosting (submission 2)" 
 image: "ghcr.io/crchum-epilepsy-group/sz_detect_crchum:new-kid"
 authors:
-  - given-names: Elie Bou
-    family-names: Assi
+  - given_names: Elie Bou
+    family_names: Assi
     affiliation: CRCHUM Epilepsy Research Team, Montreal, Canada
   
-  - given-names: Daniel
-    family-names: Galindo
+  - given_names: Daniel
+    family_names: Galindo
     affiliation: CRCHUM Epilepsy Research Team, Montreal, Canada
   
-  - given-names: Oumayma
-    family-names: Gharbi
+  - given_names: Oumayma
+    family_names: Gharbi
     affiliation: CRCHUM Epilepsy Research Team, Montreal, Canada
   
-  - given-names: François
-    family-names: Hardy
+  - given_names: François
+    family_names: Hardy
     affiliation: CRCHUM Epilepsy Research Team, Montreal, Canada
   
-  - given-names: Amirhossein
-    family-names: Jahani
+  - given_names: Amirhossein
+    family_names: Jahani
     affiliation: CRCHUM Epilepsy Research Team, Montreal, Canada
   
-  - given-names: Émile
-    family-names: Lemoine
+  - given_names: Émile
+    family_names: Lemoine
     affiliation: CRCHUM Epilepsy Research Team, Montreal, Canada
   
-  - given-names: Isabel Sarzo
-    family-names: Wabi
+  - given_names: Isabel Sarzo
+    family_names: Wabi
     affiliation: CRCHUM Epilepsy Research Team, Montreal, Canada
 
 version: "v2"
-date-released: "2025-02-15"
+date_released: "2025-02-15"
 abstract: >
   Rationale and Algorithm: Seizure detection on scalp EEG faces challenges due to poor signal-to-noise ratio and 
   heterogeneity in seizure patterns and localizations. We developed a feature extraction algorithm that captures 

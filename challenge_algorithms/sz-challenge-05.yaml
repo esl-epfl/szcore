@@ -4,20 +4,20 @@ name: "SD2025"
 title: "SD2025" 
 image: "https://hub.docker.com/r/eegdude/solution1"
 authors:
-  - given-names: Shuranov 
-    family-names: Evgenii
+  - given_names: Shuranov 
+    family_names: Evgenii
     affiliation: ITMO
   
-  - given-names: Rafael 
-    family-names: Grigorian
+  - given_names: Rafael 
+    family_names: Grigorian
     affiliation: MSU
   
-  - given-names: Konstantin 
-    family-names: Chukaev
+  - given_names: Konstantin 
+    family_names: Chukaev
     affiliation: DeniS
 
 version: "-"
-date-released: "2025-02-16"
+date_released: "2025-02-16"
 abstract: > 
   This is a deep learning-based approach for seizure detection, leveraging a 
   pre-trained Labram model. Initial pre-training weights are sourced from the 

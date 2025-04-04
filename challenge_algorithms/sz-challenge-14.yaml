@@ -4,20 +4,20 @@ name: "STORM"
 title: "STORM: Self-supervised Transformer for Optimized Recognition in EEG Modeling" 
 image: "-"
 authors:
-  - given-names: William Theodor
-    family-names: Lehn-Schiøler
+  - given_names: William Theodor
+    family_names: Lehn-Schiøler
     affiliation: BrainCapture
   
-  - given-names: Magnus Guldberg
-    family-names: Pedersen
+  - given_names: Magnus Guldberg
+    family_names: Pedersen
     affiliation: M.Sc. Eng student, DTU Compute
   
-  - given-names: Benjamin Kock
-    family-names: Fazal
+  - given_names: Benjamin Kock
+    family_names: Fazal
     affiliation: M.Sc. Eng student, DTU Compute
 
 version: "-"
-date-released: "2025-02-16"
+date_released: "2025-02-16"
 abstract: >
   Clinical interpretations of electroencephalography (EEG) recordings remain an area of 
   uncertainty and high inter-reader variability - especially in resource-limited regions 

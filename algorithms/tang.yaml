@@ -3,19 +3,19 @@
 title: "Self-Supervised Graph Neural Networks for Improved Electroencephalographic Seizure Analysis"
 image: "ghcr.io/esl-epfl/tang_2021:latest"
 authors:
-  - given-names: Siyi
-    family-names: Tang
+  - given_names: Siyi
+    family_names: Tang
     affiliation: Stanford Universit
-  - given-names: Clément
-    family-names: Samanos
+  - given_names: Clément
+    family_names: Samanos
     affiliation: EPFL-ESL
-  - given-names: Jonathan
-    family-names: Dan
+  - given_names: Jonathan
+    family_names: Dan
     email: jonathan.dan@epfl.ch
     affiliation: EPFL-ESL
     orcid: 'https://orcid.org/0000-0002-2338-572X'
 version: 0.1
-date-released: "2022-04-22"
+date_released: "2022-04-22"
 abstract: >
   Automated seizure detection and classification from electroencephalography
   (EEG) can greatly improve seizure diagnosis and treatment. However, several

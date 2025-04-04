@@ -4,16 +4,16 @@ name: "Random Forest"
 title: "EEG Seizure Detection using Random Forest"
 image: "https://hub.docker.com/r/yuxiaohe/eeg2"
 authors:
-  - given-names: Yuxiao
-    family-names: He
+  - given_names: Yuxiao
+    family_names: He
     affiliation: Rensselaer Polytechnic Institute
   
-  - given-names: Bulent
-    family-names: Yener
+  - given_names: Bulent
+    family_names: Yener
     affiliation: Rensselaer Polytechnic Institute
 
 version: "-"
-date-released: "2025-02-16"
+date_released: "2025-02-16"
 abstract: > 
   The EEG seizure detection algorithm is based on Random Forest Model. The model leverages 
   a combination of statistical, spectral, and entropy-based features extracted from 

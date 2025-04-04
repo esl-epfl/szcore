@@ -3,19 +3,19 @@
 title: "Gotman - Automatic recognition of epileptic seizures in the EEG (1982)" 
 image: "ghcr.io/esl-epfl/gotman_1982:latest"
 authors:
-  - given-names: Jean
-    family-names: Gotman
+  - given_names: Jean
+    family_names: Gotman
     affiliation: Montreal Neurological Institute
-  - given-names: Clément
-    family-names: Samanos
+  - given_names: Clément
+    family_names: Samanos
     affiliation: EPFL-ESL
-  - given-names: Jonathan
-    family-names: Dan
+  - given_names: Jonathan
+    family_names: Dan
     email: jonathan.dan@epfl.ch
     affiliation: EPFL-ESL
     orcid: 'https://orcid.org/0000-0002-2338-572X'
 version: 0.1
-date-released: "1982-01-01"
+date_released: "1982-01-01"
 abstract: >
   During prolonged EEG monitoring of epileptic patients, the continuous EEG 
   tracing may be replaced by a selective recording of ictal and interictal 

@@ -4,11 +4,11 @@ name: "Features-TCN-GRU"
 title: "seizure_detection" 
 image: "-"
 authors:
-  - given-names: Yunlin
-    family-names: Li
+  - given_names: Yunlin
+    family_names: Li
     affiliation: "-"
 version: "1"
-date-released: "2025-02-14"
+date_released: "2025-02-14"
 abstract: >
   The seizure detection algorithm utilizes data from CHB-MIT to train, validate and 
   test the model. Specifically, the EEG data are first preprocessed according to the 

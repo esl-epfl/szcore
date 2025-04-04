@@ -4,11 +4,11 @@ name: "zhu-transformer"
 title: "zhu-transformer" 
 image: "ghcr.io/esl-epfl/zhu_2023:latest"
 authors:
-  - given-names: Clement
-    family-names: Samanos
+  - given_names: Clement
+    family_names: Samanos
     affiliation: EPFL
 version: "-"
-date-released: "2025-02-13"
+date_released: "2025-02-13"
 abstract: >
   Epilepsy is a prevalent neurological disorder characterized by recurring seizures, 
   affecting approximately 50 million individuals globally. Given the potential severity 

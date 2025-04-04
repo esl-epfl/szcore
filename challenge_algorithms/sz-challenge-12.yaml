@@ -4,28 +4,28 @@ name: "SeizUnet"
 title: "SeizUnet" 
 image: "https://hub.docker.com/r/mvanmarc/challengeszcorebiomed"
 authors:
-  - given-names: Konstantinos
-    family-names: Kontras
+  - given_names: Konstantinos
+    family_names: Kontras
     affiliation: SAT KU Leuven
   
-  - given-names: Maarten
-    family-names: Vanmarcke
+  - given_names: Maarten
+    family_names: Vanmarcke
     affiliation: SAT KU Leuven
   
-  - given-names: Miguel
-    family-names: Bhagubai
+  - given_names: Miguel
+    family_names: Bhagubai
     affiliation: SAT KU Leuven
   
-  - given-names: Christos
-    family-names: Chatzichristos
+  - given_names: Christos
+    family_names: Chatzichristos
     affiliation: SAT KU Leuven
   
-  - given-names: Maarten
-    family-names: De Vos
+  - given_names: Maarten
+    family_names: De Vos
     affiliation: SAT KU Leuven, Development and Regeneration KU Leuven
 
 version: "-"
-date-released: "2025-02-16"
+date_released: "2025-02-16"
 abstract: >
   Electroencephalography (EEG) is a vital tool for diagnosing and monitoring epilepsy. 
   Manual annotation of epileptic seizures is a labor-intensive process performed by 

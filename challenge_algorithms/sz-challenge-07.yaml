@@ -4,12 +4,12 @@ name: "ConvNet"
 title: "EEG seizure detection algorithm " 
 image: "elakkat/eeg_seizure_detection:myapp"
 authors:
-  - given-names: Elakkat D. 
-    family-names: Gireesh
+  - given_names: Elakkat D. 
+    family_names: Gireesh
     affiliation: "-"
 
 version: "-"
-date-released: "2025-02-16"
+date_released: "2025-02-16"
 abstract: >
   Seizure detection using convolutional neural network: 
   The data is prepared from MIT Physionet database, where EEG was acquired at 256hz 

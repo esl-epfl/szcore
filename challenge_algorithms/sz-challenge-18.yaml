@@ -4,20 +4,20 @@ name: "Serial Band Powers"
 title: "Detect Serial Band Powers" 
 image: "https://hub.docker.com/r/ravinderjits/seizure_detect"
 authors:
-  - given-names: Ravinderjit
-    family-names: Singh
+  - given_names: Ravinderjit
+    family_names: Singh
     affiliation: Neurology, Mount Sinai
 
-  - given-names: Benjamin
-    family-names: Kummer
+  - given_names: Benjamin
+    family_names: Kummer
     affiliation: Neurology, Mount Sinai
   
-  - given-names: Ho Wing
-    family-names: Chan
+  - given_names: Ho Wing
+    family_names: Chan
     affiliation: Neurology, Mount Sinai
 
 version: "-"
-date-released: "2025-02-17"
+date_released: "2025-02-17"
 abstract: >
   The algorithm analyzes data in 5 second segments. First the algorithm rejects bad 
   channels in each 5 second segment by looking for channels with high deflections in 

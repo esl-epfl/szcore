@@ -4,16 +4,16 @@ name: "NE Illusion 1 v1"
 title: "NE Illusion 1" 
 image: "-"
 authors:
-  - given-names: Maximilian
-    family-names: Kalcher
+  - given_names: Maximilian
+    family_names: Kalcher
     affiliation: ETH
   
-  - given-names: Marian
-    family-names: Galovic
+  - given_names: Marian
+    family_names: Galovic
     affiliation: USZ
 
 version: "1"
-date-released: "2025-02-17"
+date_released: "2025-02-17"
 abstract: >
   This submission implements a self-supervised learning approach for EEG seizure detection 
   using a Joint Embedding Predictive Architecture (JEPA). The model learns EEG signal 

@@ -4,20 +4,20 @@ name: "DeepSOZ-HEM"
 title: "DeepSOZ-HEM" 
 image: "https://hub.docker.com/r/amruth1234/deepsoz-hem:v0.1.1"
 authors:
-  - given-names: Amruth
-    family-names: Niranjan
+  - given_names: Amruth
+    family_names: Niranjan
     affiliation: BU
   
-  - given-names: Deeksha M
-    family-names: Shama
+  - given_names: Deeksha M
+    family_names: Shama
     affiliation: BU
 
-  - given-names: Archana
-    family-names: Venkataraman
+  - given_names: Archana
+    family_names: Venkataraman
     affiliation: BU
 
 version: "0.1.1"
-date-released: "2025-02-13"
+date_released: "2025-02-13"
 abstract: >
   Introduction
   Epilepsy is a neurological disorder that causes recurring, unprovoked seizures. 

@@ -696,12 +696,12 @@
                     "$ref": "#/definitions/email",
                     "description": "The person's email address."
                 },
-                "family-names": {
+                "family_names": {
                     "description": "The person's family names.",
                     "minLength": 1,
                     "type": "string"
                 },
-                "given-names": {
+                "given_names": {
                     "description": "The person's given names.",
                     "minLength": 1,
                     "type": "string"
@@ -782,7 +782,7 @@
             "type": "array",
             "uniqueItems": true
         },
-        "date-released": {
+        "date_released": {
             "$ref": "#/definitions/date",
             "description": "The date the work has been released."
         },

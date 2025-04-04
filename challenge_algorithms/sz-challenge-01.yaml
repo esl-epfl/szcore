@@ -4,23 +4,23 @@ name: "Van Gogh Detect"
 title: "Van Gogh Detect" 
 image: "-"
 authors:
-  - given-names: Céline
-    family-names: Martineau
+  - given_names: Céline
+    family_names: Martineau
     affiliation: Reliev
-  - given-names: Giovanni Lo
-    family-names: Bianco
+  - given_names: Giovanni Lo
+    family_names: Bianco
     affiliation: Reliev
-  - given-names: François
-    family-names: Baudoin
+  - given_names: François
+    family_names: Baudoin
     affiliation: Reliev
-  - given-names: Laurent
-    family-names: Ribiere
+  - given_names: Laurent
+    family_names: Ribiere
     affiliation: Reliev
-  - given-names: Stanislas
-    family-names: Chambon
+  - given_names: Stanislas
+    family_names: Chambon
     affiliation: Reliev
 version: "-"
-date-released: "2025-02-15"
+date_released: "2025-02-15"
 abstract: >
   Van Gogh Detect
   The proposed seizure detection model is a binary classification algorithm that 

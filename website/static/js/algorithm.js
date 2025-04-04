@@ -118,7 +118,7 @@ async function loadYAML(fileName) {
 
 function formatAuthors(authors) {
     const listItems = authors.map(author => {
-        const name = `${author['given-names']} ${author['family-names']}`;
+        const name = `${author['given_names']} ${author['family_names']}`;
         const orcid = author.orcid ? ` - <a href="${author.orcid}" target="_blank">ORCID</a>` : '';
         return `<li class="author">${name}${orcid}</li>`;
     }).join('');
@@ -155,7 +155,7 @@ function fillContent(data) {
 
     // Update version and release date
     document.getElementById('algorithm-version').innerText = data.version || "N/A";
-    document.getElementById('release-date').innerText = data['date-released'] || "N/A";
+    document.getElementById('release-date').innerText = data['date_released'] || "N/A";
 
     // Update abstract section
     document.getElementById('abstract-text').innerText = data.abstract || "No abstract available";

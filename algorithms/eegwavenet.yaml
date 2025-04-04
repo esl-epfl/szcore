@@ -3,19 +3,19 @@
 title: "EEGWaveNet: Multiscale CNN-Based Spatiotemporal Feature Extraction for EEG Seizure Detection" 
 image: "ghcr.io/esl-epfl/eegwavenet_2021:latest"
 authors:
-  - given-names: Punnawish
-    family-names: Thuwajit
+  - given_names: Punnawish
+    family_names: Thuwajit
     affiliation: Vidyasirimedhi Institute of Science and Technology
-  - given-names: Clément
-    family-names: Samanos
+  - given_names: Clément
+    family_names: Samanos
     affiliation: EPFL-ESL
-  - given-names: Jonathan
-    family-names: Dan
+  - given_names: Jonathan
+    family_names: Dan
     email: jonathan.dan@epfl.ch
     affiliation: EPFL-ESL
     orcid: 'https://orcid.org/0000-0002-2338-572X'
 version: 0.1
-date-released: "2022-08-22"
+date_released: "2022-08-22"
 abstract: >
   The detection of seizures in epileptic patients via Electroencephalography 
   (EEG) is an essential key to medical treatment. With the advances in deep 

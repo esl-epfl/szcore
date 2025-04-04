@@ -4,20 +4,20 @@ name: "SeizureTransformer"
 title: "SeizureTransformer" 
 image: "https://hub.docker.com/r/yujjio/seizure_transformer"
 authors:
-  - given-names: Kerui
-    family-names: Wu
+  - given_names: Kerui
+    family_names: Wu
     affiliation: Department of Computer Science, Rensselaer Polytechnic Institute
   
-  - given-names: Ziyue
-    family-names: Zhao
+  - given_names: Ziyue
+    family_names: Zhao
     affiliation: Department of Computer Science, Rensselaer Polytechnic Institute
   
-  - given-names: Bülent
-    family-names: Yener
+  - given_names: Bülent
+    family_names: Yener
     affiliation: Department of Computer Science, Rensselaer Polytechnic Institute
 
 version: "-"
-date-released: "2025-02-16"
+date_released: "2025-02-16"
 abstract: >
   We introduce a novel deep-learning architecture for simultaneous seizure detection that 
   departs from traditional window-level classification methods. Instead of assigning a 

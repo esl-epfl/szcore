@@ -3,19 +3,19 @@
 title: "Automated Seizure Detection using Transformer Models on Multi-Channel EEGs" 
 image: "ghcr.io/esl-epfl/zhu_2023:latest"
 authors:
-  - given-names: Yuanda
-    family-names: Zhu
+  - given_names: Yuanda
+    family_names: Zhu
     affiliation: Georgia Institute of Technology
-  - given-names: Clément
-    family-names: Samanos
+  - given_names: Clément
+    family_names: Samanos
     affiliation: EPFL-ESL
-  - given-names: Jonathan
-    family-names: Dan
+  - given_names: Jonathan
+    family_names: Dan
     email: jonathan.dan@epfl.ch
     affiliation: EPFL-ESL
     orcid: 'https://orcid.org/0000-0002-2338-572X'
 version: 0.1
-date-released: "2023-11-14"
+date_released: "2023-11-14"
 abstract: >
   Epilepsy is a prevalent neurological disorder characterized by recurring 
   seizures, affecting approximately 50 million individuals globally. Given the 

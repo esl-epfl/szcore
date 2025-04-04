@@ -3,19 +3,19 @@
 title: "Seeuws - Avoiding Post-Processing With Event-Based Detection in Biomedical Signals" 
 image: "ghcr.io/esl-epfl/eventnet_2024:latest"
 authors:
-  - given-names: Nick
-    family-names: Seeuws
+  - given_names: Nick
+    family_names: Seeuws
     affiliation: KU Leuven
-  - given-names: Clément
-    family-names: Samanos
+  - given_names: Clément
+    family_names: Samanos
     affiliation: EPFL-ESL
-  - given-names: Jonathan
-    family-names: Dan
+  - given_names: Jonathan
+    family_names: Dan
     email: jonathan.dan@epfl.ch
     affiliation: EPFL-ESL
     orcid: 'https://orcid.org/0000-0002-2338-572X'
 version: 0.1
-date-released: "2024-03-11"
+date_released: "2024-03-11"
 abstract: >
   Objective: Finding events of interest is a common task in biomedical signal 
   processing. The detection of epileptic seizures and signal artefacts are two 

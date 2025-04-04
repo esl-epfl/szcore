@@ -4,28 +4,28 @@ name: "HHT-AlexNet"
 title: "Seizure Detect HHT-AlexNet" 
 image: "-"
 authors:
-  - given-names: Hedieh
-    family-names: Jafarpourdavatgar
+  - given_names: Hedieh
+    family_names: Jafarpourdavatgar
     affiliation: AUT
   
-  - given-names: Samaneh Alsadat
-    family-names: Saeedinia
+  - given_names: Samaneh Alsadat
+    family_names: Saeedinia
     affiliation: IUST
   
-  - given-names: Amir reza
-    family-names: Bahadori
+  - given_names: Amir reza
+    family_names: Bahadori
     affiliation: ICNR
 
-  - given-names: Afshan
-    family-names: Davari
+  - given_names: Afshan
+    family_names: Davari
     affiliation: ICNR
 
-  - given-names: Abbas
-    family-names: Tafakhori
+  - given_names: Abbas
+    family_names: Tafakhori
     affiliation: ICNR
 
 version: 
-date-released: "2025-01-28"
+date_released: "2025-01-28"
 abstract: >
   In this work, we present a novel algorithm for seizure detection that integrates 
   transfer learning with AlexNet, the Hilbert-Huang Transform (HHT), and a module to 

@@ -4,24 +4,24 @@ name: "Channel-adaptive classifier"
 title: "Channel-adaptive EEG classifier" 
 image: "docker.io/francescocarzaniga/epfl-challenge:ca-eegwavenet-v1"
 authors:
-  - given-names: Francesco
-    family-names: Carzaniga
+  - given_names: Francesco
+    family_names: Carzaniga
     affiliation: Inselspital, IBM
   
-  - given-names: Michael
-    family-names: Hersche
+  - given_names: Michael
+    family_names: Hersche
     affiliation: IBM
 
-  - given-names: Kaspar
-    family-names: Schindler
+  - given_names: Kaspar
+    family_names: Schindler
     affiliation: Inselspital
   
-  - given-names: Abbas
-    family-names: Rahimi
+  - given_names: Abbas
+    family_names: Rahimi
     affiliation: IBM
     
 version: "1"
-date-released: "2025-02-16"
+date_released: "2025-02-16"
 abstract: >
   The channel-adaptive EEG architecture (CA-EEGWaveNet here) seamlessly processes any 
   multi-variate signal with an arbitrary number of channels. It uses three components: 
