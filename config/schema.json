@@ -124,6 +124,7 @@
         "short_title": {
             "description": "A short name of the software or dataset.",
             "minLength": 1,
+            "maxLength": 20,
             "type": "string"
         },
         "version": {
