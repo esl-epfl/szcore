@@ -1,7 +1,7 @@
 ---
 # Description of a seizure detection algorithm
-name: "DynSD"
-title: "DynSD" 
+name: "DynaSD"
+title: "DynaSD" 
 image: "ghcr.io/wojemann/dynasd_competition:latest"
 authors:
   - given_names: William K.S.
@@ -10,32 +10,7 @@ authors:
 version: 0.1
 date_released: "2025-02-13"
 abstract: >
-  We submit the DynaSD (Dynamic Seizure Detection) seizure detection algorithm for 
-  the AI in Epilepsy seizure detection competition. This algorithm uses autoregressive 
-  loss as a seizure detection feature. We use a 12th order multivariate autoregressive 
-  LSTM with a 10-element hidden state shared across all channels that is then fed through 
-  a fully connected layer. In each clip, we assume that the first 60 seconds of the 
-  clip will not contain a seizure or an abundance of ictal activity and can approximate
-  patient and channel specific baseline neurophysiology. We train the LSTM to minimize 
-  autoregressive mean squared error using the default adam optimizer parameters from 
-  pytorch on the 60-second baseline period. We then deploy the algorithm on 1 second 
-  windows with 0.5 seconds of overlap and average the mean absolute error within each 
-  clip. We then threshold each window based on the average optimal threshold for 
-  annotating seizure onset channels in a cohort of annotated intracranial EEG seizure 
-  recordings.  We then applied a 5-second moving median window followed by a temporal 
-  smoothing procedure where, for each window, 14 seconds of the following 15 seconds 
-  must also be classified as seizure activity. Using this temporally smoothed signal, 
-  we required that at least 9 (more than half) of the channels be detected as seizing 
-  for a window to be classified as seizure activity. Prior to training and detection, 
-  we bipolar re reference the signal, applied a notch filter at 60 and 120 Hz, bandpass 
-  filtered the signal from 1 to 100 Hz, and then downsampled the signal to 128 Hz. We 
-  tuned the filter frequencies, spatial and temporal smoothing parameters, and the 
-  training sample size hyperparameters using the first 5 patients of the CHB-MIT scalp 
-  dataset. We achieved a median (25th and 75th percentile) F1 score of 1.0 (0.58,1.0) 
-  on this limited dataset. We do not report any space, time, or sample complexity for 
-  our model, however, we did observe that running inference on one, 1-hour clip takes 
-  approximately 15 seconds on an M1 Pro silicone chip with 10 CPU and 16 GPU cores and 
-  32 GB of unified RAM.
+  We submit the DynaSD seizure detection algorithm for the AI in Epilepsy seizure detection competition. This algorithm leverages multivariate autoregressive loss for unsupervised seizure detection. We first train a deep autoregressive model on the beginning of each continuous EEG clip to learn baseline neural dynamics. The model is then deployed on 1-second windows with 0.5-second overlap, averaging the prediction error within each clip. Seizure detection is based on a threshold optimized on annotated intracranial EEG recordings. We tuned the following processing hyperparameters using a subset of the CHB-MIT dataset. Preprocessing includes bipolar re-referencing, normalizing the signal to the model training period, notch filtering at 60 and 120 Hz, bandpass filtering from 1 to 100 Hz, and downsampling to 128 Hz. After thresholding, we apply a 15-second temporal smoothing procedure to reduce false positives from artifacts and epileptiform spikes. A window is classified as seizure activity only if at least 9 channels (more than half) are detected as seizing.
 
 brief-summary: >
   LSTM-based model trained on the CHB-MIT dataset.
