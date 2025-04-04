@@ -32,12 +32,11 @@ jobs:
 
       - name: Convert and validate using jsonschema
         run: |
-          touch algo.json
           for algo in ${FILELIST}; do
             yq -o json $algo > algo.json \
             && jsonschema-cli -i algo.json "config/schema.json"
+            rm algo.json
           done
-          rm algo.json
 
   check_image:
     runs-on: ubuntu-latest
