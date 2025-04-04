@@ -4,25 +4,17 @@ async function loadResults() {
     const data = await response.json();
 
     const algorithms = Object.keys(data);
-    const datasets = new Set();
-    algorithms.forEach(algorithm => {
-        Object.keys(data[algorithm]).forEach(dataset => {
-            datasets.add(dataset);
-        });
-    });
 
-    const tableHeaderRow = document.getElementById("table-header");
+
     const tableBody = document.getElementById("table-body");
-
-    // Add an empty cell in the top-left corner
-    tableHeaderRow.appendChild(createTableCell("Algorithms"));
-
-    // Add dataset names as column headers
-    datasets.forEach(dataset => {
-        const headerCell = createTableCell(dataset.replace(".json", ""));
-        headerCell.classList.add('text-center');
-        headerCell.classList.add('w-16');
-        tableHeaderRow.appendChild(headerCell);
+    // Get datasets from the table header row, skipping the first column
+    const tableHeaderRow = document.getElementById("table-header");
+    const headerCells = tableHeaderRow.querySelectorAll("td");
+    const datasets = new Set();
+    headerCells.forEach((cell, index) => {
+        if (index > 0) { // Skip the first column
+            datasets.add(cell.textContent.trim());
+        }
     });
 
     // Add a row for each algorithm

@@ -1,0 +1,79 @@
+<style>
+    #purple_gradient {
+        height: 100px;
+        background-color: rgb(255, 255, 255); /* For browsers that do not support gradients */
+        background-image: linear-gradient(90deg, rgb(255, 255, 255), rgb(124, 58, 237));
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        /* border-bottom: 1px dotted black; */
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 250px;
+        max-width: 500px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 5px;
+        
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+</style>
+
+<div class="py-20 w-full place-content-center">
+    <div style="overflow:hidden;">
+        <div style="float:left;">
+            Display:
+            <select name="sample-event-select" id="sample-event-select" onchange="updateSampleEventSelect()">
+                <option value="event_results">Event-based</option>
+                <option value="sample_results">Sample-based</option>
+            </select>
+        </div>
+
+        <div style="float:right;">
+            Sort by:
+            <select name="metric-sort-select" id="metric-sort-select" onchange="updateMetricSort()">
+                <option value="1">F1-Score</option>
+                <option value="2">Sensitivity</option>
+                <option value="3">Precision</option>
+                <option value="4">False Positives</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="place-content-center w-full">
+        <table id="results" data-source='{{ .Get "dataset" }}' class="table-fixed" style="display:table;">
+            <thead>
+                <tr id="table-header" class="font-bold uppercase">
+                    <!-- Table header content goes here -->
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Table rows go here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- <div id="brief-algorithm-summary" style="height: 40px;">
+        
+    </div> -->
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+<script src="{{ .Site.BaseURL }}/js/dataset_table.js"></script>
