@@ -160,7 +160,9 @@ datasets:
   - Dianalund Scalp EEG dataset
 ```
 
-Here is a tool to generate a valid `.yaml` file.
+Here is a tool to generate a valid `.yaml` file that you should then submit as a [pull-request](https://github.com/esl-epfl/szcore/pulls).
+
+{{< github repo="esl-epfl/szcore" >}}
 
 ### YAML form generator
 
