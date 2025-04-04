@@ -123,7 +123,7 @@ repository: "-"
 publication: "-"
 
 # List all datasets that were used to train this algorithm
-Dataset:
+datasets:
     - title: "TUH EEG Seizure Corpus v2.0.3"
       license: "https://isip.piconepress.com/projects/nedc/forms/tuh_eeg.pdf"
       identifiers:

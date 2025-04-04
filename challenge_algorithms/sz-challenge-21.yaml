@@ -39,7 +39,7 @@ repository: "https://github.com/esl-epfl/eegwavenet_2021"
 publication: "-"
 
 # List all datasets that were used to train this algorithm
-Dataset:
+datasets:
     - title: "Physionet CHB-MIT Scalp EEG dataset v1.0.0"
       license: "ODC-By-1.0"
       identifiers:

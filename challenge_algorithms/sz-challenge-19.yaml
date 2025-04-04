@@ -74,7 +74,7 @@ repository: "https://github.com/amruth-sn/deepsoz-hem"
 publication: "https://doi.org/10.1007/978-3-031-43993-3_18"
 
 # List all datasets that were used to train this algorithm
-Dataset:
+datasets:
     - title: "Siena Scalp EEG Database"
       license: "https://physionet.org/content/siena-scalp-eeg/view-license/1.0.0/"
       identifiers:

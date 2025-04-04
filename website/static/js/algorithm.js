@@ -128,24 +128,10 @@ function formatAuthors(authors) {
 
 // Function to format datasets section
 function formatDatasets(datasets) {
-    return datasets.map(dataset => {
-        return `
-            <div class="dataset">
-                <h3>${dataset.title}</h3>
-                <p><strong>License:</strong> <a href="${dataset.license}" target="_blank">${dataset.license}</a></p>
-                <h4>Identifiers:</h4>
-                ${dataset.identifiers.map(id => {
-                    return `
-                        <ul>
-                            <li><strong>Description:</strong> ${id.description}</li>
-                            <li><strong>Type:</strong> ${id.type}</li>
-                            <li><strong>Value:</strong> <a href="https://doi.org/${id.value}" target="_blank">${id.value}</a></li>
-                        </ul>
-                    `;
-                }).join('')}
-            </div>
-        `;
+    const listItems = datasets.map(dataset => {
+        return `<li>${dataset}</li>`;
     }).join('');
+    return `<ul>${listItems}</ul>`;
 }
 
 // Function to fill the content in the HTML page
@@ -165,7 +151,7 @@ function fillContent(data) {
     document.getElementById('authors-list').innerHTML = authorsContent;
 
     // Update dataset section
-    const datasetsContent = formatDatasets(data.Dataset);
+    const datasetsContent = formatDatasets(data.datasets);
     document.getElementById('datasets-list').innerHTML = datasetsContent;
 
     // Update repository section

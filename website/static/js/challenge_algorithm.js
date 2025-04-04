@@ -167,7 +167,7 @@ function fillContent(data) {
     document.getElementById('authors-list').innerHTML = authorsContent;
 
     // Update dataset section
-    const datasetsContent = formatDatasets(data.Dataset);
+    const datasetsContent = formatDatasets(data.datasets);
     document.getElementById('datasets-list').innerHTML = datasetsContent;
 
     // Update repository section

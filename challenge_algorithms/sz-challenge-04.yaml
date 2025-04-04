@@ -74,7 +74,7 @@ repository: "https://github.com/CRCHUM-Epilepsy-Group/sz_detection_challenge2025
 publication: "-"
 
 # List all datasets that were used to train this algorithm
-Dataset:
+datasets:
     - title: "Siena Scalp EEG Database"
       license: "https://physionet.org/content/siena-scalp-eeg/view-license/1.0.0/"
       identifiers:

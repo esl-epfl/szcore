@@ -44,7 +44,7 @@ repository: "-"
 publication: "-"
 
 # List all datasets that were used to train this algorithm
-Dataset:
+datasets:
     - title: "Siena Scalp EEG Database"
       license: "https://physionet.org/content/siena-scalp-eeg/view-license/1.0.0/"
       identifiers:

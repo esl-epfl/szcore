@@ -50,7 +50,7 @@ repository: "-"
 publication: "-"
 
 # List all datasets that were used to train this algorithm
-Dataset:
+datasets:
     - title: "TUH EEG Corpus v2.0.31"
       license: "-"
       identifiers:

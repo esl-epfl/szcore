@@ -1,6 +1,7 @@
 ---
 # Description of a seizure detection algorithm
 title: "Gotman - Automatic recognition of epileptic seizures in the EEG (1982)" 
+short_title: "Gotman 1982"
 image: "ghcr.io/esl-epfl/gotman_1982:latest"
 authors:
   - given_names: Jean
@@ -13,7 +14,6 @@ authors:
     family_names: Dan
     email: jonathan.dan@epfl.ch
     affiliation: EPFL-ESL
-    orcid: 'https://orcid.org/0000-0002-2338-572X'
 version: 0.1
 date_released: "1982-01-01"
 abstract: >
@@ -39,12 +39,5 @@ license: GPL-3.0
 repository: https://github.com/esl-epfl/gotman_1982
 
 # List all datasets that were used to train this algorithm
-Dataset:
-    - title: "Gotman 1982"
-      license: "https://doi.org/10.1016/0013-4694(82)90038-4"
-      identifiers:
-        - description: >
-            Private dataset of 24 scalp-EEG recordings with an average duration 
-            of 12.4 h and 44 intracerebral recordings with an average duration of 18.7h.
-          type: doi
-          value: "10.5281/zenodo.123456"
+datasets:
+  - "Gotman 1982"
