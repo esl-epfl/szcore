@@ -46,4 +46,4 @@ repository: https://github.com/esl-epfl/eventnet_2024
 
 # List all datasets that were used to train this algorithm
 datasets:
-  - TUH EEG Seizure Corpus
+  - TUH Seizure Corpus
