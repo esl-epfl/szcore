@@ -88,7 +88,7 @@ async function fetchTrainingDatasets(algorithm) {
                 else if (dataset === 'Physionet Siena Scalp EEG'){
                     return 'siena';
                 }
-                else if (dataset === 'TUH EEG Seizure Corpus'){
+                else if (dataset === 'TUH Seizure Corpus'){
                     return 'tuh';
                 }
                 else if (dataset === 'KU Leuven SeizeIT1'){
