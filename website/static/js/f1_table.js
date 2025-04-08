@@ -23,21 +23,28 @@ async function loadResults() {
 
         // Fetch the short_title from the YAML file
         const shortTitle = await fetchShortTitle(algorithm);
+        const trainingDatasets = await fetchTrainingDatasets(algorithm);
 
         // Add short_title as the row header with a link
         row.appendChild(createTableCellLink(shortTitle || algorithm, `/algorithm/?algo=${algorithm}`));
 
         // Add F1 score for each dataset
         datasets.forEach(dataset => {
-            const f1Score = Math.round(data[algorithm][dataset]?.event_results?.f1 * 100) ?? ''; // Handle missing data
-            const f1Cell = createTableCell(f1Score);
-            f1Cell.classList.add('text-center');
-            if (f1Score !== '') {
-                const color = getColorForScore(f1Score);
-                f1Cell.style.backgroundColor = color.bgColor;
-                f1Cell.style.color = color.textColor;
+            if (!trainingDatasets || !trainingDatasets.includes(dataset)) {
+                const f1Score = Math.round(data[algorithm][dataset]?.event_results?.f1 * 100) ?? ''; // Handle missing data
+                f1Cell = createTableCell(f1Score);
+                f1Cell.classList.add('text-center');
+                if (f1Score !== '') {
+                    const color = getColorForScore(f1Score);
+                    f1Cell.style.backgroundColor = color.bgColor;
+                    f1Cell.style.color = color.textColor;
+                }
             }
-
+            else {
+                f1Cell = createTableCell('🚂');
+                f1Cell.classList.add('text-center');
+            }
+            
             row.appendChild(f1Cell);
         });
 
@@ -56,6 +63,46 @@ async function fetchShortTitle(algorithm) {
         const yamlText = await response.text();
         const yamlData = jsyaml.load(yamlText); // Use js-yaml to parse the YAML file
         return yamlData.short_title || null; // Return the short_title if it exists
+    } catch (error) {
+        console.error(`Error fetching or parsing YAML for algorithm: ${algorithm}`, error);
+        return null;
+    }
+}
+
+// Helper function to fetch the training datasets from the YAML file
+async function fetchTrainingDatasets(algorithm) {
+    try {
+        const response = await fetch(`/algorithms/${algorithm}.yaml`);
+        if (!response.ok) {
+            console.error(`Failed to fetch YAML for algorithm: ${algorithm}`);
+            return null;
+        }
+        const yamlText = await response.text();
+        const yamlData = jsyaml.load(yamlText); // Use js-yaml to parse the YAML file
+        var datasets = yamlData.datasets || null; // Return the short_title if it exists
+        if (datasets) {
+            datasets = datasets.map(dataset => {
+                if (dataset === 'Physionet CHB-MIT Scalp EEG dataset'){
+                    return 'chbmit';
+                }
+                else if (dataset === 'Physionet Siena Scalp EEG'){
+                    return 'siena';
+                }
+                else if (dataset === 'Temple University Seizure Corpus'){
+                    return 'tuh';
+                }
+                else if (dataset === 'KU Leuven SeizeIT1'){
+                    return 'seizeit';
+                }
+                else if (dataset === 'Dianalund Scalp EEG dataset'){
+                    return 'dianalund';
+                }
+                else{
+                    return dataset;
+                }
+            });
+        }
+        return datasets;
     } catch (error) {
         console.error(`Error fetching or parsing YAML for algorithm: ${algorithm}`, error);
         return null;
