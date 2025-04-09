@@ -31,7 +31,10 @@ async function loadResults() {
         // Add F1 score for each dataset
         datasets.forEach(dataset => {
             if (!trainingDatasets || !trainingDatasets.includes(dataset)) {
-                const f1Score = Math.round(data[algorithm][dataset]?.event_results?.f1 * 100) ?? ''; // Handle missing data
+                var f1Score = '';
+                if (data[algorithm][dataset]?.event_results?.f1 && ! isNaN(data[algorithm][dataset]?.event_results?.f1)){
+                    f1Score = Math.round(data[algorithm][dataset]?.event_results?.f1 * 100) ?? ''; // Handle missing data
+                }
                 f1Cell = createTableCell(f1Score);
                 f1Cell.classList.add('text-center');
                 if (f1Score !== '') {
