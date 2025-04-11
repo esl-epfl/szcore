@@ -1,0 +1,25 @@
+---
+# Description of a seizure detection algorithm
+title: "EEG_Seiz_Pred"
+short_title: "Velland_2025 v0.1"
+image: "public.ecr.aws/n1i0o6q8/seizures:dcafd6e8b581496d913927ea9c6a85eb"
+authors:
+  - given-names: Mark
+    family-names: Velland
+    affiliation: Unknown
+version: 0.1
+date-released: "2025-03-26"
+abstract: >
+  Prolonged EEG monitoring in epilepsy can be optimized by selectively
+  recording ictal and interictal activity. We present a deep
+  neural network-based method for automatic seizure detection, independent
+  of clinical signs. The model analyzes EEG signals to identify paroxysmal
+  rhythmic bursts (3–20 Hz) by evaluating amplitude, duration, and rhythmicity.
+  Evaluated on 24 surface and 44 intracerebral recordings, the approach detects
+  diverse seizure types. The system enables real-time, multi-channel seizure
+  and spike detection.
+license: GPL-3.0
+
+# List all datasets that were used to train this algorithm
+datasets:
+  - TUH Seizure Corpus
