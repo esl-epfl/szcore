@@ -4,11 +4,11 @@ title: "EEG_Seiz_Pred"
 short_title: "Velland_2025 v0.1"
 image: "public.ecr.aws/n1i0o6q8/seizures:dcafd6e8b581496d913927ea9c6a85eb"
 authors:
-  - given-names: Mark
-    family-names: Velland
+  - given_names: Mark
+    family_names: Velland
     affiliation: Unknown
 version: 0.1
-date-released: "2025-03-26"
+date_released: "2025-03-26"
 abstract: >
   Prolonged EEG monitoring in epilepsy can be optimized by selectively
   recording ictal and interictal activity. We present a deep
