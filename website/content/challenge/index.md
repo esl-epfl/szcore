@@ -17,6 +17,10 @@ For all algorithms we evaluated the [F1-score](https://en.wikipedia.org/wiki/F-s
 
 {{< challenge_f1_table >}}
 
+## Conference presentation
+
+{{< youtubeLite id="ric4lojcwWo" label="Presentation at The International Conference on Artificial Intelligence in Epilepsy and Other Neurological Disorders" >}}
+
 ## Organizers
 
 The challenge is organized by the [Embedded Systems Laboratory](https://www.epfl.ch/labs/esl/) of EPFL in collaboration with the organizing committee of [The International Conference on Artificial Intelligence in Epilepsy and Other Neurological Disorders](https://www.aiepilepsy-neuro.com/).
