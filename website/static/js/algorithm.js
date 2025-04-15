@@ -72,7 +72,7 @@ async function loadResults() {
 
         // Get the list of metrics
         const metrics = ['sensitivity', 'precision', 'f1', 'fpRate'];
-        const metricTitles = ['Sensitivity (%)', 'Precition (%)', 'F1 (%)', 'False Positives per Day']
+        const metricTitles = ['Sensitivity (%)', 'Precision (%)', 'F1 (%)', 'False Positives per Day']
         // Populate the tables using the reusable function
         populateTable(document.getElementById('event-table-body'), algorithmData, datasets, metrics, metricTitles, 'event_results');
         populateTable(document.getElementById('sample-table-body'), algorithmData, datasets, metrics, metricTitles, 'sample_results');
