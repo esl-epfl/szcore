@@ -1,0 +1,30 @@
+title: DynaSD
+image: ghcr.io/wojemann/dynasd_competition:latest
+short_title: DynaSD
+version: 1.0.0
+date_released: '2025-02-13'
+authors:
+  - given_names: William K.S.
+    family_names: Ojemann
+    institution: CNT, University of Pennsylvania
+abstract: >-
+  We submit the DynaSD seizure detection algorithm for the AI in Epilepsy
+  seizure detection competition. This algorithm leverages multivariate
+  autoregressive loss for unsupervised seizure detection. We first train a deep
+  autoregressive model on the beginning of each continuous EEG clip to learn
+  baseline neural dynamics. The model is then deployed on 1-second windows with
+  0.5-second overlap, averaging the prediction error within each clip. Seizure
+  detection is based on a threshold optimized on annotated intracranial EEG
+  recordings. We tuned the following processing hyperparameters using a subset
+  of the CHB-MIT dataset. Preprocessing includes bipolar re-referencing,
+  normalizing the signal to the model training period, notch filtering at 60 and
+  120 Hz, bandpass filtering from 1 to 100 Hz, and downsampling to 128 Hz. After
+  thresholding, we apply a 15-second temporal smoothing procedure to reduce
+  false positives from artifacts and epileptiform spikes. A window is classified
+  as seizure activity only if at least 9 channels (more than half) are detected
+  as seizing.
+license: CC BY-NC 4.0
+repository: https://github.com/wojemann/DynaSD
+datasets:
+  - Physionet CHB-MIT Scalp EEG dataset
+  - Intracranial EEG recordings of Seizures from HUP
