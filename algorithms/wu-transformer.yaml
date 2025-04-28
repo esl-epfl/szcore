@@ -1,0 +1,39 @@
+title: Seizure Transformer
+image: yujjio/seizure_transformer
+short_title: Wu Transformer
+version: 1.0.0
+date_released: '2025-02-16'
+authors:
+  - given_names: Kerui
+    family_names: Wu
+    institution: Department of Computer Science, Rensselaer Polytechnic Institute
+    email: ''
+  - given_names: Ziyue
+    family_names: Zhao
+    institution: Department of Computer Science, Rensselaer Polytechnic Institute
+    email: ''
+  - given_names: Bülent
+    family_names: Yener
+    institution: Department of Computer Science, Rensselaer Polytechnic Institute
+    email: ''
+abstract: >-
+  We introduce a novel deep-learning architecture for simultaneous seizure
+  detection that departs from traditional window-level classification methods.
+  Instead of assigning a single label to segmented windows, our approach
+  utilizes a deep encoder, comprising 1D convolutions, Network-in-Network
+  modules, residual connections, and a transformer encoder with global
+  attention, to process raw EEG signals in the time domain. This design produces
+  high-level representations that capture rich temporal dependencies at each
+  time step. A streamlined decoder then converts these features into a sequence
+  of probabilities, directly indicating the presence or absence of seizures at
+  every time step. By operating at the time-step level, our method avoids the
+  need for complex post-processing to map window labels to events and eliminates
+  redundant overlapping inferences, thereby enhancing the model’s efficiency and
+  accuracy. Extensive experiments on a public EEG seizure detection dataset
+  demonstrate that our model significantly outperforms existing approaches,
+  underscoring its potential for real-time, precise seizure detection.
+license: MIT License
+repository: https://github.com/keruiwu/SeizureTransformer
+datasets:
+  - Physionet Siena Scalp EEG
+  - TUH Seizure Corpus
