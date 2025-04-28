@@ -1,5 +1,5 @@
 title: Channel-adaptive EEG classifier
-image: docker.io/francescocarzaniga/epfl-challenge:ca-eegwavenet-v1
+image: docker.io/francescocarzaniga/epfl-challenge:ca-eegwavenet-v2
 short_title: CA-EEGWaveNet
 version: 1.0.0
 date_released: '2025-02-16'
