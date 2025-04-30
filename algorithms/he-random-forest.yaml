@@ -1,5 +1,5 @@
 title: EEG Seizure Detection using Random Forest
-image: yuxiaohe/eeg2
+image: yuxiaohe/eeg2:latest
 short_title: He Random-Forest
 version: 1.0.0
 date_released: '2025-02-16'

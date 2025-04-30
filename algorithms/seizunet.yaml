@@ -1,5 +1,5 @@
 title: SeizUnet
-image: mvanmarc/challengeszcorebiomed
+image: mvanmarc/challengeszcorebiomed:latest
 short_title: SeizUnet
 version: 1.0.0
 date_released: '2025-02-16'

@@ -1,5 +1,5 @@
 title: Seizure Transformer
-image: yujjio/seizure_transformer
+image: yujjio/seizure_transformer:latest
 short_title: Wu Transformer
 version: 1.0.0
 date_released: '2025-02-16'
