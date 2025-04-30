@@ -1,0 +1,22 @@
+{
+  "sample_results": {
+    "sensitivity": 0.003076923076923077,
+    "sensitivity_std": 0.011094003924504582,
+    "precision": 0.2916666666666667,
+    "precision_std": 0.0,
+    "f1": 0.07506702412868632,
+    "f1_std": 0.0,
+    "fpRate": 17.963237002702805,
+    "fpRate_std": 64.76737208655702
+  },
+  "event_results": {
+    "sensitivity": 0.014285714285714287,
+    "sensitivity_std": 0.05150787536377128,
+    "precision": 1.0,
+    "precision_std": 0.0,
+    "f1": 0.33333333333333337,
+    "f1_std": 0.0,
+    "fpRate": 0.0,
+    "fpRate_std": 0.0
+  }
+}

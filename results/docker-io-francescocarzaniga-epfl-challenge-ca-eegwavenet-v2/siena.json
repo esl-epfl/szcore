@@ -1,0 +1,22 @@
+{
+  "sample_results": {
+    "sensitivity": 0.0,
+    "sensitivity_std": 0.0,
+    "precision": 0.0,
+    "precision_std": 0.0,
+    "f1": 0.0,
+    "f1_std": 0.0,
+    "fpRate": 13.634122125860515,
+    "fpRate_std": 49.158526420728165
+  },
+  "event_results": {
+    "sensitivity": 0.0,
+    "sensitivity_std": 0.0,
+    "precision": 0.0,
+    "precision_std": 0.0,
+    "f1": 0.0,
+    "f1_std": 0.0,
+    "fpRate": 1.420221054777137,
+    "fpRate_std": 5.120679835492518
+  }
+}
