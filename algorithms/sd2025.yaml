@@ -1,0 +1,38 @@
+title: SD2025
+image: eegdude/solution1
+short_title: SD2025
+version: 1.0.0
+date_released: '2025-02-16'
+authors:
+  - given_names: Shuranov
+    family_names: Evgenii
+    institution: ITMO
+  - given_names: Rafael
+    family_names: Grigorian
+    institution: MSU
+  - given_names: Konstantin
+    family_names: Chukaev
+    institution: DeniS
+abstract: >
+  This is a deep learning-based approach for seizure detection, leveraging a
+  pre-trained Labram model. Initial pre-training weights are sourced from the
+  LaBraM repository, followed by fine-tuning on the TUEV dataset using
+  cross-entropy loss across six classes. Further refinement incorporates TUEV,
+  TUSZ, and Siena datasets, optimizing losses aligned with the sz_challenge2025
+  target metric. Input EEG data consists of unipolar recordings from 19
+  channels, preprocessed through notch filtering (50 Hz), resampling (200 Hz),
+  and frame construction over five-second windows. Model inference is performed
+  on four-hour EEG segments, producing boolean output masks, later converted
+  into TSV format. Training data preprocessing includes file length filtering,
+  label-based exclusion (Siena, TUSZ), and time-shift augmentation. Experimental
+  results on the TUSZ dataset yield an F1 score of 0.43. The method operates
+  with O(N) time complexity and requires sufficient memory allocation for
+  loading EEG files. Benchmarks using an NVIDIA 3090 (12GB) and 62GB RAM
+  indicate a total processing time of approximately two hours for the full TUSZ
+  dataset.
+license: MIT License
+repository: ''
+datasets:
+  - Physionet Siena Scalp EEG
+  - TUH Seizure Corpus
+  - TUH EEG Corpus
