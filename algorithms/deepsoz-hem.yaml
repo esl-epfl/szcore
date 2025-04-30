@@ -1,0 +1,80 @@
+title: DeepSOZ-HEM
+image: amruth1234/deepsoz-hem:v0.1.3
+short_title: DeepSOZ-HEM
+version: 0.1.3
+date_released: '2025-02-17'
+authors:
+  - given_names: Amruth
+    family_names: Niranjan
+    institution: ' Boston University'
+    email: ''
+  - given_names: Deeksha M
+    family_names: Shama
+    institution: Johns Hopkins University,  Boston University
+    email: ''
+  - given_names: Archana
+    family_names: Venkataraman
+    institution: ' Boston University'
+    email: ''
+abstract: >+
+  Introduction
+
+  Epilepsy is a neurological disorder that causes recurring, unprovoked
+  seizures. Recently, deep learning has offered a unique approach to reliable
+  seizure detection by capturing latent patterns in EEG data in order to
+  accurately predict seizure onset and duration. However, automatic seizure
+  detection is still challenging due to high inter-subject variability, which
+  limits model performance. We present DeepSOZ-HEM, a robust deep learning
+  framework specifically designed for high-resolution seizure detection from
+  multichannel scalp EEG, offering strong generalizability across multiple
+  datasets.
+
+  Methods
+
+  Building upon our original DeepSOZ model (M. Shama, et al.), DeepSOZ-HEM
+  leverages a transformer encoder to extract both global and channel-wise
+  features from EEG, which are subsequently integrated via an LSTM module to
+  capture temporal dynamics at a second-level resolution. The model is
+  configured to accept inputs sampled at a frequency of 256 Hz and featuring 19
+  channels from average-referenced data. We preprocessed data by splitting all
+  recordings into 10-minute segments with 2 minutes of overlap between each
+  segment of the recording, zero-padding when necessary. To postprocess the
+  model’s predictions, we implemented a moving average (25-second) kernel that
+  smoothed the outputs and stitched outputs from multiple segments of a
+  recording before converting them into a BIDS-compatible format. We trained
+  DeepSOZ-HEM using 10-fold cross-validation on a large cohort of 171 patients
+  from the Temple University Hospital (TUH) corpus. To further enhance detection
+  performance, we employed a hard example mining (HEM) strategy that iteratively
+  retrains the model on selected EEG recordings containing heightened false
+  positives and missed detections from the initial training phase on the TUH
+  dataset. We chose to exclude CHB-MIT dataset as it is not average-referenced.
+  Finally, the HEM process is complemented by additional training and validation
+  on 14 patients from the University of Siena Scalp EEG Database for improved
+  robustness and generalization.
+
+  Results
+
+  After the initial 10-fold training stage, we observed an average F1 score of
+  0.62 土 0.11 across folds.  The best performing model split featured an F1
+  score of 0.76. After retraining this model using the HEM strategy, we observed
+  an event-based F1 score of 0.89 on the TUH validation set, indicating that the
+  HEM strategy improved model performance. We also observed an event-based F1
+  score of 0.72 on the Siena dataset, indicating high generalizability. The
+  Siena dataset featured a slight drop in performance due to its large amount of
+  long EEG recordings (12 hours or more) with almost exclusively background
+  noise, leading to some inevitable false positives.
+
+  Significance
+
+  Based on the event-based metrics for F1 score, DeepSOZ-HEM indicates high
+  potential for success in future clinical applications. This approach offers a
+  reliable seizure detection algorithm that can be integrated into clinical
+  workflows, especially due to its ability to generalize well to patient
+  variability. Future works may consider retraining DeepSOZ’s onset zone
+  localization branch and confidence scoring using HEM.
+
+license: GNU GPLv3
+repository: https://github.com/deeksha-ms/DeepSOZ/tree/main
+datasets:
+  - Physionet Siena Scalp EEG
+  - TUH Seizure Corpus
