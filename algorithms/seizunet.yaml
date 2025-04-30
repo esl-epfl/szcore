@@ -1,0 +1,47 @@
+title: SeizUnet
+image: mvanmarc/challengeszcorebiomed
+short_title: SeizUnet
+version: 1.0.0
+date_released: '2025-02-16'
+authors:
+  - given_names: Konstantinos
+    family_names: Kontras
+    institution: ESAT, KU Leuven
+    email: ''
+  - given_names: Maarten
+    family_names: Vanmarcke
+    institution: ESAT, KU Leuven
+    email: ''
+  - given_names: Miguel
+    family_names: Bhagubai
+    institution: ESAT, KU Leuven
+    email: ''
+  - given_names: Christos
+    family_names: Chatzichristos
+    institution: ESAT, KU Leuven
+    email: ''
+  - given_names: Maarten
+    family_names: De Vos
+    institution: ESAT & Development and Regeneration,  KU Leuven
+    email: ''
+abstract: >-
+  Electroencephalography (EEG) is a vital tool for diagnosing and monitoring
+  epilepsy. Manual annotation of epileptic seizures is a labor-intensive process
+  performed by expert neurologists. Therefore, an automated seizure detection
+  system can facilitate faster and more cost-effective diagnosis. Recent
+  advances in deep learning, along with the availability of large public EEG
+  seizure datasets, have enabled the development of more effective seizure
+  detection methods. In this work, we propose a seizure detection pipeline based
+  on an attention U-Net, which processes EEG signals from two different views,
+  one using raw EEG and the other filtered with a Wiener filter. Each U-Net
+  generates multi-level predictions, capturing seizure patterns at different
+  feature scales. A long short-term memory (LSTM) network is then used to merge
+  the outputs from both views for final seizure detection. The model is trained
+  on the TUH EEG seizure dataset and the SeizIT2 dataset. While further
+  refinements are needed for clinical application, the results demonstrate the
+  potential of the proposed approach for robust automatic seizure detection.
+license: GNU GPLv3
+repository: https://github.com/kkontras/EpilepsyChallenge
+datasets:
+  - TUH Seizure Corpus
+  - KU Leuven SeizeIT2
