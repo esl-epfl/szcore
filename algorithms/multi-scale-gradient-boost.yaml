@@ -1,0 +1,83 @@
+title: >-
+  An Efficient Pipeline for Seizure Detection on Scalp EEG Combining Multi-scale
+  Features and Gradient Boosting (Submission 2)
+image: ghcr.io/crchum-epilepsy-group/sz_detect_crchum:new-kid
+short_title: Multi-scale XB
+version: 1.0.0
+date_released: '2025-02-15'
+authors:
+  - given_names: Elie
+    family_names: Bou Assi
+    institution: Centre de Recherche du CHUM, Université de Montréal
+    email: ''
+  - given_names: Daniel
+    family_names: Galindo
+    institution: UdeM, CRCHUM
+    email: ''
+  - given_names: Oumayma
+    family_names: Gharbi
+    institution: UdeM, CRCHUM
+    email: ''
+  - given_names: François
+    family_names: Hardy
+    institution: CRCHUM
+    email: ''
+  - given_names: Amirhossein
+    family_names: Jahani
+    institution: CRCHUM
+    email: ''
+  - given_names: Émile
+    family_names: Lemoine
+    institution: École Polytechnique de Montréal, CRCHUM
+    email: ''
+  - given_names: Isabel
+    family_names: Sarzo Wabi
+    institution: UdeM, CRCHUM
+    email: ''
+abstract: >-
+  Rationale and Algorithm: Seizure detection on scalp EEG faces challenges due
+  to poor signal-to-noise ratio and heterogeneity in seizure patterns and
+  localizations. We developed a feature extraction algorithm that captures
+  seizure-related changes across various timescales and frequencies. Our
+  approach combines linear, non-linear, and connectivity features, and uses
+  these as input into a Gradient Boosted Trees model regularized by a 
+  post-processing algorithm.
+
+  Data Processing: EEGs were segmented into overlapping 10s windows (4s overlap)
+  using all 19 standard EEG channels in average referential montage. We applied
+  the Continuous Wavelet Transform with Morlet wavelets to decompose the signal
+  into 8 frequency bands (from 3 Hz to 50 Hz, one 3–40 Hz band). After
+  frequency-dependent downsampling, we extracted linear (band power), non-linear
+  (fuzzy entropy and line length), and connectivity features (including
+  betweenness, efficiency, eigenvector centrality, node strength) from the
+  filtered signals. The scaled features were then processed through a machine
+  learning pipeline combining minimum Redundancy-Maximum Relevance feature
+  selection and XGBoost classification. The epoch-based predictions were
+  regularized using the Firing Power algorithm, which consists in applying a
+  moving average across tau segments and binarizing the results with a fixed
+  threshold T.
+
+  Training and Validation: The model was trained on a subset of the Temple
+  University Hospital and the Siena Hospital Seizure Detection datasets. We
+  conducted an initial feature exploration step through visual exploration of
+  1,507 EEGs (training set) to narrow down the set of features and frequency
+  bands. Hyperparameter selection was done with a random search over a nested
+  cross-validation (100 iterations, 5-fold inner loop, 3-fold outer loop). The
+  criterion for the cross-validation was the epoch-wise F1-score. The outer-loop
+  predictions were used to select the optimal Firing Power’s tau and T values.
+
+  Performance: We tested the best model on a held-out set of 453 EEGs from the
+  same datasets, without overlap between subjects. With a  of 12 and T of 0.4,
+  the model achieved an average event-based F1 score of 0.72 (precision = 0.34,
+  sensitivity 0.30). For the final submissions, we further optimized tau and T
+  on this held-out set.
+
+  Complexity: Our optimized implementation employs frequency-domain convolutions
+  and channel-wise parallelization, achieving logarithmic-linear complexity with
+  signal length. Processing time averages 5 minutes per hour of EEG using 10 CPU
+  cores and 50 GB RAM.
+license: MIT License
+repository: https://github.com/CRCHUM-Epilepsy-Group/sz_detection_challenge2025
+datasets:
+  - Physionet Siena Scalp EEG
+  - TUH Seizure Corpus
