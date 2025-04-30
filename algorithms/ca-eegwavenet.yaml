@@ -1,0 +1,56 @@
+title: Channel-adaptive EEG classifier
+image: docker.io/francescocarzaniga/epfl-challenge:ca-eegwavenet-v2
+short_title: CA-EEGWaveNet
+version: 1.0.0
+date_released: '2025-02-16'
+authors:
+  - given_names: Francesco
+    family_names: Carzaniga
+    institution: Inselspital, IBM
+  - given_names: Michael
+    family_names: Hersche
+    institution: IBM
+  - given_names: Kaspar
+    family_names: Schindler
+    institution: Inselspital
+  - given_names: Abbas
+    family_names: Rahimi
+    institution: IBM
+
+abstract: >+
+  The channel-adaptive EEG architecture (CA-EEGWaveNet here) seamlessly
+  processes any multi-variate signal with an arbitrary number of channels. It
+  uses three components: the Encoder, that extracts short-term temporal
+  information; the Fusion, that reconstructs the spatial information; and the
+  Memory, that processes long-term dependencies to create a longer effective
+  context window. As the Encoder, we use EEGWaveNet. For the Fusion, we use an
+  HRR-based composition. Finally, for the Memory, we use a TCN. The (i)EEG
+  recording is divided into windows in the order of a few seconds. These windows
+  are processed by the Encoder channel-by-channel, to generalize to arbitrary
+  channel configurations. Then, the relationship between the channels is learned
+  through the Fusion component as geometric closeness between key vectors, that
+  are then bound with the feature vectors and bundled to obtain a single vector
+  per window. This vector contains both the spatial information and the
+  short-term temporal information. Multiple vectors are accumulated into a
+  memory and finally processed by a TCN to get the final classification results
+  on a longer context window, in the order of a few minutes.
+  All recordings are up-/or down-sampled to 256Hz for consistency with the
+  testing dataset, but 512Hz or higher have also been used successfully. Given
+  the homogeneous nature of the 10-20 system, the Fusion component is used
+  without learning and a uniform relationship is assumed across all channels.
+  Nonetheless, any number of channels can be used, with a linear increase in
+  computational complexity. In particular, we use the CHB-MIT and Siena datasets
+  for training, and the TUSZ dataset for validation and hyperparameter
+  optimization. Except for sampling rate manipulation when needed, no other
+  pre-processing step is performed.
+  We perform large-scale validation on iEEG datasets, that better represent the
+  final use-case of CA-EEGWaveNet. We compare CA-EEGWaveNet with EEGWaveNet on
+  the Short-term SWEC iEEG datset. CA-EEGWaveNet is trained on a single seizure
+  of the tested subject, while the baseline EEGWaveNet is trained on all but
+  one. CA-EEGWaveNet surpasses the baseline in median F1-score (0.78 vs 0.76).
+license: Apache License 2.0
+repository: https://github.com/IBM/channel-adaptive-eeg-classifier
+datasets:
+  - Physionet CHB-MIT Scalp EEG dataset
+  - Physionet Siena Scalp EEG
+  - TUH Seizure Corpus
