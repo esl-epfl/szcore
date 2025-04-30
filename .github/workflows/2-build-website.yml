@@ -5,6 +5,7 @@ on:
     paths:
       - 'website/**'
       - 'results/**'
+      - 'algorithms/**'
 
   workflow_dispatch:
 
