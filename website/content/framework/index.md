@@ -17,6 +17,8 @@ SzCORE is published in [Epilepsia](https://doi.org/10.1111/epi.18113) !
 {.text-xl}
 {{< /alert >}}
 
+[Here]((#papers-that-use-szcore)) you will find a list of papers that make use of the framework.
+
 ---
 
 ## Scalp EEG datasets
@@ -241,3 +243,18 @@ Both the [sample based scoring](#sample-based-scoring) and [event based scoring]
 We explicitly avoid using metrics that rely on a count of FN, such as specificity and accuracy. This is because in the context of event-based scoring, non-seizure events are ill-defined, and in the context of sample-based scoring, non-seizure samples are much more numerous than seizure samples given the rarity of seizures, resulting in extremely high scores for specificity and accuracy, with little clinical relevance.
 
 A library that computes these different scoring methods and metrics is available on [Github](https://github.com/esl-epfl/epilepsy_performance_metrics). As an input, it uses reference and hypothesis annotations provided by the user.
+
+## Papers that use SzCORE
+
+- Afzal, A., Cevher, V., & Shoaran, M. (2025). [MT-NAM: An Efficient and Adaptive Model for Epileptic Seizure Detection](https://doi.org/10.48550/arXiv.2503.08251) (No. arXiv:2503.08251). *arXiv*.
+- Amirshahi, A., Toosi, M. H., Mohammadi, S., Albini, S., Schiavone, P. D., Ansaloni, G., Aminifar, A., & Atienza, D. (2024). [MetaWearS: A Shortcut in Wearable Systems Lifecycle with Only a Few Shots](https://doi.org/10.48550/arXiv.2408.01988) (No. arXiv:2408.01988). *arXiv*.
+- Beniczky, S., Lhatoo, S., Sperling, M. R., & Ryvlin, P. (2025). [Artificial intelligence, digital technology, and mobile health in epilepsy](https://doi.org/10.1111/epi.18435). *Epilepsia*.
+- Bhagubai, M., Chatzichristos, C., Swinnen, L., Macea, J., Zhang, J., Lagae, L., Jansen, K., Schulze-Bonhage, A., Sales, F., Mahler, B., Weber, Y., Paesschen, W. V., & Vos, M. D. (2025). [SeizeIT2: Wearable Dataset Of Patients With Focal Epilepsy](https://doi.org/10.48550/arXiv.2502.01224) (No. arXiv:2502.01224). *arXiv*.
+- Hermes, D., Attia, T. P., Beniczky, S., Bosch-Bayard, J., Delorme, A., Lundstrom, B. N., Rogers, C., Rampp, S., Shirazi, S. Y., Truong, D., Valdes-Sosa, P., Worrell, G., Makeig, S., & Robbins, K. (2024). [Hierarchical Event Descriptor library schema for EEG data annotation](https://doi.org/10.48550/arXiv.2310.15173) (No. arXiv:2310.15173). *arXiv*.
+- Ingolfsson, T. M., Wang, X., Chakraborty, U., Benatti, S., Bernini, A., Ducouret, P., Ryvlin, P., Beniczky, S., Benini, L., & Cossettini, A. (2024). [BrainFuseNet: Enhancing Wearable Seizure Detection Through EEG-PPG-Accelerometer Sensor Fusion and Efficient Edge Deployment](https://doi.org/10.1109/TBCAS.2024.3395534). *IEEE Transactions on Biomedical Circuits and Systems*, 18(4), 720–733.
+- Najafi, T. A., Calero, J. A. M., Thevenot, J., Duc, B., Albini, S., Amirshahi, A., Taji, H., Beneyto, M. J. B., Affanni, A., & Atienza, D. (2024). [VersaSens: An Extendable Multimodal Platform for Next-Generation Edge-AI Wearables](https://doi.org/10.1109/TCASAI.2024.3453809). *IEEE Transactions on Circuits and Systems for Artificial Intelligence*, 1(1), 83–96.
+- Orlandic, L., Dan, J., Thevenot, J., Teijeiro, T., Sauty, A., & Atienza, D. (2024). [How to Count Coughs: An Event-Based Framework for Evaluating Automatic Cough Detection Algorithm Performance](https://doi.org/10.1109/BSN63547.2024.10780617). *2024 IEEE 20th International Conference on Body Sensor Networks (BSN)*, 1–4.
+- Reisinger, P., Larochelle, J., Abkai, C., Kalousios, S., Zabler, N., Duempelmann, M., Schulze-Bonhage, A., Woias, P., & Comella, L. (2025). [The impact of EEG preprocessing parameters on ultra-low-power seizure detection](https://doi.org/10.1101/2025.01.17.25320722) (p. 2025.01.17.25320722). *medRxiv*.
+- Wu, K., Zhao, Z., & Yener, B. (2025). [SeizureTransformer: Scaling U-Net with Transformer for Simultaneous Time-Step Level Seizure Detection from Long EEG Recordings](https://doi.org/10.48550/arXiv.2504.00336) (No. arXiv:2504.00336). *arXiv*.
+
+*Last update on 19 May 2025.*
