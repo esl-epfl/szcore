@@ -17,7 +17,7 @@ SzCORE is published in [Epilepsia](https://doi.org/10.1111/epi.18113) !
 {.text-xl}
 {{< /alert >}}
 
-[Here]((#papers-that-use-szcore)) you will find a list of papers that make use of the framework.
+[Here](#papers-that-use-szcore) you will find a list of papers that make use of the framework.
 
 ---
 
@@ -257,4 +257,4 @@ A library that computes these different scoring methods and metrics is available
 - Reisinger, P., Larochelle, J., Abkai, C., Kalousios, S., Zabler, N., Duempelmann, M., Schulze-Bonhage, A., Woias, P., & Comella, L. (2025). [The impact of EEG preprocessing parameters on ultra-low-power seizure detection](https://doi.org/10.1101/2025.01.17.25320722) (p. 2025.01.17.25320722). *medRxiv*.
 - Wu, K., Zhao, Z., & Yener, B. (2025). [SeizureTransformer: Scaling U-Net with Transformer for Simultaneous Time-Step Level Seizure Detection from Long EEG Recordings](https://doi.org/10.48550/arXiv.2504.00336) (No. arXiv:2504.00336). *arXiv*.
 
-*Last update on 19 May 2025.*
+*Last updated on 19 May 2025.*
