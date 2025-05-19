@@ -21,14 +21,13 @@ SzCORE is published in [Epilepsia](https://doi.org/10.1111/epi.18113) !
 
 ## Scalp EEG datasets
 
-To the best of our knowledge, there currently are four publicly available datasets of scalp EEG from people with epilepsy annotated by medical specialists that contain at least 10 subjects and at least 100 hours of recording.
+To the best of our knowledge, there currently are three publicly available datasets of scalp EEG from people with epilepsy annotated by medical specialists that contain at least 10 subjects and at least 100 hours of recording.
 
 | Dataset | \# subjects | duration \[h\] | \# seizures |
 |---|---|---|---|
 | [CHB-MIT](#physionet-chb-mit-scalp-eeg-database) | 24 | 982 | 198 |
 | [TUH EEG Sz Corpus](#tuh-eeg-seizure-corpus) | 675 | 1476 | 4029 |
 | [Siena Scalp EEG](#physionet-siena-scalp-eeg) | 14 | 128 | 47 |
-| [SeizeIT1](#seizeit1) | 42 | 4211 | 182 |
 
 ### Physionet CHB-MIT Scalp EEG Database
 
@@ -74,20 +73,6 @@ The original dataset can be downloaded on the [Physionet website](https://physio
 
 {{< button href="https://zenodo.org/records/10640762" >}}
 BIDS Siena Scalp EEG Database
-{{< /button >}}
-
-### SeizeIT1
-
-- v1.0.0
-
-The dataset was acquired at UZ Leuven on a population of adults hospitalized for pre-surgical evaluation. The dataset was first made publicly available as part of an [IEEE ICASSP 2023 seizure detection challenge](https://biomedepi.github.io/seizure_detection_challenge/). The dataset contains recordings of 42 subjects.
-
-The signals were acquired at 250 Hz and contain 24 EEG channels positioned according to the 10-20 system. Most sessions contain additional physiological signals such as ECG along with 4 extra EEG channels placed behind the ears. Files are stored as `.edf` files of approximately 9 hours. On average 4 days of data are recorded per patient.
-
-The annotations are provided in `.tsv` and contain the start time, end time, seizure type and localization information of each seizure.
-
-{{< button href="https://rdr.kuleuven.be/dataset.xhtml?persistentId=doi:10.48804/P5Q0OJ" >}}
-SeizeIT1
 {{< /button >}}
 
 ### Additional datasets
