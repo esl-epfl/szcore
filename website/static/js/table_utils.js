@@ -4,8 +4,10 @@ function sortTable(column_number) {
     while (switching) {
         switching = false;
         const rows = table.rows;
-        for (let i = 0; i < (rows.length - 1); i++) {
-            let shouldSwitch = false;
+        let shouldSwitch = false;
+        let i = 0;
+        for (i = 0; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
             const x = rows[i].getElementsByTagName("TD")[column_number];
             const y = rows[i + 1].getElementsByTagName("TD")[column_number];
 
