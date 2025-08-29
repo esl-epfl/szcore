@@ -88,11 +88,15 @@ def main():
     # Get existing entries
     existing_entries = []
     if os.path.exists(OUTPUT_BIB_FILE):
-        with open(OUTPUT_BIB_FILE, "r", encoding="utf-8") as f:
-            parser = BibTexParser(common_strings=True)
-            bib_database = bibtexparser.load(f, parser=parser)
-            existing_entries = bib_database.entries
-        print(f"Found {len(existing_entries)} existing citations.")
+        try:
+            with open(OUTPUT_BIB_FILE, "r", encoding="utf-8") as f:
+                parser = BibTexParser(common_strings=True)
+                bib_database = bibtexparser.load(f, parser=parser)
+                existing_entries = bib_database.entries
+            print(f"Found {len(existing_entries)} existing citations.")
+        except Exception as e:
+            print(f"Warning: Failed to parse existing BibTeX file '{OUTPUT_BIB_FILE}': {e}")
+            print("Proceeding with no existing citations.")
 
     existing_keys = {entry["ID"] for entry in existing_entries}
 
