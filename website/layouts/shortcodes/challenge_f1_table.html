@@ -39,7 +39,7 @@
     <div style="overflow:hidden;">
         <div style="float:left;">
             Display:
-            <select name="sample-event-select" id="sample-event-select" onchange="updateSampleEventSelect()">
+            <select name="sample-event-select" id="sample-event-select">
                 <option value="event_results">Event-based</option>
                 <option value="sample_results">Sample-based</option>
             </select>
@@ -47,7 +47,7 @@
 
         <div style="float:right;">
             Sort by:
-            <select name="metric-sort-select" id="metric-sort-select" onchange="updateMetricSort()">
+            <select name="metric-sort-select" id="metric-sort-select">
                 <option value="1">F1-Score</option>
                 <option value="2">Sensitivity</option>
                 <option value="3">Precision</option>
@@ -75,4 +75,4 @@
 
 </div>
 
-<script src="{{ .Site.BaseURL }}/js/challenge_f1_table.js"></script>
+<script type="module" src="{{ .Site.BaseURL }}/js/challenge_f1_table.js"></script>
