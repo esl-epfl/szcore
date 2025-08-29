@@ -59,9 +59,11 @@ def create_bibtex_entry(paper):
 
     authors = paper_details.get("authors", [])
     if authors:
-        author_str = " and ".join(
-            [
-                f"{author['name'].split()[-1]}, {' '.join(author['name'].split()[:-1])}"
+                (
+                    author['name']
+                    if len(author['name'].split()) == 1
+                    else f"{author['name'].split()[-1]}, {' '.join(author['name'].split()[:-1])}"
+                )
                 for author in authors
             ]
         )
