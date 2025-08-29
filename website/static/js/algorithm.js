@@ -124,7 +124,7 @@ async function fetchTrainingDatasets(algorithm) {
         }
         const yamlText = await response.text();
         const yamlData = jsyaml.load(yamlText); // Use js-yaml to parse the YAML file
-        var datasets = yamlData.datasets || null; // Return the short_title if it exists
+        let datasets = yamlData.datasets || null; // Return the short_title if it exists
         if (datasets) {
             datasets = datasets.map(dataset => {
                 if (dataset === 'Physionet CHB-MIT Scalp EEG dataset'){
