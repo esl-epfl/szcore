@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     authors = pub.author.replace(/\s+and\s+/g, ', ');
                 }
 
-                const doiLink = pub.doi ? `<a href="https://doi.org/${pub.doi}" target="_blank" rel="noopener noreferrer">${pub.title}</a>` : '';
+                const doiLink = pub.doi ? `<a href="https://doi.org/${pub.doi}" target="_blank" rel="noopener noreferrer">${pub.title}</a>` : pub.title;
                 const journalInfo = pub.journal ? `<em>${pub.journal}</em>.` : '';
 
                 return `
