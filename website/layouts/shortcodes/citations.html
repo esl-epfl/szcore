@@ -1,0 +1,91 @@
+<a
+  class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
+  href="/bib/citations.bib"
+  download="citations.bib"
+  role="button">
+  Download .bib file
+</a>
+
+
+<div id="publications-container">
+    <p class="italic">Loading publications...</p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('publications-container');
+
+    /**
+     * Extracts the value of a specific field from a BibTeX entry string.
+     * @param {string} entry - The raw string of a single BibTeX entry.
+     * @param {string} fieldName - The name of the field to extract (e.g., 'author', 'title').
+     * @returns {string|null} The extracted value or null if not found.
+     */
+    function getFieldValue(entry, fieldName) {
+        const regex = new RegExp(`${fieldName}\\s*=\\s*{(.*?)}`, 's');
+        const match = entry.match(regex);
+        return match ? match[1].trim().replace(/[\r\n]+/g, ' ') : null;
+    }
+
+    // Fetch the BibTeX file from the server.
+    fetch('/bib/citations.bib')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(bibtexText => {
+            // Split the file content into individual entries.
+            const entries = bibtexText.split('@').filter(entry => entry.trim() !== '');
+
+            if (entries.length === 0) {
+                container.innerHTML = '<p>No publications found.</p>';
+                return;
+            }
+
+            // Parse each entry string into a publication object.
+            const publications = entries.map(entry => {
+                return {
+                    title: getFieldValue(entry, 'title'),
+                    author: getFieldValue(entry, 'author'),
+                    journal: getFieldValue(entry, 'journal'),
+                    year: getFieldValue(entry, 'year'),
+                    doi: getFieldValue(entry, 'doi'),
+                };
+            }).filter(p => p.title && p.author && p.year); // Filter out any malformed entries.
+
+            // Sort publications by year, with the most recent first.
+            publications.sort((a, b) => b.year - a.year);
+
+            // Generate the final HTML for the list using Tailwind classes.
+            const html = publications.map(pub => {
+                const authorList = pub.author.split(/\s+and\s+/);
+                let authors;
+
+                // If there are more than 3 authors, use "First Author et al."
+                if (authorList.length > 3) {
+                    authors = `${authorList[0]} et al.`;
+                } else {
+                    // Otherwise, join all authors with a comma.
+                    authors = pub.author.replace(/\s+and\s+/g, ', ');
+                }
+
+                const doiLink = pub.doi ? `<a href="https://doi.org/${pub.doi}" target="_blank" rel="noopener noreferrer">${pub.title}</a>` : pub.title;
+                const journalInfo = pub.journal ? `<em>${pub.journal}</em>.` : '';
+
+                return `
+                    <li>
+                        ${authors}. "${doiLink}" ${journalInfo} (${pub.year}).
+                    </li>
+                `;
+            }).join('');
+
+            // Display the formatted list in an ordered list (<ol>)
+            container.innerHTML = `<ol>${html}</ol>`;
+        })
+        .catch(error => {
+            console.error('Error fetching or parsing publications:', error);
+        });
+});
+</script>

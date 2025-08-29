@@ -1,0 +1,10 @@
+[project]
+name = "citations"
+version = "0.1.0"
+description = "Fetch citations linked to a DOI"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "bibtexparser>=1.4.3",
+    "requests>=2.32.5",
+]
