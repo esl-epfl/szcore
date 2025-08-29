@@ -5,13 +5,14 @@ function getQueryParam(param) {
 }
 
 // Function to populate a table (event or sample results) with metrics and dataset values
-function populateTable(tableBody, algorithmData, datasets, metrics, metricTitles, resultType) {
+function populateTable(tableBody, algorithmData, datasets, trainingDatasets, metrics, metricTitles, resultType) {
     metrics.forEach((metric, metricIndex) => {
         const row = document.createElement('tr');
 
         row.innerHTML = `<td>${metricTitles[metricIndex]}</td>`;  // Metric name as the first cell
 
         datasets.forEach(dataset => {
+            const isTraining = trainingDatasets && trainingDatasets.includes(dataset);
             // Get the value for the metric from the appropriate section (event_results or sample_results)
             let value = algorithmData[dataset][resultType][metric];
             
@@ -22,7 +23,7 @@ function populateTable(tableBody, algorithmData, datasets, metrics, metricTitles
                 value = Math.round(value);  // Round values like fpRate
             }
 
-            row.innerHTML += `<td>${value}</td>`;  // Add value as a table cell
+            row.innerHTML += `<td>${isTraining ? '🚂' : value}</td>`;  // Add value as a table cell
         });
 
         tableBody.appendChild(row);  // Append the row to the table body
@@ -55,6 +56,7 @@ async function loadResults() {
 
         const algorithmData = data[algorithm];  // Get the algorithm data
         const datasets = Object.keys(algorithmData);  // Get the datasets for this algorithm
+        const trainingDatasets = await fetchTrainingDatasets(algorithm);
 
         // Update table headers dynamically with dataset names
         const eventHeader = document.getElementById('event-table-header');
@@ -74,8 +76,8 @@ async function loadResults() {
         const metrics = ['sensitivity', 'precision', 'f1', 'fpRate'];
         const metricTitles = ['Sensitivity (%)', 'Precision (%)', 'F1 (%)', 'False Positives per Day']
         // Populate the tables using the reusable function
-        populateTable(document.getElementById('event-table-body'), algorithmData, datasets, metrics, metricTitles, 'event_results');
-        populateTable(document.getElementById('sample-table-body'), algorithmData, datasets, metrics, metricTitles, 'sample_results');
+        populateTable(document.getElementById('event-table-body'), algorithmData, datasets, trainingDatasets, metrics, metricTitles, 'event_results');
+        populateTable(document.getElementById('sample-table-body'), algorithmData, datasets, trainingDatasets, metrics, metricTitles, 'sample_results');
 
     } catch (error) {
         console.error("Error loading or processing results:", error);
@@ -104,15 +106,51 @@ async function loadYAML(fileName) {
         const yamlText = await response.text();
 
         // Parse the YAML content into a JavaScript object
-        const parsedData = jsyaml.load(yamlText);
-
-        // Dynamically update the title of the page with the algorithm title
-        document.title = parsedData.title || "Algorithm Description";
-
-        // Fill in the HTML content
-        fillContent(parsedData);
+        return jsyaml.load(yamlText);
     } catch (error) {
-        // document.getElementById('content').innerHTML = `<p style="color: red;">Error loading YAML: ${error.message}</p>`;
+        // Handle error, maybe return null or an empty object
+        console.error("Error loading YAML:", error);
+        return null;
+    }
+}
+
+// Helper function to fetch the training datasets from the YAML file
+async function fetchTrainingDatasets(algorithm) {
+    try {
+        const response = await fetch(`/algorithms/${algorithm}.yaml`);
+        if (!response.ok) {
+            console.error(`Failed to fetch YAML for algorithm: ${algorithm}`);
+            return null;
+        }
+        const yamlText = await response.text();
+        const yamlData = jsyaml.load(yamlText); // Use js-yaml to parse the YAML file
+        let datasets = yamlData.datasets || null; // Return the short_title if it exists
+        if (datasets) {
+            datasets = datasets.map(dataset => {
+                if (dataset === 'Physionet CHB-MIT Scalp EEG dataset'){
+                    return 'chbmit';
+                }
+                else if (dataset === 'Physionet Siena Scalp EEG'){
+                    return 'siena';
+                }
+                else if (dataset === 'TUH Seizure Corpus'){
+                    return 'tuh';
+                }
+                else if (dataset === 'KU Leuven SeizeIT1'){
+                    return 'seizeit';
+                }
+                else if (dataset === 'Dianalund Scalp EEG dataset'){
+                    return 'dianalund';
+                }
+                else{
+                    return dataset;
+                }
+            });
+        }
+        return datasets;
+    } catch (error) {
+        console.error(`Error fetching or parsing YAML for algorithm: ${algorithm}`, error);
+        return null;
     }
 }
 
@@ -161,10 +199,24 @@ function fillContent(data) {
 
 }
 
-// Get the filename from the URL query parameter 'algo'
-const yamlFileName = getQueryParam('algo');
+// Main function to load all data and populate the page
+async function main() {
+    const yamlFileName = getQueryParam('algo');
+    if (!yamlFileName) {
+        alert("Algorithm not specified in the URL.");
+        return;
+    }
 
-// Load the YAML file based on the 'algo' query parameter
-loadYAML(yamlFileName);
-// Call the function to load and populate the results when the page is loaded
-document.addEventListener('DOMContentLoaded', loadResults);
+    const yamlData = await loadYAML(yamlFileName);
+    if (yamlData) {
+        // Dynamically update the title of the page with the algorithm title
+        document.title = yamlData.title || "Algorithm Description";
+        // Fill in the HTML content
+        fillContent(yamlData);
+    }
+
+    loadResults();
+}
+
+// Call the main function when the page is loaded
+document.addEventListener('DOMContentLoaded', main);
