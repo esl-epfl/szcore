@@ -12,7 +12,7 @@ function populateTable(tableBody, algorithmData, datasets, trainingDatasets, met
         row.innerHTML = `<td>${metricTitles[metricIndex]}</td>`;  // Metric name as the first cell
 
         datasets.forEach(dataset => {
-            const isTraining = trainingDatasets.includes(dataset);
+            const isTraining = trainingDatasets && trainingDatasets.includes(dataset);
             // Get the value for the metric from the appropriate section (event_results or sample_results)
             let value = algorithmData[dataset][resultType][metric];
             
