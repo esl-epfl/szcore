@@ -28,6 +28,7 @@ jobs:
       - name: Commit updated citations.bib
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
+          token: ${{ secrets.SZCORE_COMMIT_RW }}
           commit_message: "chore: Update citations.bib"
           file_pattern: "website/static/bib/citations.bib"
           commit_user_name: "GitHub Actions Bot"
