@@ -1,0 +1,26 @@
+---
+# SzCORE algorithm submission file (copy into `esl-epfl/szcore/algorithms/`).
+# Must validate against: https://github.com/esl-epfl/szcore/blob/main/config/schema.json
+
+title: "Brain-Go-Brr v4.4.0: Dual-Stream TCN + Gated DeltaNet + GNN for Seizure Detection"
+short_title: "BrainGoBrr"
+image: "ghcr.io/clarity-digital-twin/brain-go-brr-szcore:v4.4.0"
+version: "4.4.0"
+date_released: "2025-12-29"
+
+authors:
+  - given_names: "John H."
+    family_names: "Jung"
+    affiliation: "Clarity Digital Twin"
+
+repository: "https://github.com/Clarity-Digital-Twin/brain-go-brr-v2"
+license: "Apache-2.0"
+
+abstract: >-
+  Brain-Go-Brr is a seizure detection algorithm for long-term scalp EEG.
+  It expects 19-channel 10-20 EEG at 256 Hz and produces HED-SCORE TSV event
+  annotations. This submission uses Brain-Go-Brr's V3 architecture and the
+  FLA (Gated DeltaNet) variant trained on TUH EEG Seizure Corpus.
+
+datasets:
+  - "TUH EEG Sz Corpus v2"
