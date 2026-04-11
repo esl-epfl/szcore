@@ -14,15 +14,21 @@ async function fetchJSON(url) {
     }
 }
 
+// In-memory cache for YAML files so each URL is fetched only once
+const yamlCache = {};
+
 // Generic function to fetch and parse a YAML file
 async function fetchYAML(url) {
+    if (yamlCache[url]) return yamlCache[url];
     try {
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`Network response was not ok for ${url}`);
         }
         const yamlText = await response.text();
-        return jsyaml.load(yamlText);
+        const parsed = jsyaml.load(yamlText);
+        yamlCache[url] = parsed;
+        return parsed;
     } catch (error) {
         console.error(`Error loading YAML from ${url}:`, error);
         return null;

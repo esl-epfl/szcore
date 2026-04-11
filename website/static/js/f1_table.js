@@ -20,7 +20,8 @@ async function loadResults() {
         }
     });
 
-    // Add a row for each algorithm
+    // Build rows with sort key, then sort by best event F1 before appending
+    const rows = [];
     for (const algorithm of algorithms) {
         const row = document.createElement("tr");
 
@@ -55,8 +56,16 @@ async function loadResults() {
             row.appendChild(f1Cell);
         });
 
-        tableBody.appendChild(row);
+        // Sort key: best event F1 across non-training datasets (higher is better)
+        const sortKey = Math.max(...[...datasets]
+            .filter(d => !trainingDatasets || !trainingDatasets.includes(d))
+            .map(d => data[algorithm][d]?.event_results?.f1 ?? -1)
+        );
+        rows.push({ row, sortKey });
     }
+
+    rows.sort((a, b) => b.sortKey - a.sortKey);
+    rows.forEach(({ row }) => tableBody.appendChild(row));
 }
 
 // Call the function to load results and populate the table

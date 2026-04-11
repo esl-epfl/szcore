@@ -16,6 +16,7 @@ module.exports = {
       'xl': '1280px',
       '2xl': '1536px',
     },
+    extend: {
     colors: {
       transparent: "transparent",
       neutral: {
@@ -56,7 +57,6 @@ module.exports = {
         900: "rgba(var(--color-secondary-900), <alpha-value>)",
       },
     },
-    extend: {
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
