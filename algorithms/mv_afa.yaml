@@ -1,0 +1,36 @@
+---
+title: "MV-AFA: Interpretable Topology-Aware Multi-View Adaptive Fusion Attention for EEG Seizure Detection"
+short_title: "MV-AFA"
+
+image: "docker.io/mellow99/mv-afa-szcore:v1.0.0"
+
+version: "1.0.0"
+date_released: "2026-06-12"
+
+authors:
+  - given_names: "Yuhang"
+    family_names: "Guo"
+    affiliation: "Khalifa University"
+    email: "yuhang5259@gmail.com"
+
+license: "MIT"
+
+repository: "https://github.com/yuhangYH/mv-afa-szcore"
+
+abstract: >-
+  MV-AFA (Multi-View Adaptive Fusion Attention) is an EEG seizure detection
+  framework that integrates four complementary views of a 2-second EEG window:
+  (1) temporal dynamics via a multi-scale patch Transformer,
+  (2) spectral content via a multi-scale 2-D CNN on PSD maps,
+  (3) hand-crafted statistical features (Hjorth, entropy, etc.), and
+  (4) topological data analysis (TDA) features derived from Vietoris-Rips
+  persistent homology (H0 and H1 summary statistics).
+  A gated fusion mechanism learns adaptive per-sample branch weights,
+  enabling interpretable attention over the four views. The model is trained
+  end-to-end with class-weighted cross-entropy on 2-second windows
+  (step 4 s) extracted from CHB-MIT bipolar montage channels.
+  Post-processing merges detections within 30 s and discards events shorter
+  than 5 s before outputting BIDS-compatible TSV annotations.
+
+datasets:
+  - CHB-MIT Scalp EEG Database
