@@ -6,9 +6,9 @@
 title: "MV-AFA: Interpretable Topology-Aware Multi-View Adaptive Fusion Attention for EEG Seizure Detection"
 short_title: "MV-AFA"
 
-image: "docker.io/mellow99/mv-afa-szcore:v1.2.0"
+image: "docker.io/mellow99/mv-afa-szcore:v1.3.0"
 
-version: "1.2.0"
+version: "1.3.0"
 date_released: "2026-06-16"
 
 authors:
@@ -29,8 +29,8 @@ abstract: >-
   (4) topological data analysis (TDA) features derived from Vietoris–Rips
   persistent homology (H0 and H1 summary statistics).
   A gated fusion mechanism learns adaptive per-sample branch weights,
-  enabling interpretable attention over the four views. v1.2.0 is trained
-  multi-dataset across CHB-MIT, Siena and TUH-Sz (TUSZ) using 2-second windows
+  enabling interpretable attention over the four views. v1.3.0 is trained
+  multi-dataset across CHB-MIT, Siena and TUH-Sz (TUSZ, 1500 recordings for subject diversity) using 2-second windows
   (4 s step) on the 18-channel bipolar montage, with EEG augmentation and
   per-dataset balancing for cross-dataset robustness; splits are subject-level
   to avoid leakage. At inference, per-window seizure probabilities are
