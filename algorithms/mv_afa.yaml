@@ -6,10 +6,10 @@
 title: "MV-AFA: Interpretable Topology-Aware Multi-View Adaptive Fusion Attention for EEG Seizure Detection"
 short_title: "MV-AFA"
 
-image: "docker.io/mellow99/mv-afa-szcore:v1.1.0"
+image: "docker.io/mellow99/mv-afa-szcore:v1.2.0"
 
-version: "1.1.0"
-date_released: "2026-06-15"
+version: "1.2.0"
+date_released: "2026-06-16"
 
 authors:
   - given_names: "Yuhang"
@@ -29,15 +29,17 @@ abstract: >-
   (4) topological data analysis (TDA) features derived from Vietoris–Rips
   persistent homology (H0 and H1 summary statistics).
   A gated fusion mechanism learns adaptive per-sample branch weights,
-  enabling interpretable attention over the four views. The model is trained
-  cross-subject on all 24 CHB-MIT subjects using 2-second windows (4 s step)
-  from the 18-channel bipolar montage. At inference, per-window seizure
-  probabilities are temporally smoothed and gated by a persistence /
-  minimum-duration / merge post-processor that suppresses isolated false
-  positives, before emitting BIDS-compatible TSV annotations. On held-out
-  continuous CHB-MIT recordings this yields high event sensitivity at well
-  under 1 false alarm per 24 h.
+  enabling interpretable attention over the four views. v1.2.0 is trained
+  multi-dataset across CHB-MIT, Siena and TUH-Sz (TUSZ) using 2-second windows
+  (4 s step) on the 18-channel bipolar montage, with EEG augmentation and
+  per-dataset balancing for cross-dataset robustness; splits are subject-level
+  to avoid leakage. At inference, per-window seizure probabilities are
+  temporally smoothed and gated by a persistence / minimum-duration / merge
+  post-processor before emitting BIDS-compatible TSV annotations. Referential
+  10-20 inputs are remontaged to the 18 bipolar pairs automatically.
 
 # Training datasets used
 datasets:
   - CHB-MIT Scalp EEG Database
+  - Siena Scalp EEG Database
+  - TUH EEG Seizure Corpus
