@@ -1,0 +1,24 @@
+---
+title: "IctalTrace V4 Raw R69 Source Floor"
+short_title: "IctalTraceV4R69"
+image: "ashune96/ictaltrace-szcore:v4-raw-r69-sourcefloor-r1"
+version: "0.9.2"
+date_released: "2026-06-09"
+authors:
+  - given_names: "Arthur"
+    family_names: "Ashune"
+    affiliation: "IctalTrace"
+abstract: >-
+  IctalTrace V4 Raw R69 Source Floor is a raw-EDF seizure detection pipeline for
+  long-term scalp EEG. The container reads the EDF file supplied by SzCORE and
+  writes event-level TSV annotations. The method combines a window-level neural
+  detector with deterministic event construction, proposal recovery, artifact
+  suppression, and precision-oriented event selection. The submitted Docker
+  image is the frozen R69 configuration evaluated locally on a TUSZ v2.0.6
+  880-file reference snapshot with szcore-evaluation 0.0.7 and
+  avg_per_subject=True, yielding event F1 0.4967288743, sensitivity
+  0.4681395113, precision 0.8307291667, and FP/day 2.5523041402.
+repository: "https://github.com/ArthurShune/IctalTrace"
+license: "MIT"
+datasets:
+  - "TUH EEG Corpus / TUSZ benchmark"
