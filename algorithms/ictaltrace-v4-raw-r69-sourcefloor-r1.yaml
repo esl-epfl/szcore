@@ -21,4 +21,5 @@ abstract: >-
 repository: "https://github.com/ArthurShune/IctalTrace"
 license: "MIT"
 datasets:
-  - "TUH EEG Corpus / TUSZ benchmark"
+  - TUH EEG Corpus
+  - TUH Seizure Corpus
