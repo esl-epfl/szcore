@@ -1,0 +1,46 @@
+---
+# SzCORE algorithm submission file
+# Schema: https://github.com/esl-epfl/szcore/blob/main/config/schema.json
+# Submit by: fork esl-epfl/szcore → copy this file to algorithms/ → open PR
+
+title: "MV-AFA: Interpretable Topology-Aware Multi-View Adaptive Fusion Attention for EEG Seizure Detection"
+short_title: "MV-AFA"
+
+image: "docker.io/mellow99/mv-afa-szcore:v1.3.0"
+
+version: "1.3.0"
+date_released: "2026-06-16"
+
+authors:
+  - given_names: "Yuhang"
+    family_names: "Guo"
+    affiliation: "Khalifa University"
+    email: "yuhang5259@gmail.com"
+
+license: "MIT"
+
+repository: "https://github.com/yuhangYH/mv-afa-szcore"
+
+abstract: >-
+  MV-AFA (Multi-View Adaptive Fusion Attention) is an EEG seizure detection
+  framework that integrates four complementary views of a 2-second EEG window:
+  (1) temporal dynamics via a multi-scale patch Transformer,
+  (2) spectral content via a multi-scale 2-D CNN on PSD maps,
+  (3) hand-crafted statistical features (Hjorth, entropy, etc.), and
+  (4) topological data analysis (TDA) features derived from Vietoris–Rips
+  persistent homology (H0 and H1 summary statistics).
+  A gated fusion mechanism learns adaptive per-sample branch weights,
+  enabling interpretable attention over the four views. v1.3.0 is trained
+  multi-dataset across CHB-MIT, Siena and TUH-Sz (TUSZ, 1500 recordings for subject diversity) using 2-second windows
+  (4 s step) on the 18-channel bipolar montage, with EEG augmentation and
+  per-dataset balancing for cross-dataset robustness; splits are subject-level
+  to avoid leakage. At inference, per-window seizure probabilities are
+  temporally smoothed and gated by a persistence / minimum-duration / merge
+  post-processor before emitting BIDS-compatible TSV annotations. Referential
+  10-20 inputs are remontaged to the 18 bipolar pairs automatically.
+
+# Training datasets used
+datasets:
+  - CHB-MIT Scalp EEG Database
+  - Siena Scalp EEG Database
+  - TUH EEG Seizure Corpus
