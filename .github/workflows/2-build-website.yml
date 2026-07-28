@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Concatenate JSONs
         run: |
@@ -52,7 +52,7 @@ jobs:
           done
 
       - name: upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with: 
           name: results
           path: ./results.json
@@ -63,7 +63,7 @@ jobs:
       HUGO_VERSION: 0.160.0
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
           fetch-depth: 0
@@ -73,7 +73,7 @@ jobs:
             hugo-version: '0.160.0'
             extended: true
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '23'
           cache: 'npm'
@@ -93,7 +93,7 @@ jobs:
           cd website
           hugo --minify
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: hugo
           path: website/public/
@@ -106,15 +106,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Download Hugo project
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: hugo
           path: website/public/
 
       - name: Download results.json
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: results
           path: website/public/
@@ -136,13 +136,13 @@ jobs:
           cp -r ./challenge_algorithms website/public/challenge_algorithms
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: 'website/public'
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
