@@ -1,0 +1,41 @@
+---
+# Description of a seizure detection algorithm
+title: "EEG-Conformer trained on CHB-MIT and Siena"
+short_title: "EEG-Conformer"
+image: "ghcr.io/stanley1208/eeg-conformer:v1-0-0"
+authors:
+  - given_names: Stanley
+    family_names: Mei
+    affiliation: Independent researcher
+version: 1.0
+date_released: "2026-09-26"
+abstract: >
+  A small convolution-plus-transformer model, 117,890 parameters, run over
+  4-second windows with 50% overlap. It takes 20 bipolar derivations built from
+  the 19 electrodes this benchmark provides. Training used 23 CHB-MIT subjects
+  and 14 Siena adults, no pretraining and no external data.
+
+  The operating point is tuned for event F1, since that is what this benchmark
+  reports. On held-out CHB-MIT patients it catches 46% of seizures at 7.7 false
+  alarms a day. A looser setting catches 69% but alarms 76 times a day, and
+  scores worse here. Worth saying plainly: 46% is not a sensitivity anyone
+  would deploy, and this row should not be read as the setup I would put in
+  front of a clinician.
+
+  One part of the method does not run here at all. Thresholds are normally
+  calibrated per patient from a seizure-free stretch of that patient's own
+  earlier recording, worth 0.139 event sensitivity on CHB-MIT. A container gets
+  one anonymous file with no patient identity and no earlier session, so there
+  is nothing to calibrate against.
+
+  Tuning used leave-one-patient-out predictions over 190 seizure events, with
+  no patient scored by a model that had trained on them. An earlier attempt
+  tuned on one held-out patient who had three seizures and picked a setting 40%
+  worse. Three events cannot calibrate anything.
+license: MIT
+repository: https://github.com/Project-for-EEG/EEG-Conformer
+
+# List all datasets that were used to train this algorithm
+datasets:
+  - "CHB-MIT"
+  - "Siena"
