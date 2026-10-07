@@ -1,0 +1,36 @@
+title: "RelSz: causal patient-relative seizure detector"
+short_title: "RelSz"
+image: "ghcr.io/guhanvenkat10/relsz:0.2.0"
+version: "0.2.0"
+date_released: "2026-10-06"
+authors:
+  - given_names: Guhan
+    family_names: Venkat
+    affiliation: Independent
+    email: guhan.venkatachalapathi@gmail.com
+abstract: >-
+  RelSz is a causal seizure detector for scalp EEG. Each of the 18 longitudinal
+  bipolar derivations is converted to a log power spectrum (2 s window, 1 s
+  step, 40 bands of 1 Hz from 0.5 to 40.5 Hz), and the median of the same
+  channel and band over the preceding five minutes is subtracted, so that the
+  input describes the EEG relative to the recent baseline of the same
+  recording. Six small convolutional networks with causal temporal convolutions
+  are averaged (654,486 parameters in total). Three encode each channel
+  separately and pool over the channels present. Three additionally receive
+  the difference between homologous left and right derivations. An alarm starts
+  when the 3 s trailing mean of the probability has been at or above 0.4 for
+  5 s. No alarm is raised in the first 60 s of a recording. Only past samples
+  are used. The networks were trained on the Siena Scalp EEG Database (14
+  adults) and SeizeIT2 (125 patients, two behind-the-ear channels). No TUH data
+  were used. Seven CHB-MIT patients were used for development. The other 16
+  CHB-MIT patients were not used for training or tuning. On them the
+  event-based F1 was 0.493 (sensitivity 0.566, precision 0.623, 1.13 false
+  alarms per 24 h, szcore-evaluation 0.0.7, mean over subjects). An earlier
+  version with three networks scored 0.441 on the same 16 patients, and the
+  present version was chosen over it on that comparison. Input: 19 channel
+  10-20 EEG or 18 channel bipolar EEG at 256 Hz. The algorithm runs on a CPU.
+license: "CC-BY-NC-4.0"
+repository: "https://github.com/guhanvenkat10/relsz"
+datasets:
+  - Physionet Siena Scalp EEG
+  - SeizeIT2
