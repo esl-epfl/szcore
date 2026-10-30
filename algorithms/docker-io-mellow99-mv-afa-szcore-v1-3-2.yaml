@@ -1,15 +1,12 @@
 ---
-# SzCORE algorithm submission file
-# Schema: https://github.com/esl-epfl/szcore/blob/main/config/schema.json
-# Submit by: fork esl-epfl/szcore → copy this file to algorithms/ → open PR
 
 title: "MV-AFA: Interpretable Topology-Aware Multi-View Adaptive Fusion Attention for EEG Seizure Detection"
-short_title: "MV-AFA"
+short_title: "MV-AFA_Guo_2026"
 
-image: "docker.io/mellow99/mv-afa-szcore:v1.3.0"
+image: "docker.io/mellow99/mv-afa-szcore:v1-3-2"
 
-version: "1.3.0"
-date_released: "2026-06-16"
+version: "1.3.2"
+date_released: "2026-10-30"
 
 authors:
   - given_names: "Yuhang"
@@ -30,14 +27,21 @@ abstract: >-
   (4) topological data analysis (TDA) features derived from Vietoris–Rips
   persistent homology (H0 and H1 summary statistics).
   A gated fusion mechanism learns adaptive per-sample branch weights,
-  enabling interpretable attention over the four views. v1.3.0 is trained
+  enabling interpretable attention over the four views. The model is trained
   multi-dataset across CHB-MIT, Siena and TUH-Sz (TUSZ, 1500 recordings for subject diversity) using 2-second windows
   (4 s step) on the 18-channel bipolar montage, with EEG augmentation and
   per-dataset balancing for cross-dataset robustness; splits are subject-level
   to avoid leakage. At inference, per-window seizure probabilities are
   temporally smoothed and gated by a persistence / minimum-duration / merge
   post-processor before emitting BIDS-compatible TSV annotations. Referential
-  10-20 inputs are remontaged to the 18 bipolar pairs automatically.
+  10-20 inputs (including SzCORE "<electrode>-Avg" channels and old T3/T4/T5/T6
+  labels) are remontaged to the 18 bipolar pairs automatically. v1.3.1 fixed a
+  channel-mapping bug in v1.3.0 that zero-filled the input on SzCORE
+  referential data (and 6 temporal pairs on three CHB-MIT files). v1.3.2 adds a
+  recording-adaptive threshold. On recordings of 1 h or more a lower threshold
+  is used and at most 0.5% of the windows can be positive, which bounds false
+  alarms where the background probability is high. Shorter recordings keep the
+  v1.3.1 setting. The weights are unchanged since v1.3.0.
 
 # Training datasets used
 datasets:
