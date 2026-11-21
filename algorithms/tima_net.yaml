@@ -1,0 +1,44 @@
+title: "TIMA-Net: Montage-Agnostic Electrode-Coordinate Token Transformer for EEG Seizure Detection"
+short_title: "TIMA-Net_Guo_2026"
+
+image: "docker.io/mellow99/tima-net-szcore:v1-0-0"
+
+version: "1.0.0"
+date_released: "2026-11-18"
+
+authors:
+  - given_names: "Yuhang"
+    family_names: "Guo"
+    affiliation: "Khalifa University"
+    email: "yuhang5259@gmail.com"
+
+license: "MIT"
+
+repository: "https://github.com/yuhangYH/tima-net-szcore"
+
+abstract: >-
+  TIMA-Net treats every EEG channel of a 2-second window as one token. A token
+  carries 12 per-channel signal features (relative band powers, spectral
+  entropy, Hjorth mobility and complexity, zero-crossing rate, relative and
+  absolute line length, log total power) and a 4-D electrode-coordinate
+  code, so the same weights read bipolar and referential montages with any
+  subset of the 10-20 electrodes. A 3-layer Transformer encoder pools the
+  channel tokens into a window-level seizure probability. The deployed model
+  is the mean of five seeds trained on four sources (CHB-MIT, Siena, TUH-Sz
+  and SeizeIT2 wearable), with the epoch chosen on source
+  validation patients only. Channel names are canonicalised (EEG/POL prefixes,
+  -Avg/-REF/-LE/-AR/-CAR suffixes, T3/T4/T5/T6 aliases); CHB-MIT bipolar input
+  stays bipolar and the referential inputs use the 19 10-20 electrodes, with
+  no zero-filled channel. Window probabilities are smoothed and turned into
+  events by a threshold, merge-gap and minimum-duration rule (with an optional
+  per-recording quantile gate on records of 1 h or more), all fixed on source
+  validation patients converted to the SzCORE input format before any
+  benchmark output existed. Dianalund and SeizeIT1 were never seen in
+  training; CHB-MIT, Siena and TUH are training corpora.
+
+# Training datasets used
+datasets:
+  - CHB-MIT Scalp EEG Database
+  - Siena Scalp EEG Database
+  - TUH EEG Seizure Corpus
+  - SeizeIT2
